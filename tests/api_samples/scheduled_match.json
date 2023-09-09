@@ -1,0 +1,99 @@
+{
+    "start_datetime": "2023-09-11T20:00:00+02:00",
+    "start_datetime_st": "2023-09-11 20:00:00",
+    "available_slots": 2,
+    "missing_players": 2,
+    "player_price": {
+        "currency_symbol": "€",
+        "amount": 7,
+        "currency": "EUR"
+    },
+    "status": 5,
+    "id": 3004643,
+    "owner": {
+        "id": 12345,
+        "first_name": "Francesco",
+        "last_name": "Rossi",
+        "avatar": "https://example.com/rossi.jpg",
+        "url": "https://api.fubles.com/it/app/user/12345",
+        "me": {
+            "is_myself": false
+        }
+    },
+    "structure": {
+        "phone_complete": "+0 02.39975568",
+        "id": 1370,
+        "partner": true,
+        "lat": 45.4274201,
+        "lng": 9.112,
+        "name": "Sport Time Corsico",
+        "address": "Via Visconti di Modrone, 2, 20094 Corsico MI, Italia",
+        "sub_title": "2 Km - Via Visconti di Modrone, 2, 20094 Corsico MI, Italia"
+    },
+    "side_1": {
+        "name": "Bianchi",
+        "points": 0,
+        "img": "https://assets.fubles.com/images/common/side1_crest.png?v24"
+    },
+    "side_2": {
+        "name": "Neri",
+        "points": 0,
+        "img": "https://assets.fubles.com/images/common/side2_crest.png?v24"
+    },
+    "goalkeepers_count": 0,
+    "player_payment_type": 2,
+    "me": {
+        "followed_players": [
+            {
+                "id": 817611,
+                "first_name": "Giovanni",
+                "last_name": "Gilio",
+                "avatar": "https://example.com/gilio.jpg",
+                "url": "https://api.fubles.com/it/app/user/817611",
+                "me": {
+                    "is_myself": false
+                }
+            },
+            {
+                "id": 205266,
+                "first_name": "Simone",
+                "last_name": "Ferro",
+                "avatar": "https://example.com/ferro.jpg",
+                "url": "https://api.fubles.com/it/app/user/205266",
+                "me": {
+                    "is_myself": false
+                }
+            }
+        ],
+        "distance": 2,
+        "is_following": true,
+        "is_playing": true,
+        "can_subscribe": false,
+        "has_requested_replace": false
+    },
+    "ref_player": {
+        "side_key": 1,
+        "is_mom": false,
+        "level_variation": 0,
+        "is_no_show": false,
+        "level": 78,
+        "role": {
+            "id": 3,
+            "name": "Centrocampista"
+        },
+        "user": {
+            "id": 55576,
+            "first_name": "Daniele",
+            "last_name": "Megna",
+            "avatar": "https://example.com/megna.jpg",
+            "url": "https://api.fubles.com/it/app/user/55576",
+            "me": {
+                "is_myself": true
+            }
+        },
+        "points": 0
+    },
+    "title": "Calcio a 5",
+    "sub_title": "2 Km - Sport Time Corsico",
+    "sport_name": "Calcetto"
+}
