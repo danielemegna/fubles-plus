@@ -10,12 +10,12 @@ export const enum Side {
   BLACK = 'black'
 }
 
-export function matchFrom(obj: any): Match {
+export function matchFrom(matchDetails: any): Match {
   return {
-    id: obj.id,
-    available_slots: obj.available_slots,
-    my_side: mySideFrom(obj),
-    starting_at: new Date(obj.start_datetime)
+    id: matchDetails.id,
+    available_slots: matchDetails.available_slots,
+    my_side: mySideFrom(matchDetails),
+    starting_at: new Date(matchDetails.start_datetime)
   }
 }
 
