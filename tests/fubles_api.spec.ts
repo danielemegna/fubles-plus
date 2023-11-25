@@ -7,17 +7,17 @@ import { Vote } from '../src/vote';
 describe.skip('Fubles API integration tests', () => {
 
   test('get my next scheduled matches', async () => {
-    const api = new FublesAPI(validAuthenticatedUser());
+    const api = new FublesAPI(validAuthenticatedUser())
 
-    const matches: Match[] = await api.getMyNextScheduledMatches();
+    const matches: Match[] = await api.getMyNextScheduledMatches()
 
     expect(matches).not.toBeEmpty()
   })
 
   test('get received votes in a match', async () => {
-    const api = new FublesAPI(validAuthenticatedUser());
+    const api = new FublesAPI(validAuthenticatedUser())
 
-    const votes: Vote[] = await api.receivedVotes(3015820);
+    const votes: Vote[] = await api.receivedVotes(3015820)
 
     expect(votes).not.toBeEmpty()
     expect(votes).toContainEqual({
@@ -33,5 +33,5 @@ function validAuthenticatedUser(): AutheticatedUser {
   return {
     id: "55576",
     bearerToken: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  };
+  }
 }

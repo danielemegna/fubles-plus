@@ -17,7 +17,7 @@ export default class FublesAPI {
       },
       "body": null,
       "method": "GET"
-    });
+    })
 
     const responseBody = await response.json()
     const matches = responseBody.items as any[]
@@ -32,7 +32,7 @@ export default class FublesAPI {
       },
       "body": null,
       "method": "GET"
-    });
+    })
 
     const responseBody = await response.json()
     const votes = responseBody.match.ref_player.received_votes as any[]
