@@ -4,10 +4,10 @@ import { Match } from '../src/match';
 
 describe('Fubles API', () => {
 
-  test('get scheduled matches', async () => {
+  test('get my next scheduled matches', async () => {
     const api = new FublesAPI(validAuthenticatedUser());
 
-    const matches: Match[] = await api.getScheduledMatches();
+    const matches: Match[] = await api.getMyNextScheduledMatches();
 
     expect(matches).not.toBeEmpty()
   })

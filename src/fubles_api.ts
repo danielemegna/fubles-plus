@@ -8,8 +8,7 @@ export default class FublesAPI {
     this.authenticatedUser = autheticatedUser
   }
 
-
-  async getScheduledMatches(): Promise<Match[]> {
+  async getMyNextScheduledMatches(): Promise<Match[]> {
     const response = await fetch(`https://api.fubles.com/api/users/${this.authenticatedUser.id}/matches/scheduled`, {
       "headers": {
         "accept": "application/json",
