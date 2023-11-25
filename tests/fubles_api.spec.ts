@@ -2,7 +2,8 @@ import 'jest-extended';
 import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
 import { Match } from '../src/match';
 
-describe('Fubles API', () => {
+// set a valid bearerToken in order to run this tests
+describe.skip('Fubles API integration tests', () => {
 
   test('get my next scheduled matches', async () => {
     const api = new FublesAPI(validAuthenticatedUser());
