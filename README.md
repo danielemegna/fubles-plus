@@ -56,3 +56,9 @@ Given a full match I'm enrolled to, automatically change team when a spot became
 
 Variations:
 - do not autoswitch, just notify
+
+#### Peek votes without voting [feasibility to verify]
+
+Given a recent match that I played, I want to see votes players gave without voting.
+
+> in fubles you cannot see votes without giving your votes before
