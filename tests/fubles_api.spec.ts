@@ -1,11 +1,11 @@
 import 'jest-extended';
-import FublesAPI from '../src/fubles_api';
+import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
 import { Match } from '../src/match';
 
 describe('Fubles API', () => {
 
   test('get scheduled matches', async () => {
-    const api = new FublesAPI();
+    const api = new FublesAPI(validAuthenticatedUser());
 
     const matches: Match[] = await api.getScheduledMatches();
 
@@ -14,3 +14,9 @@ describe('Fubles API', () => {
 
 })
 
+function validAuthenticatedUser(): AutheticatedUser {
+  return {
+    id: "55576",
+    bearerToken: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  };
+}

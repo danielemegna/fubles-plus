@@ -2,10 +2,12 @@ import { Match, matchFrom } from "./match";
 
 export default class FublesAPI {
 
-  private authenticatedUser: AutheticatedUser = {
-    id: "55576",
-    bearerToken: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  private authenticatedUser: AutheticatedUser
+
+  constructor(autheticatedUser: AutheticatedUser) {
+    this.authenticatedUser = autheticatedUser
   }
+
 
   async getScheduledMatches(): Promise<Match[]> {
     const response = await fetch(`https://api.fubles.com/api/users/${this.authenticatedUser.id}/matches/scheduled`, {
@@ -24,7 +26,7 @@ export default class FublesAPI {
 
 }
 
-type AutheticatedUser = {
+export type AutheticatedUser = {
   id: string,
   bearerToken: string
 }
