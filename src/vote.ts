@@ -4,10 +4,11 @@ export type Vote = {
   vote: number
 }
 
-export function voteFrom(obj: any): Vote {
+export function voteFrom(receivedVote: any): Vote {
+  const voter = receivedVote.voter
   return {
-    voterId: obj.voter.id,
-    voterName: obj.voter.first_name + " " + obj.voter.last_name,
-    vote: obj.vote
+    voterId: voter.id,
+    voterName: voter.first_name + " " + voter.last_name,
+    vote: receivedVote.vote
   }
 }
