@@ -1,6 +1,6 @@
 import 'jest-extended';
 import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
-import { Match } from '../src/match';
+import { Match, Side } from '../src/match';
 import { Vote } from '../src/vote';
 
 // set a valid bearerToken in order to run this tests
@@ -25,6 +25,17 @@ describe.skip('Fubles API integration tests', () => {
       voterName: 'Alessandro Pulvirenti',
       vote: 7
     })
+  })
+
+  test('get match details', async () => {
+    const api = new FublesAPI(validAuthenticatedUser())
+
+    const match: Match = await api.matchDetails(3015825)
+
+    expect(match.id).toBe(3015825)
+    expect(match.available_slots).toBe(0)
+    expect(match.side).toBe(Side.BLACK)
+    expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
   })
 
 })
