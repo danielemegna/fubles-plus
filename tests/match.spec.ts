@@ -13,8 +13,9 @@ describe('Match', () => {
     expect(match.starting_at.toISOString()).toBe("2023-09-11T18:00:00.000Z")
   })
 
-  test('properly map side', async () => {
+  test('properly map side field', async () => {
     const onBlackSide = sampleWithSideKey(2)
+
     const match = matchFrom(onBlackSide)
 
     expect(match.side).toBe(Side.BLACK)
