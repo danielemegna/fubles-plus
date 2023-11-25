@@ -1,0 +1,659 @@
+{
+    "is_imminent": false,
+    "start_datetime": "2023-11-30T19:00:00+01:00",
+    "start_datetime_st": "2023-11-30 19:00:00",
+    "imminent_datetime_st": "2023-11-29 19:00:00",
+    "imminent_datetime": "2023-11-29T19:00:00+01:00",
+    "available_slots": 0,
+    "missing_players": 0,
+    "followers_count": 18,
+    "player_price": {
+        "currency_symbol": "€",
+        "amount": 7.5,
+        "currency": "EUR"
+    },
+    "status": 5,
+    "available_roles": [
+        {
+            "id": 1,
+            "name": "Portiere"
+        },
+        {
+            "id": 2,
+            "name": "Difensore"
+        },
+        {
+            "id": 3,
+            "name": "Centrocampista",
+            "me": {
+                "favorite": true
+            }
+        },
+        {
+            "id": 4,
+            "name": "Attaccante"
+        }
+    ],
+    "id": 3017265,
+    "team_players": 5,
+    "team_benches": 0,
+    "owner": {
+        "id": 26809,
+        "first_name": "Luca",
+        "last_name": "Ricci",
+        "owned_matches_count": 10274,
+        "co_owners": [
+            {
+                "id": 37041,
+                "first_name": "Fabio",
+                "last_name": "Ben",
+                "avatar": "https://assets.fubles.com/images/User/37041/avatar/original_large.jpg",
+                "url": "https://api.fubles.com/it/app/user/37041",
+                "me": {
+                    "is_myself": false
+                }
+            },
+            {
+                "id": 35512,
+                "first_name": "Amico",
+                "last_name": "Jolly",
+                "avatar": "https://assets.fubles.com/images/User/35512/avatar/original_large.jpg",
+                "url": "https://api.fubles.com/it/app/user/35512",
+                "me": {
+                    "is_myself": false
+                }
+            },
+            {
+                "id": 35640,
+                "first_name": "Santiago",
+                "last_name": "Bonili",
+                "avatar": "https://assets.fubles.com/images/User/35640/avatar/original_large.jpeg",
+                "url": "https://api.fubles.com/it/app/user/35640",
+                "me": {
+                    "is_myself": false
+                }
+            }
+        ],
+        "avatar": "https://assets.fubles.com/images/User/26809/avatar/original_large.jpeg",
+        "url": "https://api.fubles.com/it/app/user/26876",
+        "me": {
+            "is_myself": false
+        }
+    },
+    "structure": {
+        "phone_complete": "+0 02.39930558",
+        "id": 1370,
+        "partner": true,
+        "lat": 45.4274201,
+        "lng": 9.112,
+        "name": "Sport Time Corsico",
+        "address": "Via Visconti di Modrone, 2, 20094 Corsico MI, Italia",
+        "sub_title": "2 Km - Via Visconti di Modrone, 2, 20094 Corsico MI, Italia"
+    },
+    "type": 1,
+    "side_1": {
+        "name": "Bianchi",
+        "players": [
+            {
+                "side_key": 1,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 49,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    }
+                },
+                "user": {
+                    "id": 543746,
+                    "first_name": "Giovanni",
+                    "last_name": "Romano",
+                    "avatar": "https://assets.fubles.com/images/User/543746/avatar/large.png",
+                    "url": "https://api.fubles.com/it/app/user/543746",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 1,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 92,
+                "role": {
+                    "id": 4,
+                    "name": "Attaccante"
+                },
+                "user": {
+                    "id": 782729,
+                    "first_name": "Stefano",
+                    "last_name": "Martani",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/782729",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 1,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 78,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    }
+                },
+                "user": {
+                    "id": 152516,
+                    "first_name": "Daniele",
+                    "last_name": "Servito",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/152516",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [
+                    {
+                        "title": "Ha chiesto delle sostituzioni nelle ultime 10 partite",
+                        "actions": [
+                            {
+                                "label": "Calcio a 5 • mar 17 ott - 20:00",
+                                "img": "https://assets.fubles.com/images/icons/match.png?v24",
+                                "type": "go-match",
+                                "arg1": 3009501
+                            },
+                            {
+                                "label": "Calcio a 7 • sab 30 set - 17:00",
+                                "img": "https://assets.fubles.com/images/icons/match.png?v24",
+                                "type": "go-match",
+                                "arg1": 3010024
+                            }
+                        ],
+                        "matches": [
+                            {
+                                "id": 3009501,
+                                "title": "2023-10-17 20:00 - Sport Time Corsico"
+                            },
+                            {
+                                "id": 3010024,
+                                "title": "2023-09-30 17:00 - Barona Sporting 1971"
+                            }
+                        ]
+                    }
+                ],
+                "has_warnings": true,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 1,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 60,
+                "role": {
+                    "id": 2,
+                    "name": "Difensore"
+                },
+                "user": {
+                    "id": 937794,
+                    "first_name": "Simone",
+                    "last_name": "Certalsi",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/937794",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 1,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 61,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    }
+                },
+                "user": {
+                    "id": 961556,
+                    "first_name": "Antonio",
+                    "last_name": "Provagli",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/961556",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            }
+        ],
+        "stats": {
+            "roles": [
+                {
+                    "id": 1,
+                    "name": "Portiere",
+                    "players_count": 0
+                },
+                {
+                    "id": 2,
+                    "name": "Difensore",
+                    "players_count": 1
+                },
+                {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3
+                },
+                {
+                    "id": 4,
+                    "name": "Attaccante",
+                    "players_count": 1
+                }
+            ],
+            "avg_level": 68,
+            "avg_age": 33,
+            "quotation": 2.38,
+            "prediction": 0.42
+        },
+        "points": 0,
+        "img": "https://assets.fubles.com/images/common/side1_crest.png?v24"
+    },
+    "side_2": {
+        "name": "Neri",
+        "players": [
+            {
+                "side_key": 2,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 77,
+                "role": {
+                    "id": 2,
+                    "name": "Difensore",
+                    "players_count": 1
+                },
+                "user": {
+                    "id": 806893,
+                    "first_name": "Donato",
+                    "last_name": "Filippo",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/806893",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 2,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 82,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3
+                },
+                "user": {
+                    "id": 583292,
+                    "first_name": "Gianluca",
+                    "last_name": "Bergamo",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/583292",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 2,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 56,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3
+                },
+                "user": {
+                    "id": 480113,
+                    "first_name": "Matteo",
+                    "last_name": "Giunno",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/480940",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 2,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 69,
+                "role": {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3
+                },
+                "user": {
+                    "id": 763244,
+                    "first_name": "Riccardo",
+                    "last_name": "Arringa",
+                    "avatar": "https://assets.fubles.com/images/default/User/avatar/large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/763244",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            },
+            {
+                "side_key": 2,
+                "received_votes": [],
+                "replace_request": 0,
+                "is_mom": false,
+                "is_winning": false,
+                "level_variation": 0,
+                "is_no_show": false,
+                "level": 74,
+                "role": {
+                    "id": 2,
+                    "name": "Difensore",
+                    "players_count": 1
+                },
+                "user": {
+                    "id": 223581,
+                    "first_name": "Alberto",
+                    "last_name": "Raffico",
+                    "avatar": "https://assets.fubles.com/images/User/223581/avatar/original_large.jpeg",
+                    "url": "https://api.fubles.com/it/app/user/223581",
+                    "me": {
+                        "is_myself": false
+                    }
+                },
+                "points": 0,
+                "status": 4,
+                "warnings": [],
+                "has_warnings": false,
+                "me": {
+                    "can_change_side": false,
+                    "can_change_role": false,
+                    "can_remove": false,
+                    "can_replace": false,
+                    "can_subscribe": false
+                }
+            }
+        ],
+        "stats": {
+            "roles": [
+                {
+                    "id": 1,
+                    "name": "Portiere",
+                    "players_count": 0
+                },
+                {
+                    "id": 2,
+                    "name": "Difensore",
+                    "players_count": 2
+                },
+                {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3
+                },
+                {
+                    "id": 4,
+                    "name": "Attaccante",
+                    "players_count": 0
+                }
+            ],
+            "avg_level": 72,
+            "avg_age": 39,
+            "quotation": 1.72,
+            "prediction": 0.58
+        },
+        "points": 0,
+        "img": "https://assets.fubles.com/images/common/side2_crest.png?v24"
+    },
+    "goalkeeper_required": false,
+    "goalkeepers_count": 0,
+    "reliable_players_required": false,
+    "notes": "SPORT TIME CORSICO\nArrivare in anticipo. \nSi paga IN CONTANTI prima di giocare. \n\nCampo in erba sintetica di ultima generazione.\nSe all'aperto si gioca anche con pioggia. \n\nChi manda la sostituzione ha comunque la responsabilità di presentarsi se non si trova nessuno. \n\nChi bidona dovrà pagare la quota entro il giorno successivo, verrà bloccato finché non paga. \n\nSi è responsabili di chi si iscrive, in caso di bidone di una persona iscritta da voi la quota la dovete pagare subito al campo. \n\nBlacklist per comportamenti inappropriati, ritardi, bidone. \n\nSPORT TIME COSICO\nVia Visconti di Modrone, 2, 20094 Corsico, MI. \n\nN.B. Non sarà possibile cancellarsi dalla partita a meno di 24 ore dall'inizio.",
+    "imminent_interval": "24H",
+    "ground": {
+        "id": 1,
+        "name": "Sintetico 3G"
+    },
+    "indoor": true,
+    "player_payment_type": 2,
+    "stats": {
+        "sides": {
+            "avg_level": {
+                "side_1": 68,
+                "side_2": 72
+            },
+            "avg_age": {
+                "side_1": 33,
+                "side_2": 39
+            },
+            "quotation": {
+                "side_1": 2.38,
+                "side_2": 1.72
+            },
+            "prediction": {
+                "side_1": 0.42,
+                "side_2": 0.58
+            },
+            "roles": [
+                {
+                    "id": 1,
+                    "name": "Portiere",
+                    "players_count": 0,
+                    "side_1": 0,
+                    "side_2": 0
+                },
+                {
+                    "id": 2,
+                    "name": "Difensore",
+                    "players_count": 2,
+                    "side_1": 1,
+                    "side_2": 2
+                },
+                {
+                    "id": 3,
+                    "name": "Centrocampista",
+                    "me": {
+                        "favorite": true
+                    },
+                    "players_count": 3,
+                    "side_1": 3,
+                    "side_2": 3
+                },
+                {
+                    "id": 4,
+                    "name": "Attaccante",
+                    "players_count": 0,
+                    "side_1": 1,
+                    "side_2": 0
+                }
+            ]
+        },
+        "goalkeepers_count": 0
+    },
+    "anonymous_voting": false,
+    "me": {
+        "is_following": true,
+        "is_playing": false,
+        "can_subscribe": false,
+        "has_requested_replace": false,
+        "can_report_votes": false,
+        "can_see_votes": false,
+        "can_report_score": false,
+        "can_report_warnings": false,
+        "can_see_score": false,
+        "has_to_complete_report": false,
+        "can_invite": true,
+        "can_admin": false,
+        "can_edit": false,
+        "can_retract": false,
+        "can_make_public": false,
+        "can_change_roster": false
+    },
+    "share_url": "https://api.fubles.com/it/matches/3017265",
+    "title": "Calcio a 5 • Coperto",
+    "sub_title": "gio 30 nov 2023 - 19:00",
+    "sport_name": "Calcetto"
+}

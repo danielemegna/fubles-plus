@@ -2,6 +2,7 @@ import 'jest-extended';
 import { Side, matchFrom } from '../src/match';
 import scheduledMatchSample from './api_samples/scheduled_match.json';
 import matchDetailsFullWithMe from './api_samples/match_details__full_with_me.json';
+import matchDetailsFullWithoutMe from './api_samples/match_details__full_without_me.json';
 
 describe('Match', () => {
 
@@ -21,6 +22,15 @@ describe('Match', () => {
     expect(match.available_slots).toBe(0)
     expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
+  })
+
+  test('build from match details full without me api object', async () => {
+    const match = matchFrom(matchDetailsFullWithoutMe)
+
+    expect(match.id).toBe(3017265)
+    expect(match.available_slots).toBe(0)
+    expect(match.my_side).toBeNull()
+    expect(match.starting_at.toISOString()).toBe("2023-11-30T18:00:00.000Z")
   })
 
   test('properly map my side field', async () => {
