@@ -3,8 +3,10 @@ import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
 import { Match, Side } from '../src/match';
 import { Vote } from '../src/vote';
 
-// set a valid bearerToken in order to run this tests
-describe.skip('Fubles API integration tests', () => {
+// set TEST_BEARER_TOKEN env variabile in order to run this tests
+const describe_withtoken = process.env.TEST_BEARER_TOKEN ? describe : describe.skip;
+
+describe_withtoken('Fubles API integration tests', () => {
 
   test('get my next scheduled matches', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
@@ -42,7 +44,7 @@ describe.skip('Fubles API integration tests', () => {
 
 function validAuthenticatedUser(): AutheticatedUser {
   return {
-    id: "55576",
-    bearerToken: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    id: process.env.TEST_USER_ID ?? "55576",
+    bearerToken: process.env.TEST_BEARER_TOKEN!
   }
 }

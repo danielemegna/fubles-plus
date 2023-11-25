@@ -62,3 +62,17 @@ Variations:
 Given a recent match that I played, I want to see votes players gave without voting.
 
 > in fubles you cannot see votes without giving your votes before
+
+## Dev notes
+
+Run tests with:
+```
+$ yarn test
+```
+
+To run api integration tests set a valid `TEST_BEARER_TOKEN` environment variable:
+
+```
+$ export TEST_BEARER_TOKEN=xxxxxxxxxxxxxxxxxx
+$ yarn test
+```
