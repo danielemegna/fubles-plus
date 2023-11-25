@@ -34,7 +34,7 @@ describe.skip('Fubles API integration tests', () => {
 
     expect(match.id).toBe(3015825)
     expect(match.available_slots).toBe(0)
-    expect(match.side).toBe(Side.BLACK)
+    expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
   })
 
