@@ -1,8 +1,8 @@
 import 'jest-extended';
 import { Side, matchFrom } from '../src/match';
 import scheduledMatchSample from './api_samples/scheduled_match.json';
-import matchDetailsFullWithMe from './api_samples/match_details__full_with_me.json';
-import matchDetailsFullWithoutMe from './api_samples/match_details__full_without_me.json';
+import matchDetailsFullWithMe from './api_samples/match_details/full_with_me.json';
+import matchDetailsFullWithoutMe from './api_samples/match_details/full_without_me.json';
 
 describe('Match', () => {
 
