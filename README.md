@@ -80,5 +80,5 @@ $ yarn test
 #### Next tiny steps
 
 - [ ] Read list of played matches
-- [ ] Get match available slots by side
+- [x] Get match available slots by side
 - [ ] Find out how to use this modules client-side
