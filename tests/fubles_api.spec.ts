@@ -1,6 +1,6 @@
 import 'jest-extended';
 import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
-import { Match, Side } from '../src/match';
+import { MatchDetails, MatchSummary, Side } from '../src/match';
 import { Vote } from '../src/vote';
 
 // set TEST_BEARER_TOKEN env variabile in order to run this tests
@@ -11,7 +11,7 @@ describe_withtoken('Fubles API integration tests', () => {
   test('get my next scheduled matches', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
-    const matches: Match[] = await api.getMyNextScheduledMatches()
+    const matches: MatchSummary[] = await api.getMyNextScheduledMatches()
 
     expect(matches).not.toBeEmpty()
   })
@@ -32,7 +32,7 @@ describe_withtoken('Fubles API integration tests', () => {
   test('get match details', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
-    const match: Match = await api.matchDetails(3009514)
+    const match: MatchDetails = await api.matchDetails(3009514)
 
     expect(match.id).toBe(3009514)
     expect(match.available_slots).toBe(0)
