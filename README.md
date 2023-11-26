@@ -57,7 +57,7 @@ Given a full match I'm enrolled to, automatically change team when a spot became
 Variations:
 - do not autoswitch, just notify
 
-#### Peek votes without voting [feasibility to verify]
+#### Peek votes without voting
 
 Given a recent match that I played, I want to see votes players gave without voting.
 
@@ -76,3 +76,9 @@ To run api integration tests set a valid `TEST_BEARER_TOKEN` environment variabl
 $ export TEST_BEARER_TOKEN=xxxxxxxxxxxxxxxxxx
 $ yarn test
 ```
+
+#### Next tiny steps
+
+- [ ] Read list of played matches
+- [ ] Get match available slots by side
+- [ ] Find out how to use this modules client-side
