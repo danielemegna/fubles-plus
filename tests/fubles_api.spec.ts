@@ -32,12 +32,12 @@ describe_withtoken('Fubles API integration tests', () => {
   test('get match details', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
-    const match: Match = await api.matchDetails(3015825)
+    const match: Match = await api.matchDetails(3009514)
 
-    expect(match.id).toBe(3015825)
+    expect(match.id).toBe(3009514)
     expect(match.available_slots).toBe(0)
     expect(match.my_side).toBe(Side.BLACK)
-    expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
+    expect(match.starting_at.toISOString()).toBe("2023-11-03T19:00:00.000Z")
   })
 
 })
