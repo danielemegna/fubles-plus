@@ -3,6 +3,7 @@ import { Side, matchFrom } from '../src/match';
 import scheduledMatchSample from './api_samples/scheduled_match.json';
 import matchDetailsFullWithMe from './api_samples/match_details/full_with_me.json';
 import matchDetailsFullWithoutMe from './api_samples/match_details/full_without_me.json';
+import matchDetailsOpenWithoutMe from './api_samples/match_details/open_without_me.json';
 
 describe('build match', () => {
 
@@ -24,6 +25,15 @@ describe('build match', () => {
       expect(match.available_slots).toBe(0)
       expect(match.my_side).toBeNull()
       expect(match.starting_at.toISOString()).toBe("2023-11-30T18:00:00.000Z")
+    })
+
+    test('open without me match', async () => {
+      const match = matchFrom(matchDetailsOpenWithoutMe)
+
+      expect(match.id).toBe(3017267)
+      expect(match.available_slots).toBe(6)
+      expect(match.my_side).toBeNull()
+      expect(match.starting_at.toISOString()).toBe("2023-12-07T18:00:00.000Z")
     })
 
   })
