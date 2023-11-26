@@ -10,9 +10,9 @@ export type MatchDetails = {
 
 export type MatchSummary = {
   id: number,
-  available_slots: number,
-  my_side: Side | null,
   starting_at: Date
+  my_side: Side | null,
+  available_slots: number,
 }
 
 export const enum Side {
@@ -37,9 +37,9 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
 export function matchSummaryFrom(matchDetails: any): MatchSummary {
   return {
     id: matchDetails.id,
-    available_slots: matchDetails.available_slots,
+    starting_at: new Date(matchDetails.start_datetime),
     my_side: mySideFrom(matchDetails),
-    starting_at: new Date(matchDetails.start_datetime)
+    available_slots: matchDetails.available_slots,
   }
 }
 
