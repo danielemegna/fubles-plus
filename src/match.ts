@@ -1,4 +1,12 @@
-export type MatchDetails = MatchSummary
+export type MatchDetails = {
+  id: number,
+  starting_at: Date,
+  my_side: Side | null,
+  available_slots: {
+    white: number,
+    black: number
+  },
+}
 
 export type MatchSummary = {
   id: number,
@@ -13,11 +21,16 @@ export const enum Side {
 }
 
 export function matchDetailsFrom(matchDetails: any): MatchDetails {
+  const whitePlayers = playingPlayersCountFor(matchDetails.side_1)
+  const blackPlayers = playingPlayersCountFor(matchDetails.side_2)
   return {
     id: matchDetails.id,
-    available_slots: matchDetails.available_slots,
+    starting_at: new Date(matchDetails.start_datetime),
     my_side: mySideFrom(matchDetails),
-    starting_at: new Date(matchDetails.start_datetime)
+    available_slots: {
+      white: 5 - whitePlayers,
+      black: 5 - blackPlayers
+    }
   }
 }
 
@@ -35,4 +48,8 @@ function mySideFrom(matchDetails: any): Side | null {
     return null;
 
   return matchDetails.ref_player.side_key === 1 ? Side.WHITE : Side.BLACK
+}
+
+function playingPlayersCountFor(side: any): number {
+  return side.players.filter((p: any) => p.status == 4).length
 }

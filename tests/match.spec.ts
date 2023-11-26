@@ -11,7 +11,8 @@ describe('build match details from api object', () => {
     const match = matchDetailsFrom(matchDetailsFullWithMe)
 
     expect(match.id).toBe(3015825)
-    expect(match.available_slots).toBe(0)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
     expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
   })
@@ -20,7 +21,8 @@ describe('build match details from api object', () => {
     const match = matchDetailsFrom(matchDetailsFullWithoutMe)
 
     expect(match.id).toBe(3017265)
-    expect(match.available_slots).toBe(0)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
     expect(match.my_side).toBeNull()
     expect(match.starting_at.toISOString()).toBe("2023-11-30T18:00:00.000Z")
   })
@@ -29,7 +31,8 @@ describe('build match details from api object', () => {
     const match = matchDetailsFrom(matchDetailsOpenWithoutMe)
 
     expect(match.id).toBe(3017267)
-    expect(match.available_slots).toBe(6)
+    expect(match.available_slots.white).toBe(4)
+    expect(match.available_slots.black).toBe(2)
     expect(match.my_side).toBeNull()
     expect(match.starting_at.toISOString()).toBe("2023-12-07T18:00:00.000Z")
   })

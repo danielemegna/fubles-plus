@@ -35,7 +35,8 @@ describe_withtoken('Fubles API integration tests', () => {
     const match: MatchDetails = await api.matchDetails(3009514)
 
     expect(match.id).toBe(3009514)
-    expect(match.available_slots).toBe(0)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
     expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-03T19:00:00.000Z")
   })
