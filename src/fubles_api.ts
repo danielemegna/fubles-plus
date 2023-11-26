@@ -9,37 +9,27 @@ export default class FublesAPI {
   }
 
   async getMyNextScheduledMatches(): Promise<MatchSummary[]> {
-    const response = await fetch(`https://api.fubles.com/api/users/${this.authenticatedUser.id}/matches/scheduled`, {
-      "headers": {
-        "accept": "application/json",
-        "authorization": `Bearer ${this.authenticatedUser.bearerToken}`,
-      },
-      "body": null,
-      "method": "GET"
-    })
-
+    const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/scheduled`)
     const responseBody = await response.json()
     const matches = responseBody.items as any[]
     return matches.map(matchSummaryFrom)
   }
 
   async receivedVotes(matchId: number): Promise<Vote[]> {
-    const response = await fetch(`https://api.fubles.com/api/matches/${matchId}`, {
-      "headers": {
-        "accept": "application/json",
-        "authorization": `Bearer ${this.authenticatedUser.bearerToken}`,
-      },
-      "body": null,
-      "method": "GET"
-    })
-
+    const response = await this.fetchAt(`/matches/${matchId}`)
     const responseBody = await response.json()
     const votes = responseBody.match.ref_player.received_votes as any[]
     return votes.map(voteFrom)
   }
 
   async matchDetails(matchId: number): Promise<MatchDetails> {
-    const response = await fetch(`https://api.fubles.com/api/matches/${matchId}`, {
+    const response = await this.fetchAt(`/matches/${matchId}`)
+    const responseBody = await response.json()
+    return matchDetailsFrom(responseBody.match)
+  }
+
+  private async fetchAt(urlPath: string): Promise<Response> {
+    return await fetch(`https://api.fubles.com/api${urlPath}`, {
       "headers": {
         "accept": "application/json",
         "authorization": `Bearer ${this.authenticatedUser.bearerToken}`,
@@ -47,11 +37,7 @@ export default class FublesAPI {
       "body": null,
       "method": "GET"
     })
-
-    const responseBody = await response.json()
-    return matchDetailsFrom(responseBody.match)
   }
-
 }
 
 export type AutheticatedUser = {
