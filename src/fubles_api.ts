@@ -15,6 +15,13 @@ export default class FublesAPI {
     return matches.map(matchSummaryFrom)
   }
 
+  async getMyLastPlayedMatches(): Promise<MatchSummary[]> {
+    const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/played?offset=0&page_size=4`)
+    const responseBody = await response.json()
+    const matches = responseBody.items as any[]
+    return matches.map(matchSummaryFrom)
+  }
+
   async receivedVotes(matchId: number): Promise<Vote[]> {
     const response = await this.fetchAt(`/matches/${matchId}`)
     const responseBody = await response.json()

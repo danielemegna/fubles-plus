@@ -16,6 +16,14 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(matches).not.toBeEmpty()
   })
 
+  test('get my last played matches', async () => {
+    const api = new FublesAPI(validAuthenticatedUser())
+
+    const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
+
+    expect(matches).toHaveLength(4)
+  })
+
   test('get received votes in a match', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
