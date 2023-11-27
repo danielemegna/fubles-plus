@@ -47,16 +47,6 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
   }
 }
 
-function receivedVotesFrom(matchDetails: any) {
-  if (!matchDetails.me.is_playing)
-    return null;
-  if (!hasBeenPlayed(matchDetails))
-    return null;
-
-  const votesNodes = matchDetails.ref_player.received_votes as any[]
-  return votesNodes.map(voteFrom)
-}
-
 export function matchSummaryFrom(matchDetails: any): MatchSummary {
   return {
     id: matchDetails.id,
@@ -77,10 +67,19 @@ function playingPlayersCountFor(side: any): number {
   return side.players.filter((p: any) => p.status == 4).length
 }
 
+function receivedVotesFrom(matchDetails: any) {
+  if (!matchDetails.me.is_playing)
+    return null;
+  if (!hasBeenPlayed(matchDetails))
+    return null;
+
+  const votesNodes = matchDetails.ref_player.received_votes as any[]
+  return votesNodes.map(voteFrom)
+}
+
 function hasBeenPlayed(matchDetails: any) {
   return [
     MatchStatus.VOTING,
     MatchStatus.CONCLUDED
   ].includes(matchDetails.status)
 }
-
