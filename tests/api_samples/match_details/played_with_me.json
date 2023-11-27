@@ -1,0 +1,2478 @@
+{
+  "is_imminent": false,
+  "start_datetime": "2023-10-25T20:00:00+02:00",
+  "start_datetime_st": "2023-10-25 20:00:00",
+  "imminent_datetime_st": "2023-10-24 20:00:00",
+  "imminent_datetime": "2023-10-24T20:00:00+02:00",
+  "available_slots": 0,
+  "missing_players": 0,
+  "followers_count": 21,
+  "player_price": {
+    "currency_symbol": "€",
+    "amount": 7,
+    "currency": "EUR"
+  },
+  "status": 4,
+  "available_roles": [
+    {
+      "id": 1,
+      "name": "Portiere"
+    },
+    {
+      "id": 2,
+      "name": "Difensore"
+    },
+    {
+      "id": 3,
+      "name": "Centrocampista",
+      "me": {
+        "favorite": true
+      }
+    },
+    {
+      "id": 4,
+      "name": "Attaccante"
+    }
+  ],
+  "id": 3009507,
+  "team_players": 5,
+  "team_benches": 0,
+  "owner": {
+    "id": 26865,
+    "first_name": "Luca",
+    "last_name": "Serella",
+    "owned_matches_count": 10275,
+    "co_owners": [
+      {
+        "id": 33334,
+        "first_name": "Sebastiano",
+        "last_name": "Pursi",
+        "avatar": "https://assets.fubles.com/images/User/33334/avatar/original_large.jpg",
+        "url": "https://api.fubles.com/it/app/user/33334",
+        "me": {
+          "is_myself": false
+        }
+      }
+    ],
+    "avatar": "https://assets.fubles.com/images/User/26865/avatar/original_large.jpeg",
+    "url": "https://api.fubles.com/it/app/user/26865",
+    "me": {
+      "is_myself": false
+    }
+  },
+  "structure": {
+    "phone_complete": "+0 02.39930558",
+    "id": 1370,
+    "partner": true,
+    "lat": 45.4274201,
+    "lng": 9.112,
+    "name": "Sport Time Corsico",
+    "address": "Via Visconti di Modrone, 2, 20094 Corsico MI, Italia",
+    "sub_title": "2 Km - Via Visconti di Modrone, 2, 20094 Corsico MI, Italia"
+  },
+  "type": 1,
+  "side_1": {
+    "name": "Bianchi",
+    "players": [
+      {
+        "side_key": 1,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21595470,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594105,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595193,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596757,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593633,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594758,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "comment": "bella presentazione, peccato per il gol mangiato a mezzo metro dalla porta",
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603425,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595452,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 5.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": true,
+        "level_variation": 1,
+        "is_no_show": false,
+        "level": 72,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          }
+        },
+        "user": {
+          "id": 55576,
+          "first_name": "Daniele",
+          "last_name": "Megna",
+          "avatar": "https://assets.fubles.com/images/User/55576/avatar/e10506740c9170bc1be69ce8c98fb87f_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/55576",
+          "me": {
+            "is_myself": true
+          }
+        },
+        "points": 0,
+        "avg_vote": 7.06,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 1,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21595471,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594106,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596758,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593634,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595194,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595453,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603426,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": true,
+        "level_variation": 1,
+        "is_no_show": false,
+        "level": 63,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          }
+        },
+        "user": {
+          "id": 986622,
+          "first_name": "Oliviero",
+          "last_name": "Giroud",
+          "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/986622",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 1,
+        "avg_vote": 7.21,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 1,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21595472,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594107,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595195,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593635,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595454,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594759,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603427,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": true,
+        "is_winning": true,
+        "level_variation": 2,
+        "is_no_show": false,
+        "level": 91,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          }
+        },
+        "user": {
+          "id": 98353,
+          "first_name": "Beppe",
+          "last_name": "Tarantino",
+          "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/98353",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 2,
+        "avg_vote": 7.5,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 1,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21595473,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594108,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596759,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594760,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593636,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595455,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603428,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": true,
+        "level_variation": 1,
+        "is_no_show": false,
+        "level": 89,
+        "role": {
+          "id": 4,
+          "name": "Attaccante"
+        },
+        "user": {
+          "id": 890946,
+          "first_name": "Francesco",
+          "last_name": "Pirlo",
+          "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/890946",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 1,
+        "avg_vote": 7.36,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 1,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21594109,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596760,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595196,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594761,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595456,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593637,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603429,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": true,
+        "level_variation": 1,
+        "is_no_show": false,
+        "level": 87,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          }
+        },
+        "user": {
+          "id": 896115,
+          "first_name": "Roberto",
+          "last_name": "Bergamo",
+          "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/896115",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 3,
+        "avg_vote": 7.43,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      }
+    ],
+    "stats": {
+      "roles": [
+        {
+          "id": 1,
+          "name": "Portiere",
+          "players_count": 0
+        },
+        {
+          "id": 2,
+          "name": "Difensore",
+          "players_count": 0
+        },
+        {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        {
+          "id": 4,
+          "name": "Attaccante",
+          "players_count": 1
+        }
+      ],
+      "avg_level": 80,
+      "avg_age": 34,
+      "quotation": 1.27,
+      "prediction": 0.79
+    },
+    "points": 7,
+    "img": "https://assets.fubles.com/images/common/side1_crest.png?v24"
+  },
+  "side_2": {
+    "name": "Neri",
+    "players": [
+      {
+        "side_key": 2,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21594110,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595474,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596761,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595197,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594762,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593638,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603430,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": false,
+        "level_variation": -2,
+        "is_no_show": false,
+        "level": 75,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        "user": {
+          "id": 841289,
+          "first_name": "Andrea",
+          "last_name": "Carmine",
+          "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/841289",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 2,
+        "avg_vote": 7.36,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 2,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21594111,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595457,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595475,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596762,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594763,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593639,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595198,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": false,
+        "level_variation": -1,
+        "is_no_show": false,
+        "level": 71,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        "user": {
+          "id": 688144,
+          "first_name": "Davide",
+          "last_name": "Gennaro",
+          "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/688144",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "agent": {
+          "id": 841289,
+          "first_name": "Andrea",
+          "last_name": "Carmine",
+          "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/841289",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 1,
+        "avg_vote": 7.43,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 2,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21595476,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596763,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593640,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595199,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603431,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594764,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595458,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": false,
+        "level_variation": -2,
+        "is_no_show": false,
+        "level": 60,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        "user": {
+          "id": 726361,
+          "first_name": "Giuseppe",
+          "last_name": "Arcani",
+          "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/726361",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 0,
+        "avg_vote": 6.71,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 2,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21594112,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595477,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596764,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603432,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21593641,
+            "voter": {
+              "id": 710057,
+              "first_name": "Tommaso",
+              "last_name": "Cerami",
+              "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/710057",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595200,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594765,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595459,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 5.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": false,
+        "level_variation": -2,
+        "is_no_show": false,
+        "level": 65,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        "user": {
+          "id": 14223,
+          "first_name": "Michael",
+          "last_name": "Biondi",
+          "avatar": "https://assets.fubles.com/images/User/14223/avatar/original_large.jpg",
+          "url": "https://api.fubles.com/it/app/user/14223",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 0,
+        "avg_vote": 7.13,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      },
+      {
+        "side_key": 2,
+        "received_votes": [
+          {
+            "is_anonymous": false,
+            "id": 21594113,
+            "voter": {
+              "id": 726361,
+              "first_name": "Giuseppe",
+              "last_name": "Arcani",
+              "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/726361",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 9,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595478,
+            "voter": {
+              "id": 896115,
+              "first_name": "Roberto",
+              "last_name": "Bergamo",
+              "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/896115",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 8,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21596765,
+            "voter": {
+              "id": 98353,
+              "first_name": "Beppe",
+              "last_name": "Tarantino",
+              "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+              "url": "https://api.fubles.com/it/app/user/98353",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7.5,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595201,
+            "voter": {
+              "id": 890946,
+              "first_name": "Francesco",
+              "last_name": "Pirlo",
+              "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/890946",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21595460,
+            "voter": {
+              "id": 841289,
+              "first_name": "Andrea",
+              "last_name": "Carmine",
+              "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/841289",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21594766,
+            "voter": {
+              "id": 986622,
+              "first_name": "Oliviero",
+              "last_name": "Giroud",
+              "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/986622",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 7,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          },
+          {
+            "is_anonymous": false,
+            "id": 21603433,
+            "voter": {
+              "id": 688144,
+              "first_name": "Davide",
+              "last_name": "Gennaro",
+              "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+              "url": "https://api.fubles.com/it/app/user/688144",
+              "me": {
+                "is_myself": false
+              }
+            },
+            "vote": 6,
+            "no_show": false,
+            "late": false,
+            "me": {
+              "can_comment": false
+            }
+          }
+        ],
+        "replace_request": 0,
+        "is_mom": false,
+        "is_winning": false,
+        "level_variation": -2,
+        "is_no_show": false,
+        "level": 63,
+        "role": {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 4
+        },
+        "user": {
+          "id": 710057,
+          "first_name": "Tommaso",
+          "last_name": "Cerami",
+          "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/710057",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "points": 4,
+        "avg_vote": 7.36,
+        "status": 4,
+        "warnings": [],
+        "has_warnings": false,
+        "me": {
+          "can_change_side": false,
+          "can_change_role": false,
+          "can_remove": false,
+          "can_replace": false,
+          "can_subscribe": false
+        }
+      }
+    ],
+    "stats": {
+      "roles": [
+        {
+          "id": 1,
+          "name": "Portiere",
+          "players_count": 0
+        },
+        {
+          "id": 2,
+          "name": "Difensore",
+          "players_count": 0
+        },
+        {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 5
+        },
+        {
+          "id": 4,
+          "name": "Attaccante",
+          "players_count": 0
+        }
+      ],
+      "avg_level": 65,
+      "avg_age": 26,
+      "quotation": 4.76,
+      "prediction": 0.21
+    },
+    "points": 6,
+    "img": "https://assets.fubles.com/images/common/side2_crest.png?v24"
+  },
+  "goalkeeper_required": false,
+  "goalkeepers_count": 0,
+  "reliable_players_required": false,
+  "notes": "SPORT TIME CORSICO\nArrivare in anticipo. \nSi paga IN CONTANTI prima di giocare. \n\nCampo in erba sintetica di ultima generazione.\nSe all'aperto si gioca anche con pioggia. \n\nChi manda la sostituzione ha comunque la responsabilità di presentarsi se non si trova nessuno. \n\nChi bidona dovrà pagare la quota entro il giorno successivo, verrà bloccato finché non paga. \n\nSi è responsabili di chi si iscrive, in caso di bidone di una persona iscritta da voi la quota la dovete pagare subito al campo. \n\nBlacklist per comportamenti inappropriati, ritardi, bidone. \n\nSPORT TIME COSICO\nVia Visconti di Modrone, 2, 20094 Corsico, MI. \n\nN.B. Non sarà possibile cancellarsi dalla partita a meno di 24 ore dall'inizio.",
+  "imminent_interval": "24H",
+  "ground": {
+    "id": 1,
+    "name": "Sintetico 3G"
+  },
+  "indoor": false,
+  "player_payment_type": 2,
+  "stats": {
+    "sides": {
+      "avg_level": {
+        "side_1": 80,
+        "side_2": 65
+      },
+      "avg_age": {
+        "side_1": 34,
+        "side_2": 26
+      },
+      "quotation": {
+        "side_1": 1.27,
+        "side_2": 4.76
+      },
+      "prediction": {
+        "side_1": 0.79,
+        "side_2": 0.21
+      },
+      "roles": [
+        {
+          "id": 1,
+          "name": "Portiere",
+          "players_count": 0,
+          "side_1": 0,
+          "side_2": 0
+        },
+        {
+          "id": 2,
+          "name": "Difensore",
+          "players_count": 0,
+          "side_1": 0,
+          "side_2": 0
+        },
+        {
+          "id": 3,
+          "name": "Centrocampista",
+          "me": {
+            "favorite": true
+          },
+          "players_count": 5,
+          "side_1": 4,
+          "side_2": 5
+        },
+        {
+          "id": 4,
+          "name": "Attaccante",
+          "players_count": 0,
+          "side_1": 1,
+          "side_2": 0
+        }
+      ]
+    },
+    "goalkeepers_count": 0
+  },
+  "anonymous_voting": false,
+  "ref_player": {
+    "side_key": 1,
+    "received_votes": [
+      {
+        "is_anonymous": false,
+        "id": 21595470,
+        "voter": {
+          "id": 896115,
+          "first_name": "Roberto",
+          "last_name": "Bergamo",
+          "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/896115",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 9,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21594105,
+        "voter": {
+          "id": 726361,
+          "first_name": "Giuseppe",
+          "last_name": "Arcani",
+          "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/726361",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 9,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21595193,
+        "voter": {
+          "id": 890946,
+          "first_name": "Francesco",
+          "last_name": "Pirlo",
+          "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/890946",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21596757,
+        "voter": {
+          "id": 98353,
+          "first_name": "Beppe",
+          "last_name": "Tarantino",
+          "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/98353",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21593633,
+        "voter": {
+          "id": 710057,
+          "first_name": "Tommaso",
+          "last_name": "Cerami",
+          "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/710057",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 6.5,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21594758,
+        "voter": {
+          "id": 986622,
+          "first_name": "Oliviero",
+          "last_name": "Giroud",
+          "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/986622",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 6.5,
+        "comment": "bella presentazione, peccato per il gol mangiato a mezzo metro dalla porta",
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21603425,
+        "voter": {
+          "id": 688144,
+          "first_name": "Davide",
+          "last_name": "Gennaro",
+          "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/688144",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 6,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21595452,
+        "voter": {
+          "id": 841289,
+          "first_name": "Andrea",
+          "last_name": "Carmine",
+          "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/841289",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 5.5,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      }
+    ],
+    "replace_request": 0,
+    "is_mom": false,
+    "is_winning": true,
+    "level_variation": 1,
+    "is_no_show": false,
+    "level": 72,
+    "role": {
+      "id": 3,
+      "name": "Centrocampista",
+      "me": {
+        "favorite": true
+      },
+      "players_count": 5,
+      "side_1": 4,
+      "side_2": 5
+    },
+    "user": {
+      "id": 55576,
+      "first_name": "Daniele",
+      "last_name": "Megna",
+      "avatar": "https://assets.fubles.com/images/User/55576/avatar/e10506740c9170bc1be69ce8c98fb87f_large.jpeg",
+      "url": "https://api.fubles.com/it/app/user/55576",
+      "me": {
+        "is_myself": true
+      }
+    },
+    "points": 0,
+    "avg_vote": 7.06,
+    "status": 4,
+    "warnings": [],
+    "has_warnings": false,
+    "me": {
+      "can_change_side": false,
+      "can_change_role": false,
+      "can_remove": false,
+      "can_replace": false,
+      "can_subscribe": false
+    }
+  },
+  "me": {
+    "is_following": true,
+    "is_playing": true,
+    "can_subscribe": false,
+    "has_requested_replace": false,
+    "can_report_votes": false,
+    "can_see_votes": true,
+    "can_report_score": false,
+    "can_report_warnings": false,
+    "can_see_score": true,
+    "has_to_complete_report": false,
+    "can_invite": false,
+    "can_admin": false,
+    "can_edit": false,
+    "can_retract": false,
+    "can_make_public": false,
+    "can_change_roster": false
+  },
+  "share_url": "https://api.fubles.com/it/matches/3009507",
+  "mom": {
+    "side_key": 1,
+    "received_votes": [
+      {
+        "is_anonymous": false,
+        "id": 21595472,
+        "voter": {
+          "id": 896115,
+          "first_name": "Roberto",
+          "last_name": "Bergamo",
+          "avatar": "https://assets.fubles.com/images/User/896115/avatar/original_large.jpeg",
+          "url": "https://api.fubles.com/it/app/user/896115",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 9,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21594107,
+        "voter": {
+          "id": 726361,
+          "first_name": "Giuseppe",
+          "last_name": "Arcani",
+          "avatar": "https://assets.fubles.com/images/User/726361/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/726361",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 9,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21595195,
+        "voter": {
+          "id": 890946,
+          "first_name": "Francesco",
+          "last_name": "Pirlo",
+          "avatar": "https://assets.fubles.com/images/User/890946/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/890946",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7.5,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21593635,
+        "voter": {
+          "id": 710057,
+          "first_name": "Tommaso",
+          "last_name": "Cerami",
+          "avatar": "https://assets.fubles.com/images/User/710057/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/710057",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21595454,
+        "voter": {
+          "id": 841289,
+          "first_name": "Andrea",
+          "last_name": "Carmine",
+          "avatar": "https://assets.fubles.com/images/User/841289/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/841289",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21594759,
+        "voter": {
+          "id": 986622,
+          "first_name": "Oliviero",
+          "last_name": "Giroud",
+          "avatar": "https://assets.fubles.com/images/User/986622/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/986622",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 7,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      },
+      {
+        "is_anonymous": false,
+        "id": 21603427,
+        "voter": {
+          "id": 688144,
+          "first_name": "Davide",
+          "last_name": "Gennaro",
+          "avatar": "https://assets.fubles.com/images/User/688144/avatar/original_large.png",
+          "url": "https://api.fubles.com/it/app/user/688144",
+          "me": {
+            "is_myself": false
+          }
+        },
+        "vote": 6,
+        "no_show": false,
+        "late": false,
+        "me": {
+          "can_comment": false
+        }
+      }
+    ],
+    "replace_request": 0,
+    "is_mom": true,
+    "is_winning": true,
+    "level_variation": 2,
+    "is_no_show": false,
+    "level": 91,
+    "role": {
+      "id": 3,
+      "name": "Centrocampista",
+      "me": {
+        "favorite": true
+      },
+      "players_count": 5,
+      "side_1": 4,
+      "side_2": 5
+    },
+    "user": {
+      "id": 98353,
+      "first_name": "Beppe",
+      "last_name": "Tarantino",
+      "avatar": "https://assets.fubles.com/images/User/98353/avatar/original_large.jpeg",
+      "url": "https://api.fubles.com/it/app/user/98353",
+      "me": {
+        "is_myself": false
+      }
+    },
+    "points": 2,
+    "avg_vote": 7.5,
+    "status": 4,
+    "warnings": [],
+    "has_warnings": false,
+    "me": {
+      "can_change_side": false,
+      "can_change_role": false,
+      "can_remove": false,
+      "can_replace": false,
+      "can_subscribe": false
+    }
+  },
+  "title": "Calcio a 5",
+  "sub_title": "mer 25 ott 2023 - 20:00",
+  "sport_name": "Calcetto"
+}
