@@ -79,6 +79,6 @@ $ yarn test
 
 #### Next tiny steps
 
-- [ ] Read list of played matches
+- [x] Read list of played matches
 - [x] Get match available slots by side
 - [ ] Find out how to use this modules client-side
