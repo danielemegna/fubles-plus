@@ -1,15 +1,15 @@
 import 'jest-extended';
 import { Side, matchDetailsFrom, matchSummaryFrom } from '../src/match';
-import matchDetailsFullWithMe from './api_samples/match_details/full_with_me.json';
-import matchDetailsFullWithoutMe from './api_samples/match_details/full_without_me.json';
-import matchDetailsOpenWithoutMe from './api_samples/match_details/open_without_me.json';
-import matchDetailsPlayedWithMe from './api_samples/match_details/played_with_me.json';
-import scheduledMatchSample from './api_samples/scheduled_match.json';
+import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.json';
+import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
+import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
+import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
+import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 
 describe('build match details from api object', () => {
 
   test('full with me match', async () => {
-    const match = matchDetailsFrom(matchDetailsFullWithMe)
+    const match = matchDetailsFrom(fullWithMeMatchDetails)
 
     expect(match.id).toBe(3015825)
     expect(match.available_slots.white).toBe(0)
@@ -20,7 +20,7 @@ describe('build match details from api object', () => {
   })
 
   test('full without me match', async () => {
-    const match = matchDetailsFrom(matchDetailsFullWithoutMe)
+    const match = matchDetailsFrom(fullWithoutMeMatchDetails)
 
     expect(match.id).toBe(3017265)
     expect(match.available_slots.white).toBe(0)
@@ -31,7 +31,7 @@ describe('build match details from api object', () => {
   })
 
   test('open without me match', async () => {
-    const match = matchDetailsFrom(matchDetailsOpenWithoutMe)
+    const match = matchDetailsFrom(openWithoutMeMatchDetails)
 
     expect(match.id).toBe(3017267)
     expect(match.available_slots.white).toBe(4)
@@ -42,7 +42,7 @@ describe('build match details from api object', () => {
   })
 
   test('played with me match', async () => {
-    const match = matchDetailsFrom(matchDetailsPlayedWithMe)
+    const match = matchDetailsFrom(playedWithMeMatchDetails)
 
     expect(match.id).toBe(3009507)
     expect(match.available_slots.white).toBe(0)
@@ -58,7 +58,7 @@ describe('build match details from api object', () => {
 describe('build match summary from api object', () => {
 
   test('has properly fields values', async () => {
-    const match = matchSummaryFrom(scheduledMatchSample)
+    const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
     expect(match.available_slots).toBe(2)
@@ -68,9 +68,9 @@ describe('build match summary from api object', () => {
 
   test('has properly my_side field value', async () => {
     const onBlackSide = {
-      ...scheduledMatchSample,
+      ...openWithMeMatchSummary,
       ref_player: {
-        ...scheduledMatchSample.ref_player,
+        ...openWithMeMatchSummary.ref_player,
         side_key: 2
       }
     }
