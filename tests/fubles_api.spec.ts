@@ -7,7 +7,7 @@ const describe_withtoken = process.env.TEST_BEARER_TOKEN ? describe : describe.s
 
 describe_withtoken('Fubles API integration tests', () => {
 
-  test('get my next scheduled matches', async () => {
+  test('get my next scheduled matches summaries', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
     const matches: MatchSummary[] = await api.getMyNextScheduledMatches()
@@ -15,7 +15,7 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(matches).not.toBeEmpty()
   })
 
-  test('get my last played matches', async () => {
+  test('get my last played matches summaries', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
     const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
