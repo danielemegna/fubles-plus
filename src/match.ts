@@ -23,6 +23,14 @@ export const enum Side {
   BLACK = 'black'
 }
 
+// these are just guesses :)
+export const enum MatchStatus {
+  OPEN_SCHEDULED = 1,
+  VOTING = 3,
+  CONCLUDED = 4,
+  FULL_SCHEDULED = 5,
+}
+
 export function matchDetailsFrom(matchDetails: any): MatchDetails {
   const whitePlayers = playingPlayersCountFor(matchDetails.side_1)
   const blackPlayers = playingPlayersCountFor(matchDetails.side_2)
@@ -41,6 +49,8 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
 
 function receivedVotesFrom(matchDetails: any) {
   if (!matchDetails.me.is_playing)
+    return null;
+  if (!hasBeenPlayed(matchDetails))
     return null;
 
   const votesNodes = matchDetails.ref_player.received_votes as any[]
@@ -66,3 +76,11 @@ function mySideFrom(matchDetails: any): Side | null {
 function playingPlayersCountFor(side: any): number {
   return side.players.filter((p: any) => p.status == 4).length
 }
+
+function hasBeenPlayed(matchDetails: any) {
+  return [
+    MatchStatus.VOTING,
+    MatchStatus.CONCLUDED
+  ].includes(matchDetails.status)
+}
+

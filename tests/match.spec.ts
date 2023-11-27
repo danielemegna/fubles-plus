@@ -16,7 +16,7 @@ describe('build match details from api object', () => {
     expect(match.available_slots.black).toBe(0)
     expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
-    expect(match.received_votes).toEqual([]) // wrong behavior, this should be null
+    expect(match.received_votes).toBeNull()
   })
 
   test('full without me match', async () => {
