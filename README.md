@@ -14,8 +14,32 @@ Some features that we could implement below.
 Select a full match I'm not enrolled to and auto-enroll me immediately when a seat is available.
 
 Variations:
+- parametrize maximum datetime to be enrolled
 - enroll me only if the free seat is in the specified team
 - enroll me only if I can play with a specific team mate
+- do not autoenroll, just notify
+
+#### Flash side switch
+
+Given a full match I'm enrolled to, automatically change team when a spot became available in the other team.
+
+Variations:
+- do not autoswitch, just notify
+
+#### Auto unsubcribe
+
+Given a match I'm enrolled to, if the prediction is too unbalanced close to the deadline to unsubscribe, auto unroll me.
+
+Variations:
+- configure unbalance value
+- do not auto unroll, just notify
+
+#### User recent performances
+
+Given a player, show some additional statistics on last N played matches:
+- match outcome (winner/lost)
+- number of goals
+- average votes
 
 #### Almost full match notification
 
@@ -49,13 +73,6 @@ Versions:
 
 Variations:
 - parametrize number of followed users
-
-#### Flash side switch
-
-Given a full match I'm enrolled to, automatically change team when a spot became available in the other team.
-
-Variations:
-- do not autoswitch, just notify
 
 #### Peek votes without voting
 
