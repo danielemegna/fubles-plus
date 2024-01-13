@@ -39,6 +39,17 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(match.points).toStrictEqual({ white: 10, black: 11})
   })
 
+  test.skip('manual run', async () => {
+    const api = new FublesAPI(validAuthenticatedUser())
+    const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
+
+    for(var match of matches.reverse()) {
+      const details: MatchDetails = await api.matchDetails(match.id);
+      console.log(">>>> Summary:", match)
+      console.log(">>>> Details", details)
+    }
+  })
+
 })
 
 function validAuthenticatedUser(): AutheticatedUser {
