@@ -70,6 +70,7 @@ describe('build match summary from api object', () => {
     expect(match.my_side).toBe(Side.WHITE)
     expect(match.starting_at.toISOString()).toBe("2023-09-11T18:00:00.000Z")
     expect(match.points).toBeNull()
+    expect(match.avg_received_vote).toBeNull()
   })
 
   test('has properly my_side field value', async () => {
@@ -93,6 +94,7 @@ describe('build match summary from api object', () => {
     expect(match.available_slots).toBe(0)
     expect(match.my_side).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 7, black: 9})
+    expect(match.avg_received_vote).toBe(7.3)
   })
 
 })

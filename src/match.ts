@@ -18,6 +18,7 @@ export type MatchSummary = {
   my_side: Side | null,
   available_slots: number,
   points: MatchPoints | null,
+  avg_received_vote: number | null
 }
 
 type MatchPoints = {
@@ -61,7 +62,8 @@ export function matchSummaryFrom(matchDetails: any): MatchSummary {
     starting_at: new Date(matchDetails.start_datetime),
     my_side: mySideFrom(matchDetails),
     available_slots: matchDetails.available_slots,
-    points: matchPointsFrom(matchDetails)
+    points: matchPointsFrom(matchDetails),
+    avg_received_vote: matchDetails.ref_player.avg_vote ?? null
   }
 }
 
