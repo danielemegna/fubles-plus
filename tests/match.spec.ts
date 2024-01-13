@@ -5,6 +5,7 @@ import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
 import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
+import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
 
 describe('build match details from api object', () => {
 
@@ -64,6 +65,7 @@ describe('build match summary from api object', () => {
     expect(match.available_slots).toBe(2)
     expect(match.my_side).toBe(Side.WHITE)
     expect(match.starting_at.toISOString()).toBe("2023-09-11T18:00:00.000Z")
+    expect(match.points).toBeNull()
   })
 
   test('has properly my_side field value', async () => {
@@ -78,6 +80,15 @@ describe('build match summary from api object', () => {
     const match = matchSummaryFrom(onBlackSide)
 
     expect(match.my_side).toBe(Side.BLACK)
+  })
+
+  test('played match has scored points', async () => {
+    const match = matchSummaryFrom(playedWithMeMatchSummary)
+
+    expect(match.id).toBe(3017993)
+    expect(match.available_slots).toBe(0)
+    expect(match.my_side).toBe(Side.WHITE)
+    expect(match.points).toStrictEqual({ white: 7, black: 9})
   })
 
 })

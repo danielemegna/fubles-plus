@@ -13,9 +13,15 @@ export type MatchDetails = {
 
 export type MatchSummary = {
   id: number,
-  starting_at: Date
+  starting_at: Date,
   my_side: Side | null,
   available_slots: number,
+  points: MatchPoints | null,
+}
+
+type MatchPoints = {
+  white: number,
+  black: number
 }
 
 export const enum Side {
@@ -53,6 +59,7 @@ export function matchSummaryFrom(matchDetails: any): MatchSummary {
     starting_at: new Date(matchDetails.start_datetime),
     my_side: mySideFrom(matchDetails),
     available_slots: matchDetails.available_slots,
+    points: matchPointsFrom(matchDetails)
   }
 }
 
@@ -75,6 +82,16 @@ function receivedVotesFrom(matchDetails: any) {
 
   const votesNodes = matchDetails.ref_player.received_votes as any[]
   return votesNodes.map(voteFrom)
+}
+
+function matchPointsFrom(matchDetails: any): MatchPoints | null {
+  if (!hasBeenPlayed(matchDetails))
+    return null;
+
+  return {
+    white: matchDetails.side_1.points,
+    black: matchDetails.side_2.points,
+  }
 }
 
 function hasBeenPlayed(matchDetails: any) {

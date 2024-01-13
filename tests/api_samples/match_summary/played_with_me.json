@@ -1,0 +1,79 @@
+{
+  "start_datetime": "2023-12-23T11:00:00+01:00",
+  "start_datetime_st": "2023-12-23 11:00:00",
+  "available_slots": 0,
+  "missing_players": 0,
+  "player_price": {
+    "currency_symbol": "\u20ac",
+    "amount": 6.5,
+    "currency": "EUR"
+  },
+  "status": 4,
+  "id": 3017993,
+  "owner": {
+    "id": 31705,
+    "first_name": "Luca",
+    "last_name": "Basilico",
+    "avatar": "https://assets.fubles.com/images/User/31705/avatar/large.png",
+    "url": "https://api.fubles.com/it/app/user/31705",
+    "me": {
+      "is_myself": false
+    }
+  },
+  "structure": {
+    "phone_complete": "+39 02750770",
+    "id": 17,
+    "partner": true,
+    "lat": 45.435822,
+    "lng": 9.1578103,
+    "name": "Tennis Calcetto Barona  (T.C.B.)",
+    "address": "Via Ovada, 22, 20142 Milano MI, Italy",
+    "sub_title": "5 Km - Via Ovada, 22, 20142 Milano MI, Italy"
+  },
+  "side_1": {
+    "name": "Bianchi",
+    "points": 7,
+    "img": "https://assets.fubles.com/images/common/side1_crest.png?v24"
+  },
+  "side_2": {
+    "name": "Neri",
+    "points": 9,
+    "img": "https://assets.fubles.com/images/common/side2_crest.png?v24"
+  },
+  "goalkeepers_count": 2,
+  "player_payment_type": 2,
+  "me": {
+    "followed_players": [],
+    "distance": 5.2,
+    "is_following": true,
+    "is_playing": true,
+    "can_subscribe": false,
+    "has_requested_replace": false
+  },
+  "ref_player": {
+    "side_key": 1,
+    "is_mom": false,
+    "level_variation": 0,
+    "is_no_show": false,
+    "level": 74,
+    "role": {
+      "id": 3,
+      "name": "Centrocampista"
+    },
+    "user": {
+      "id": 55576,
+      "first_name": "Daniele",
+      "last_name": "Megna",
+      "avatar": "https://assets.fubles.com/images/User/55576/avatar/default_large.png",
+      "url": "https://api.fubles.com/it/app/user/55576",
+      "me": {
+        "is_myself": true
+      }
+    },
+    "points": 0,
+    "avg_vote": 7
+  },
+  "title": "Calcio a 5 \u2022 Coperto",
+  "sub_title": "5.2 Km - Tennis Calcetto Barona  (T.C.B.)",
+  "sport_name": "Calcetto"
+}
