@@ -9,6 +9,7 @@ export type MatchDetails = {
     black: number
   },
   received_votes: Vote[] | null,
+  points: MatchPoints | null,
 }
 
 export type MatchSummary = {
@@ -49,7 +50,8 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
       white: 5 - whitePlayers,
       black: 5 - blackPlayers
     },
-    received_votes: receivedVotesFrom(matchDetails)
+    received_votes: receivedVotesFrom(matchDetails),
+    points: matchPointsFrom(matchDetails)
   }
 }
 

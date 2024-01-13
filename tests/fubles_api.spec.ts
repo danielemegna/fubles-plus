@@ -36,6 +36,7 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(match.received_votes).not.toBeNull()
     expect(match.received_votes).toHaveLength(5)
     expect(match.received_votes).toContainEqual({"vote": 7.5, "voterId": 196726, "voterName": "Simone Ferraro"})
+    expect(match.points).toStrictEqual({ white: 10, black: 11})
   })
 
 })

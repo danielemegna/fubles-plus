@@ -18,6 +18,7 @@ describe('build match details from api object', () => {
     expect(match.my_side).toBe(Side.BLACK)
     expect(match.starting_at.toISOString()).toBe("2023-11-28T19:00:00.000Z")
     expect(match.received_votes).toBeNull()
+    expect(match.points).toBeNull()
   })
 
   test('full without me match', async () => {
@@ -29,6 +30,7 @@ describe('build match details from api object', () => {
     expect(match.my_side).toBeNull()
     expect(match.starting_at.toISOString()).toBe("2023-11-30T18:00:00.000Z")
     expect(match.received_votes).toBeNull()
+    expect(match.points).toBeNull()
   })
 
   test('open without me match', async () => {
@@ -40,6 +42,7 @@ describe('build match details from api object', () => {
     expect(match.my_side).toBeNull()
     expect(match.starting_at.toISOString()).toBe("2023-12-07T18:00:00.000Z")
     expect(match.received_votes).toBeNull()
+    expect(match.points).toBeNull()
   })
 
   test('played with me match', async () => {
@@ -52,6 +55,7 @@ describe('build match details from api object', () => {
     expect(match.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
     expect(match.received_votes).toHaveLength(8)
     expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 986622, "voterName": "Oliviero Giroud" })
+    expect(match.points).toStrictEqual({ white: 7, black: 6})
   })
 
 })
