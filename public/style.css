@@ -3,6 +3,8 @@
   --x-padding: 1rem;
   --y-padding: 1.25rem;
   --grey: grey;
+  --lightgrey: rgb(230, 230, 230);
+  --lightblack: rgb(70, 70, 70);
   --background: #f2f2f2;
 }
 
@@ -58,7 +60,7 @@ header > div {
 }
 
 .match-card__body {
-  padding: var(--x-padding) var(--y-padding);
+  padding: 0 0.5rem;
   background: white;
 }
 
@@ -67,6 +69,7 @@ header > div {
   grid-template-columns: 3fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   row-gap: 0.125rem;
+  padding: 1rem;
 }
 
 .match-card__outcome {
@@ -107,3 +110,13 @@ header > div {
   width: 100%;
   font-size: 0.875rem;
 }
+
+.match-card__votes {
+  border-top: 1px solid var(--lightgrey);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  color: var(--lightblack);
+  row-gap: 0.875rem;
+}
+
