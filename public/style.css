@@ -10,6 +10,10 @@ h1 {
   margin: 0;
 }
 
+body>* {
+  box-sizing: border-box;
+}
+
 body {
   display: block;
   position: fixed;
@@ -50,13 +54,17 @@ header > div {
 }
 
 .match-card {
-  padding: var(--x-padding);
+  margin: 0.5rem 0;
+}
+
+.match-card__body {
+  padding: var(--x-padding) var(--y-padding);
   background: white;
 }
 
 .match-card__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 3fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   row-gap: 0.125rem;
 }
@@ -91,4 +99,11 @@ header > div {
 .match-card__structure-name {
   font-size: 0.875rem;
   color: var(--grey);
+}
+
+.match-card__date {
+  padding: 0.75rem;
+  text-align: center;
+  width: 100%;
+  font-size: 0.875rem;
 }
