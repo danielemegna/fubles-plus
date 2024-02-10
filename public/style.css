@@ -58,7 +58,7 @@ header > div {
 .match-card__body {
   padding: 0 0.5rem;
   background: white;
-  box-shadow: 0px 0px 20px 0px lightgrey;
+  box-shadow: 0px 0px 20px -8px gray;
 }
 
 .match-card__grid {
