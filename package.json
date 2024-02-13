@@ -1,9 +1,11 @@
 {
-  "name": "ts-kata",
-  "description": "Typescript Kata",
+  "name": "fubles-api",
+  "description": "Fubles API",
   "version": "1.0.0",
   "license": "ISC",
+  "type": "module",
   "scripts": {
+    "build": "tsc && vite build",
     "test": "jest --runInBand --verbose"
   },
   "engines": {
@@ -17,6 +19,7 @@
     "ts-jest": "^29.1.1",
     "jest-extended": "^4.0.0",
     "jest-mock-extended": "^3.0.4",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
   }
 }
