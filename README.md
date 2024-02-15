@@ -82,20 +82,41 @@ Given a recent match that I played, I want to see votes players gave without vot
 
 ## Dev notes
 
-Run tests with:
+### Library part (typescript)
+
+Compile with TS checks:
+```
+$ yarn tsc
+```
+
+Run tests:
 ```
 $ yarn test
 ```
 
-To run api integration tests set a valid `TEST_BEARER_TOKEN` environment variable:
-
+To run api integration tests set a valid `TEST_BEARER_TOKEN` environment variable before:
 ```
 $ export TEST_BEARER_TOKEN=xxxxxxxxxxxxxxxxxx
 $ yarn test
 ```
 
-#### Next tiny steps
+To bundle the library in a single ES module file (via Vite) ready to be used by browsers:
+```
+$ yarn build
+```
 
-- [x] Read list of played matches
-- [x] Get match available slots by side
-- [ ] Find out how to use this modules client-side
+> it generates the file `public/js/lib/fubles-api.js`
+
+### HTML public part (html/css/js - mobile only)
+
+To browse public html pages, bundle the library before (see above) and than serve the public folder:
+
+```
+$ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
+```
+
+> browse http://localhost
+
+### Bot part (typescript)
+
+To be continued ...
