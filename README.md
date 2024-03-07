@@ -84,6 +84,11 @@ Given a recent match that I played, I want to see votes players gave without vot
 
 ### Library part (typescript)
 
+Install node dependencies:
+```
+$ yarn install
+```
+
 Compile with TS checks:
 ```
 $ yarn tsc
