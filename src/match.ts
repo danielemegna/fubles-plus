@@ -102,7 +102,7 @@ function playingPlayersCountFor(side: any): number {
   return side.players.filter((p: any) => p.status == 4).length
 }
 
-function receivedVotesFrom(matchDetails: any) {
+function receivedVotesFrom(matchDetails: any): Vote[] | null {
   if (!matchDetails.me.is_playing)
     return null;
   if (!hasBeenPlayed(matchDetails))
@@ -122,7 +122,7 @@ function matchPointsFrom(matchDetails: any): MatchPoints | null {
   }
 }
 
-function hasBeenPlayed(matchDetails: any) {
+function hasBeenPlayed(matchDetails: any): boolean {
   return [
     MatchStatus.VOTING,
     MatchStatus.CONCLUDED
