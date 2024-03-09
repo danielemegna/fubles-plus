@@ -14,9 +14,7 @@ export default class FublesAPI {
   }
 
   async getMyLastPlayedMatches(): Promise<MatchSummary[]> {
-    const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/played?offset=0&page_size=4`)
-    const responseBody = await response.json()
-    return responseBody.items.map(matchSummaryFrom)
+    return this.getLastPlayedMatchesFor(this.authenticatedUser.id)
   }
 
   async getLastPlayedMatchesFor(userId: number): Promise<MatchSummary[]> {
@@ -26,15 +24,19 @@ export default class FublesAPI {
   }
 
   async matchDetails(matchId: number): Promise<MatchDetails> {
-    const response = await this.fetchAt(`/matches/${matchId}`)
-    const responseBody = await response.json()
-    return matchDetailsFrom(responseBody.match)
+    const rawMatchDetails = await this.fetchMatchDetails(matchId);
+    return matchDetailsFrom(rawMatchDetails)
   }
 
   async matchDetailsAsAnotherUser(matchId: number, userId: number): Promise<MatchDetails> {
-    const response = await this.fetchAt(`/matches/${matchId}`)
-    const responseBody = await response.json()
-    return matchDetailsAsAnotherUser(responseBody.match, userId)
+    const rawMatchDetails = await this.fetchMatchDetails(matchId);
+    return matchDetailsAsAnotherUser(rawMatchDetails, userId)
+  }
+
+  private async fetchMatchDetails(matchId: number): Promise<any> {
+    const response = await this.fetchAt(`/matches/${matchId}`);
+    const responseBody = await response.json();
+    return responseBody.match;
   }
 
   private async fetchAt(urlPath: string): Promise<Response> {
