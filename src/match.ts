@@ -39,12 +39,6 @@ export const enum MatchStatus {
   FULL_SCHEDULED = 5,
 }
 
-export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): MatchDetails {
-  const result = matchDetailsFrom(matchDetails);
-  result.my_side = sideFor(matchDetails, userId);
-  return result;
-}
-
 export function matchDetailsFrom(matchDetails: any): MatchDetails {
   const whitePlayers = playingPlayersCountFor(matchDetails.side_1)
   const blackPlayers = playingPlayersCountFor(matchDetails.side_2)
@@ -62,6 +56,12 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
   }
 }
 
+export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): MatchDetails {
+  const result = matchDetailsFrom(matchDetails);
+  result.my_side = sideFor(matchDetails, userId);
+  return result;
+}
+
 export function matchSummaryFrom(matchDetails: any): MatchSummary {
   return {
     id: matchDetails.id,
@@ -71,6 +71,13 @@ export function matchSummaryFrom(matchDetails: any): MatchSummary {
     points: matchPointsFrom(matchDetails),
     avg_received_vote: matchDetails.ref_player.avg_vote ?? null
   }
+}
+
+function mySideFrom(matchDetails: any): Side | null {
+  if (!matchDetails.me.is_playing)
+    return null;
+
+  return matchDetails.ref_player.side_key === 1 ? Side.WHITE : Side.BLACK
 }
 
 function sideFor(matchDetails: any, userId: number): Side | null {
@@ -89,13 +96,6 @@ function sideFor(matchDetails: any, userId: number): Side | null {
     return Side.BLACK
 
   return null;
-}
-
-function mySideFrom(matchDetails: any): Side | null {
-  if (!matchDetails.me.is_playing)
-    return null;
-
-  return matchDetails.ref_player.side_key === 1 ? Side.WHITE : Side.BLACK
 }
 
 function playingPlayersCountFor(side: any): number {
