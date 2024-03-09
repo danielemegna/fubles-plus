@@ -1,5 +1,5 @@
 import 'jest-extended';
-import { Side, matchDetailsFrom, matchSummaryFrom } from '../src/match';
+import { Side, matchDetailsAsAnotherUser, matchDetailsFrom, matchSummaryFrom } from '../src/match';
 import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.json';
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
@@ -69,6 +69,25 @@ describe('build match details from api object', () => {
     expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
     expect(match.received_votes).toBeNil()
     expect(match.points).toStrictEqual({ white: 9, black: 14})
+  })
+
+  test('played without me match with another player details', async () => {
+    const matchAsFirstUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 874716)
+    const matchAsSecondUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 718115)
+    const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 999999)
+
+    for(let matchDetails of [matchAsFirstUser, matchAsSecondUser, matchAsNonPlayingUser]) {
+      expect(matchDetails.id).toBe(3022562)
+      expect(matchDetails.available_slots.white).toBe(0)
+      expect(matchDetails.available_slots.black).toBe(0)
+      expect(matchDetails.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+      expect(matchDetails.points).toStrictEqual({ white: 9, black: 14})
+    }
+
+    expect(matchAsFirstUser.my_side).toBe(Side.BLACK)
+    expect(matchAsSecondUser.my_side).toBe(Side.WHITE)
+    expect(matchAsNonPlayingUser.my_side).toBeNil();
+    expect(matchAsNonPlayingUser.received_votes).toBeNil();
   })
 
 })
