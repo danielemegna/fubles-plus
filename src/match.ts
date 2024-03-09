@@ -82,21 +82,10 @@ function mySideFrom(matchDetails: any): Side | null {
 }
 
 function sideFor(matchDetails: any, userId: number): Side | null {
-  const isWhite = matchDetails
-    .side_1.players
-    .some((player: any) => player.user.id == userId)
+  const user = findUserIn(matchDetails, userId);
+  if(user == null) return null;
 
-  if (isWhite)
-    return Side.WHITE
-
-  const isBlack = matchDetails
-    .side_2.players
-    .some((player: any) => player.user.id == userId)
-
-  if (isBlack)
-    return Side.BLACK
-
-  return null;
+  return user.side_key === 1 ? Side.WHITE : Side.BLACK
 }
 
 function playingPlayersCountFor(side: any): number {
