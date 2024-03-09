@@ -4,6 +4,7 @@ import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.jso
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
 import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
+import playedWithoutMeMatchDetails from './api_samples/match_details/played_without_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
 
@@ -55,7 +56,19 @@ describe('build match details from api object', () => {
     expect(match.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
     expect(match.received_votes).toHaveLength(8)
     expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 986622, "voterName": "Oliviero Giroud" })
-    expect(match.points).toStrictEqual({ white: 7, black: 6})
+    expect(match.points).toStrictEqual({ white: 7, black: 6 })
+  })
+
+  test('played without me match', async () => {
+    const match = matchDetailsFrom(playedWithoutMeMatchDetails)
+
+    expect(match.id).toBe(3022562)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
+    expect(match.my_side).toBeNil()
+    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+    expect(match.received_votes).toBeNil()
+    expect(match.points).toStrictEqual({ white: 9, black: 14})
   })
 
 })
@@ -93,7 +106,7 @@ describe('build match summary from api object', () => {
     expect(match.id).toBe(3017993)
     expect(match.available_slots).toBe(0)
     expect(match.my_side).toBe(Side.WHITE)
-    expect(match.points).toStrictEqual({ white: 7, black: 9})
+    expect(match.points).toStrictEqual({ white: 7, black: 9 })
     expect(match.avg_received_vote).toBe(7.3)
   })
 
