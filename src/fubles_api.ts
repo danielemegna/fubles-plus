@@ -50,6 +50,6 @@ export default class FublesAPI {
 }
 
 export type AutheticatedUser = {
-  id: string,
+  id: number,
   bearerToken: string
 }

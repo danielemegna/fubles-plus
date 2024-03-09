@@ -80,7 +80,7 @@ describe_withtoken('Fubles API integration tests', () => {
 
 function validAuthenticatedUser(): AutheticatedUser {
   return {
-    id: process.env.TEST_USER_ID ?? "55576",
+    id: process.env.TEST_USER_ID ? parseInt(process.env.TEST_USER_ID) : 55576,
     bearerToken: process.env.TEST_BEARER_TOKEN!
   }
 }
