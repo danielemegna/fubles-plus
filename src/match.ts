@@ -59,6 +59,7 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
 export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): MatchDetails {
   const result = matchDetailsFrom(matchDetails);
   result.my_side = sideFor(matchDetails, userId);
+  result.received_votes = receivedVotesFor(matchDetails, userId);
   return result;
 }
 
@@ -110,6 +111,22 @@ function receivedVotesFrom(matchDetails: any): Vote[] | null {
 
   const votesNodes = matchDetails.ref_player.received_votes as any[]
   return votesNodes.map(voteFrom)
+}
+
+function receivedVotesFor(matchDetails: any, userId: number): Vote[] | null {
+  if (!hasBeenPlayed(matchDetails))
+    return null;
+
+  const user = findUserIn(matchDetails, userId);
+  return user?.received_votes.map(voteFrom)
+}
+
+function findUserIn(matchDetails: any, userId: number): any | null {
+  const found = [
+    ...matchDetails.side_1.players,
+    ...matchDetails.side_2.players
+  ].find((player: any) => player.user.id == userId)
+  return found ?? null;
 }
 
 function matchPointsFrom(matchDetails: any): MatchPoints | null {

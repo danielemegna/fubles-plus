@@ -85,7 +85,15 @@ describe('build match details from api object', () => {
     }
 
     expect(matchAsFirstUser.my_side).toBe(Side.BLACK)
+    expect(matchAsFirstUser.received_votes).toHaveLength(4)
+    expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9.5, "voterId": 997122, "voterName": "Alessandro Puntazza" })
+    expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9, "voterId": 919328, "voterName": "Donato Virgilio" })
+
     expect(matchAsSecondUser.my_side).toBe(Side.WHITE)
+    expect(matchAsSecondUser.received_votes).toHaveLength(4)
+    expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 874716, "voterName": "Tommaso Forte" })
+    expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 928229, "voterName": "Cristian Benvenuto" })
+
     expect(matchAsNonPlayingUser.my_side).toBeNil();
     expect(matchAsNonPlayingUser.received_votes).toBeNil();
   })
