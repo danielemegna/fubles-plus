@@ -1,4 +1,4 @@
-import { MatchDetails, MatchSummary, matchDetailsFrom, matchSummaryFrom } from "./match";
+import { MatchDetails, MatchSummary, matchDetailsFrom, matchDetailsAsAnotherUser, matchSummaryFrom } from "./match";
 
 export default class FublesAPI {
   private authenticatedUser: AutheticatedUser
@@ -29,6 +29,12 @@ export default class FublesAPI {
     const response = await this.fetchAt(`/matches/${matchId}`)
     const responseBody = await response.json()
     return matchDetailsFrom(responseBody.match)
+  }
+
+  async matchDetailsAsAnotherUser(matchId: number, userId: number): Promise<MatchDetails> {
+    const response = await this.fetchAt(`/matches/${matchId}`)
+    const responseBody = await response.json()
+    return matchDetailsAsAnotherUser(responseBody.match, userId)
   }
 
   private async fetchAt(urlPath: string): Promise<Response> {

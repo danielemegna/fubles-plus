@@ -47,7 +47,7 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(match.points).toStrictEqual({ white: 10, black: 11})
   })
 
-  test('get a past match details played by another user', async () => {
+  test('get a past match details played without me', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
     const match: MatchDetails = await api.matchDetails(3022886)
@@ -59,6 +59,21 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
     expect(match.points).toStrictEqual({ white: 9, black: 14})
     expect(match.received_votes).toBeNil()
+  })
+
+  test('get a past match details played as another user', async () => {
+    const api = new FublesAPI(validAuthenticatedUser())
+
+    const match: MatchDetails = await api.matchDetailsAsAnotherUser(3022886, 774702)
+
+    expect(match.id).toBe(3022886)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
+    expect(match.my_side).toBe(Side.BLACK)
+    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+    expect(match.points).toStrictEqual({ white: 9, black: 14})
+    expect(match.received_votes).toHaveLength(4)
+    expect(match.received_votes).toContainEqual({"vote": 9, "voterId": 948124, "voterName": "Cristian Bonvegna"})
   })
 
 })
