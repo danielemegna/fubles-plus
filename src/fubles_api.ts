@@ -10,15 +10,19 @@ export default class FublesAPI {
   async getMyNextScheduledMatches(): Promise<MatchSummary[]> {
     const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/scheduled`)
     const responseBody = await response.json()
-    const matches = responseBody.items as any[]
-    return matches.map(matchSummaryFrom)
+    return responseBody.items.map(matchSummaryFrom)
   }
 
   async getMyLastPlayedMatches(): Promise<MatchSummary[]> {
     const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/played?offset=0&page_size=4`)
     const responseBody = await response.json()
-    const matches = responseBody.items as any[]
-    return matches.map(matchSummaryFrom)
+    return responseBody.items.map(matchSummaryFrom)
+  }
+
+  async getLastPlayedMatchesFor(userId: string): Promise<MatchSummary[]> {
+    const response = await this.fetchAt(`/users/${userId}/matches/played?offset=0&page_size=4`)
+    const responseBody = await response.json()
+    return responseBody.items.map(matchSummaryFrom)
   }
 
   async matchDetails(matchId: number): Promise<MatchDetails> {
