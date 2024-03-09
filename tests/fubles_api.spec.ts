@@ -26,7 +26,7 @@ describe_withtoken('Fubles API integration tests', () => {
   test('get last played matches summaries of another user', async () => {
     const api = new FublesAPI(validAuthenticatedUser())
 
-    const matches: MatchSummary[] = await api.getLastPlayedMatchesFor("774702")
+    const matches: MatchSummary[] = await api.getLastPlayedMatchesFor(774702)
 
     expect(matches).toHaveLength(4)
   })
