@@ -47,6 +47,20 @@ describe_withtoken('Fubles API integration tests', () => {
     expect(match.points).toStrictEqual({ white: 10, black: 11})
   })
 
+  test('get a past match details played by another user', async () => {
+    const api = new FublesAPI(validAuthenticatedUser())
+
+    const match: MatchDetails = await api.matchDetails(3022886)
+
+    expect(match.id).toBe(3022886)
+    expect(match.available_slots.white).toBe(0)
+    expect(match.available_slots.black).toBe(0)
+    expect(match.my_side).toBeNil()
+    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+    expect(match.points).toStrictEqual({ white: 9, black: 14})
+    expect(match.received_votes).toBeNil()
+  })
+
 })
 
 function validAuthenticatedUser(): AutheticatedUser {
