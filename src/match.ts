@@ -40,20 +40,9 @@ export const enum MatchStatus {
 }
 
 export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): MatchDetails {
-  const whitePlayers = playingPlayersCountFor(matchDetails.side_1)
-  const blackPlayers = playingPlayersCountFor(matchDetails.side_2)
-
-  return {
-    id: matchDetails.id,
-    starting_at: new Date(matchDetails.start_datetime),
-    my_side: sideFor(matchDetails, userId),
-    available_slots: {
-      white: 5 - whitePlayers,
-      black: 5 - blackPlayers
-    },
-    received_votes: receivedVotesFrom(matchDetails),
-    points: matchPointsFrom(matchDetails)
-  }
+  const result = matchDetailsFrom(matchDetails);
+  result.my_side = sideFor(matchDetails, userId);
+  return result;
 }
 
 export function matchDetailsFrom(matchDetails: any): MatchDetails {
@@ -85,12 +74,17 @@ export function matchSummaryFrom(matchDetails: any): MatchSummary {
 }
 
 function sideFor(matchDetails: any, userId: number): Side | null {
-  const whiteSidePlayers = matchDetails.side_1.players as any[]
-  const isWhite = whiteSidePlayers.some(player => player.user.id == userId)
+  const isWhite = matchDetails
+    .side_1.players
+    .some((player: any) => player.user.id == userId)
+
   if (isWhite)
     return Side.WHITE
-  const blackSidePlayers = matchDetails.side_2.players as any[]
-  const isBlack = blackSidePlayers.some(player => player.user.id == userId)
+
+  const isBlack = matchDetails
+    .side_2.players
+    .some((player: any) => player.user.id == userId)
+
   if (isBlack)
     return Side.BLACK
 
