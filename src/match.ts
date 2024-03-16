@@ -2,7 +2,9 @@ import { Vote, voteFrom } from "./vote"
 
 export type MatchDetails = {
   id: number,
+  title: string,
   starting_at: Date,
+  structure_name: string,
   my_side: Side | null,
   available_slots: {
     white: number,
@@ -45,7 +47,9 @@ export function matchDetailsFrom(matchDetails: any): MatchDetails {
 
   return {
     id: matchDetails.id,
+    title: matchDetails.title,
     starting_at: new Date(matchDetails.start_datetime),
+    structure_name: matchDetails.structure.name,
     my_side: mySideFrom(matchDetails),
     available_slots: {
       white: 5 - whitePlayers,
