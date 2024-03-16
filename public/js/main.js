@@ -21,7 +21,7 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
       </div>
       <div class="match-card__body">
         <div class="match-card__grid">
-          <span class="match-card__sport-type">Calcio a 5 &bull; Coperto</span>
+          <span class="match-card__sport-type">${details.title}</span>
           <div class="match-card__outcome">
             <span class="${summary.my_side == 'white' ? 'match-card__self' : ''}">
               ${summary.points.white}
@@ -31,7 +31,7 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
               ${summary.points.black}
             </span>
           </div>
-          <span class="match-card__structure-name">Sport Time Corsico</span>
+          <span class="match-card__structure-name">${details.structure_name}</span>
           <div class="match-card__average-vote">
             Voto: <span id="match-avg-vote-0">${summary.avg_received_vote}</span>
           </div>
