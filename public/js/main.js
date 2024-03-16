@@ -33,7 +33,7 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
           </div>
           <span class="match-card__structure-name">${details.structure_name}</span>
           <div class="match-card__average-vote">
-            Voto: <span id="match-avg-vote-0">${summary.avg_received_vote}</span>
+            Voto: <span id="match-avg-vote-0">${summary.avg_received_vote ?? "--"}</span>
           </div>
         </div>
         <div class="match-card__votes">
