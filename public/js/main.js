@@ -11,7 +11,7 @@ let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesApi)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {
   return `
-    <div class="match-card">
+    <div class="match-card" onclick="window.open('https://app.fubles.com/it/app/matches/${summary.id}')">
       <div class="match-card__date">
         ${summary.starting_at.toLocaleString('it-IT', {
           weekday: 'long', //  values: 'long', 'short', 'narrow'
