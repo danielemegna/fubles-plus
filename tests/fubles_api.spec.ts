@@ -1,5 +1,5 @@
 import 'jest-extended';
-import FublesAPI, { AutheticatedUser } from '../src/fubles_api';
+import FublesAPI, { AutheticatedUser, MatchNotFoundError } from '../src/fubles_api';
 import { MatchDetails, MatchSummary, Side } from '../src/match';
 
 // set TEST_BEARER_TOKEN env variabile in order to run this tests
@@ -82,6 +82,34 @@ describe_withtoken('Fubles API integration tests', () => {
       expect(match.points).toStrictEqual({ white: 9, black: 14 })
       expect(match.received_votes).toHaveLength(4)
       expect(match.received_votes).toContainEqual({ "vote": 9, "voterId": 948124, "voterName": "Cristian Bonvegna" })
+    })
+
+  })
+
+  describe('match following', () => {
+
+    test('unfollow an already played match never followed', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+      await api.matchUnfollow(3034162)
+    })
+
+    test('follow and unfollow an already played match', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+      await api.matchFollow(2998153)
+      await api.matchUnfollow(2998153)
+    })
+
+    test('try to follow or unfollow unexisting match', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+      const unexistingMatchId = 1000000;
+
+      expect(async () =>
+        await api.matchFollow(unexistingMatchId)
+      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+
+      expect(async () =>
+        await api.matchUnfollow(unexistingMatchId)
+      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
   })

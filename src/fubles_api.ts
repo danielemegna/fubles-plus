@@ -33,6 +33,26 @@ export default class FublesAPI {
     return matchDetailsAsAnotherUser(rawMatchDetails, userId)
   }
 
+  async matchFollow(matchId: number): Promise<void> {
+    const response = await this.postAt(`/matches/${matchId}/followers`)
+    if (response.ok) return
+
+    if (response.status === 404)
+      throw new MatchNotFoundError(matchId)
+
+    throw new Error("Something went wrong during match follow: " + response.status + " - " + response.statusText)
+  }
+
+  async matchUnfollow(matchId: number): Promise<void> {
+    const response = await this.deleteAt(`/matches/${matchId}/followers`)
+    if (response.ok) return
+
+    if (response.status === 404)
+      throw new MatchNotFoundError(matchId)
+
+    throw new Error("Something went wrong during match unfollow: " + response.status + " - " + response.statusText)
+  }
+
   private async fetchMatchDetails(matchId: number): Promise<any> {
     const response = await this.fetchAt(`/matches/${matchId}`);
     const responseBody = await response.json();
@@ -47,9 +67,34 @@ export default class FublesAPI {
     })
   }
 
+  private async postAt(urlPath: string, body?: any): Promise<Response> {
+    return await fetch(`https://api.fubles.com/api${urlPath}`, {
+      method: "POST",
+      headers: {
+        "authorization": `Bearer ${this.authenticatedUser.bearerToken}`,
+        "content-type": "application/json",
+      },
+      body: body ? JSON.stringify(body) : null
+    })
+  }
+
+  private async deleteAt(urlPath: string): Promise<Response> {
+    return await fetch(`https://api.fubles.com/api${urlPath}`, {
+      method: "DELETE",
+      headers: { "authorization": `Bearer ${this.authenticatedUser.bearerToken}` },
+      body: null,
+    })
+  }
+
 }
 
 export type AutheticatedUser = {
   id: number,
   bearerToken: string
+}
+
+export class MatchNotFoundError extends Error {
+  constructor(matchId: number) {
+    super(`Match ${matchId} not found !`);
+  }
 }
