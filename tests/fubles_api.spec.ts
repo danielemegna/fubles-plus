@@ -106,10 +106,15 @@ describe_withtoken('Fubles API integration tests', () => {
 
   describe('match enrolling', () => {
 
-    test('try to enroll to already played match', async () => {
+    test('enroll to already played match do not throws errors', async () => {
+      await api.matchEnroll(3000478)
+    })
+
+    test('try to enroll to completed match not played', async () => {
+      const expectedErrorMessage = 'Operation not allowed to user 55576 on match 3038184: match is not subscribable';
       await expect(async () =>
-        api.matchEnroll(3000478)
-      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot enroll to match 3000478')
+        api.matchEnroll(3038184)
+      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
     })
 
     test('try to enroll to unexisting match', async () => {

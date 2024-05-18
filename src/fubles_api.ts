@@ -63,7 +63,7 @@ export default class FublesAPI {
     if (response.ok) return
 
     if (response.status === 403)
-      throw new MatchEnrollError(matchId)
+      throw new MatchEnrollError((await response.json()).message)
 
     if (response.status === 500)  // unexisting match returns 500 !
       throw new MatchNotFoundError(matchId)
@@ -124,8 +124,4 @@ export class MatchNotFoundError extends Error {
   }
 }
 
-export class MatchEnrollError extends Error {
-  constructor(matchId: number) {
-    super(`Cannot enroll to match ${matchId}`);
-  }
-}
+export class MatchEnrollError extends Error { }
