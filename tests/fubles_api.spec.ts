@@ -7,29 +7,22 @@ const describe_withtoken = process.env.TEST_BEARER_TOKEN ? describe : describe.s
 
 describe_withtoken('Fubles API integration tests', () => {
 
+  const api = new FublesAPI(validAuthenticatedUser())
+
   describe('match summaries reading', () => {
 
     test('get my next scheduled matches summaries', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const matches: MatchSummary[] = await api.getMyNextScheduledMatches()
-
       expect(matches).not.toBeEmpty()
     })
 
     test('get my last played matches summaries', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
-
       expect(matches).toHaveLength(4)
     })
 
     test('get last played matches summaries of another user', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const matches: MatchSummary[] = await api.getLastPlayedMatchesFor(774702)
-
       expect(matches).toHaveLength(4)
     })
 
@@ -38,16 +31,12 @@ describe_withtoken('Fubles API integration tests', () => {
   describe('match details reading', () => {
 
     test('try to get unexisting match details', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       expect(async () =>
         await api.matchDetails(1000000)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
     test('get a past played match details', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const match: MatchDetails = await api.matchDetails(3009514)
 
       expect(match.id).toBe(3009514)
@@ -64,8 +53,6 @@ describe_withtoken('Fubles API integration tests', () => {
     })
 
     test('get a past match details played without me', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const match: MatchDetails = await api.matchDetails(3022886)
 
       expect(match.id).toBe(3022886)
@@ -78,8 +65,6 @@ describe_withtoken('Fubles API integration tests', () => {
     })
 
     test('get a past match details played as another user', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-
       const match: MatchDetails = await api.matchDetailsAsAnotherUser(3022886, 774702)
 
       expect(match.id).toBe(3022886)
@@ -97,18 +82,15 @@ describe_withtoken('Fubles API integration tests', () => {
   describe('match following', () => {
 
     test('follow and unfollow an already played match', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
       await api.matchFollow(2998153)
       await api.matchUnfollow(2998153)
     })
 
     test('unfollow an already played match never followed', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
       await api.matchUnfollow(3034162)
     })
 
     test('try to follow or unfollow unexisting match', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
       const unexistingMatchId = 1000000;
 
       expect(async () =>
