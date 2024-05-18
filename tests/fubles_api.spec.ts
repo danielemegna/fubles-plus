@@ -31,8 +31,8 @@ describe_withtoken('Fubles API integration tests', () => {
   describe('match details reading', () => {
 
     test('try to get unexisting match details', async () => {
-      expect(async () =>
-        await api.matchDetails(1000000)
+      await expect(async () =>
+        api.matchDetails(1000000)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
@@ -93,12 +93,12 @@ describe_withtoken('Fubles API integration tests', () => {
     test('try to follow or unfollow unexisting match', async () => {
       const unexistingMatchId = 1000000;
 
-      expect(async () =>
-        await api.matchFollow(unexistingMatchId)
+      await expect(async () =>
+        api.matchFollow(unexistingMatchId)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
 
-      expect(async () =>
-        await api.matchUnfollow(unexistingMatchId)
+      await expect(async () =>
+        api.matchUnfollow(unexistingMatchId)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
@@ -108,13 +108,13 @@ describe_withtoken('Fubles API integration tests', () => {
 
     test('try to enroll to already played match', async () => {
       await expect(async () =>
-        await api.matchEnroll(3000478)
+        api.matchEnroll(3000478)
       ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot enroll to match 3000478')
     })
 
     test('try to enroll to unexisting match', async () => {
       await expect(async () =>
-        await api.matchEnroll(1000000)
+        api.matchEnroll(1000000)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
