@@ -41,14 +41,12 @@ export default class FublesAPI {
 
   private async fetchAt(urlPath: string): Promise<Response> {
     return await fetch(`https://api.fubles.com/api${urlPath}`, {
-      "headers": {
-        "accept": "application/json",
-        "authorization": `Bearer ${this.authenticatedUser.bearerToken}`,
-      },
-      "body": null,
-      "method": "GET"
+      method: "GET",
+      headers: { "authorization": `Bearer ${this.authenticatedUser.bearerToken}` },
+      body: null,
     })
   }
+
 }
 
 export type AutheticatedUser = {
