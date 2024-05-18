@@ -7,75 +7,83 @@ const describe_withtoken = process.env.TEST_BEARER_TOKEN ? describe : describe.s
 
 describe_withtoken('Fubles API integration tests', () => {
 
-  test('get my next scheduled matches summaries', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
+  describe('match summaries reading', () => {
 
-    const matches: MatchSummary[] = await api.getMyNextScheduledMatches()
+    test('get my next scheduled matches summaries', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
 
-    expect(matches).not.toBeEmpty()
+      const matches: MatchSummary[] = await api.getMyNextScheduledMatches()
+
+      expect(matches).not.toBeEmpty()
+    })
+
+    test('get my last played matches summaries', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+
+      const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
+
+      expect(matches).toHaveLength(4)
+    })
+
+    test('get last played matches summaries of another user', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+
+      const matches: MatchSummary[] = await api.getLastPlayedMatchesFor(774702)
+
+      expect(matches).toHaveLength(4)
+    })
+
   })
 
-  test('get my last played matches summaries', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
+  describe('match details reading', () => {
 
-    const matches: MatchSummary[] = await api.getMyLastPlayedMatches()
+    test('get a past played match details', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
 
-    expect(matches).toHaveLength(4)
-  })
+      const match: MatchDetails = await api.matchDetails(3009514)
 
-  test('get last played matches summaries of another user', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
+      expect(match.id).toBe(3009514)
+      expect(match.title).toBe("Calcio a 5")
+      expect(match.starting_at.toISOString()).toBe("2023-11-03T19:00:00.000Z")
+      expect(match.structure_name).toBe("Sport Time Corsico")
+      expect(match.my_side).toBe(Side.BLACK)
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.received_votes).not.toBeNull()
+      expect(match.received_votes).toHaveLength(5)
+      expect(match.received_votes).toContainEqual({ "vote": 7.5, "voterId": 196726, "voterName": "Simone Ferraro" })
+      expect(match.points).toStrictEqual({ white: 10, black: 11 })
+    })
 
-    const matches: MatchSummary[] = await api.getLastPlayedMatchesFor(774702)
+    test('get a past match details played without me', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
 
-    expect(matches).toHaveLength(4)
-  })
+      const match: MatchDetails = await api.matchDetails(3022886)
 
-  test('get a past played match details', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
+      expect(match.id).toBe(3022886)
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.my_side).toBeNil()
+      expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+      expect(match.points).toStrictEqual({ white: 9, black: 14 })
+      expect(match.received_votes).toBeNil()
+    })
 
-    const match: MatchDetails = await api.matchDetails(3009514)
+    test('get a past match details played as another user', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
 
-    expect(match.id).toBe(3009514)
-    expect(match.title).toBe("Calcio a 5")
-    expect(match.starting_at.toISOString()).toBe("2023-11-03T19:00:00.000Z")
-    expect(match.structure_name).toBe("Sport Time Corsico")
-    expect(match.my_side).toBe(Side.BLACK)
-    expect(match.available_slots.white).toBe(0)
-    expect(match.available_slots.black).toBe(0)
-    expect(match.received_votes).not.toBeNull()
-    expect(match.received_votes).toHaveLength(5)
-    expect(match.received_votes).toContainEqual({"vote": 7.5, "voterId": 196726, "voterName": "Simone Ferraro"})
-    expect(match.points).toStrictEqual({ white: 10, black: 11})
-  })
+      const match: MatchDetails = await api.matchDetailsAsAnotherUser(3022886, 774702)
 
-  test('get a past match details played without me', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
+      expect(match.id).toBe(3022886)
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.my_side).toBe(Side.BLACK)
+      expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+      expect(match.points).toStrictEqual({ white: 9, black: 14 })
+      expect(match.received_votes).toHaveLength(4)
+      expect(match.received_votes).toContainEqual({ "vote": 9, "voterId": 948124, "voterName": "Cristian Bonvegna" })
+    })
 
-    const match: MatchDetails = await api.matchDetails(3022886)
-
-    expect(match.id).toBe(3022886)
-    expect(match.available_slots.white).toBe(0)
-    expect(match.available_slots.black).toBe(0)
-    expect(match.my_side).toBeNil()
-    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
-    expect(match.points).toStrictEqual({ white: 9, black: 14})
-    expect(match.received_votes).toBeNil()
-  })
-
-  test('get a past match details played as another user', async () => {
-    const api = new FublesAPI(validAuthenticatedUser())
-
-    const match: MatchDetails = await api.matchDetailsAsAnotherUser(3022886, 774702)
-
-    expect(match.id).toBe(3022886)
-    expect(match.available_slots.white).toBe(0)
-    expect(match.available_slots.black).toBe(0)
-    expect(match.my_side).toBe(Side.BLACK)
-    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
-    expect(match.points).toStrictEqual({ white: 9, black: 14})
-    expect(match.received_votes).toHaveLength(4)
-    expect(match.received_votes).toContainEqual({"vote": 9, "voterId": 948124, "voterName": "Cristian Bonvegna"})
   })
 
 })
