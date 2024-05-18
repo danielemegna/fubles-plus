@@ -14,10 +14,12 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
     <div class="match-card" onclick="window.open('https://app.fubles.com/it/app/matches/${summary.id}')">
       <div class="match-card__date">
         ${summary.starting_at.toLocaleString('it-IT', {
-          weekday: 'long', //  values: 'long', 'short', 'narrow'
-          month: 'long', //  values: 'numeric', '2-digit', 'long', 'short', 'narrow'
-          day: 'numeric', //  values: 'numeric', '2-digit'
-        })}
+          weekday: 'short', //  values: 'long', 'short', 'narrow'
+          day: 'numeric', //  values: 'numeric', '2-digit',
+          month: 'short', //  values: 'numeric', '2-digit', 'long', 'short', 'narrow'
+          hour: '2-digit', // values: 'numeric', '2-digit',
+          minute: '2-digit', // values: 'numeric', '2-digit',
+        }).replace(', ', ' - ')}
       </div>
       <div class="match-card__body">
         <div class="match-card__grid">
