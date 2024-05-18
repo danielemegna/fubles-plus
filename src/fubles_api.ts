@@ -53,6 +53,24 @@ export default class FublesAPI {
     throw new Error("Something went wrong during match unfollow: " + response.status + " - " + response.statusText)
   }
 
+  async matchEnroll(matchId: number): Promise<void> {
+    const response = await this.postAt(`/matches/${matchId}/players`, {
+      user: this.authenticatedUser.id,
+      side_key: 2, // BLACK
+      role: 3 // Centrocampista
+    });
+
+    if (response.ok) return
+
+    if (response.status === 403)
+      throw new MatchEnrollError(matchId)
+
+    if (response.status === 500)  // unexisting match returns 500 !
+      throw new MatchNotFoundError(matchId)
+
+    throw new Error("Something went wrong during match enroll: " + response.status + " - " + response.statusText)
+  }
+
   private async fetchMatchDetails(matchId: number): Promise<any> {
     const response = await this.fetchAt(`/matches/${matchId}`);
     if (response.ok) {
@@ -103,5 +121,11 @@ export type AutheticatedUser = {
 export class MatchNotFoundError extends Error {
   constructor(matchId: number) {
     super(`Match ${matchId} not found !`);
+  }
+}
+
+export class MatchEnrollError extends Error {
+  constructor(matchId: number) {
+    super(`Cannot enroll to match ${matchId}`);
   }
 }

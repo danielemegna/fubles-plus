@@ -1,5 +1,5 @@
 import 'jest-extended';
-import FublesAPI, { AutheticatedUser, MatchNotFoundError } from '../src/fubles_api';
+import FublesAPI, { AutheticatedUser, MatchEnrollError, MatchNotFoundError } from '../src/fubles_api';
 import { MatchDetails, MatchSummary, Side } from '../src/match';
 
 // set TEST_BEARER_TOKEN env variabile in order to run this tests
@@ -99,6 +99,22 @@ describe_withtoken('Fubles API integration tests', () => {
 
       expect(async () =>
         await api.matchUnfollow(unexistingMatchId)
+      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+    })
+
+  })
+
+  describe('match enrolling', () => {
+
+    test('try to enroll to already played match', async () => {
+      await expect(async () =>
+        await api.matchEnroll(3000478)
+      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot enroll to match 3000478')
+    })
+
+    test('try to enroll to unexisting match', async () => {
+      await expect(async () =>
+        await api.matchEnroll(1000000)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
