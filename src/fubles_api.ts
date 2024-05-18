@@ -55,8 +55,15 @@ export default class FublesAPI {
 
   private async fetchMatchDetails(matchId: number): Promise<any> {
     const response = await this.fetchAt(`/matches/${matchId}`);
-    const responseBody = await response.json();
-    return responseBody.match;
+    if (response.ok) {
+      const responseBody = await response.json();
+      return responseBody.match;
+    }
+
+    if (response.status === 404)
+      throw new MatchNotFoundError(matchId)
+
+    throw new Error("Something went wrong during match details fetch: " + response.status + " - " + response.statusText)
   }
 
   private async fetchAt(urlPath: string): Promise<Response> {

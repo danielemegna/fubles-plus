@@ -37,6 +37,14 @@ describe_withtoken('Fubles API integration tests', () => {
 
   describe('match details reading', () => {
 
+    test('try to get unexisting match details', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+
+      expect(async () =>
+        await api.matchDetails(1000000)
+      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+    })
+
     test('get a past played match details', async () => {
       const api = new FublesAPI(validAuthenticatedUser())
 
