@@ -123,6 +123,26 @@ describe_withtoken('Fubles API integration tests', () => {
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 
+    test('try to unenroll from already played match', async () => {
+      const expectedErrorMessage = 'Impossible to remove User 55576 from match 2498015';
+      await expect(async () =>
+        api.matchUnenroll(2498015)
+      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
+    })
+
+    test('try to unenroll to completed match not played', async () => {
+      const expectedErrorMessage = 'Match 3038184 does not include User 55576';
+      await expect(async () =>
+        api.matchUnenroll(3038184)
+      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
+    })
+
+    test('try to unenroll from unexisting match', async () => {
+      await expect(async () =>
+        api.matchUnenroll(1000000)
+      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+    })
+
   })
 
 })

@@ -71,6 +71,19 @@ export default class FublesAPI {
     throw new Error("Something went wrong during match enroll: " + response.status + " - " + response.statusText)
   }
 
+  async matchUnenroll(matchId: number): Promise<void> {
+    const response = await this.deleteAt(`/matches/${matchId}/players/${this.authenticatedUser.id}`)
+    if (response.ok) return
+
+    if (response.status === 400 || response.status == 403)
+      throw new MatchEnrollError((await response.json()).message)
+
+    if (response.status === 404)
+      throw new MatchNotFoundError(matchId)
+
+    throw new Error("Something went wrong during match unenroll: " + response.status + " - " + response.statusText)
+  }
+
   private async fetchMatchDetails(matchId: number): Promise<any> {
     const response = await this.fetchAt(`/matches/${matchId}`);
     if (response.ok) {
