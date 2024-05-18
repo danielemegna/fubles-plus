@@ -111,10 +111,9 @@ describe_withtoken('Fubles API integration tests', () => {
     })
 
     test('try to enroll to completed match not played', async () => {
-      const expectedErrorMessage = 'Operation not allowed to user 55576 on match 3038184: match is not subscribable';
       await expect(async () =>
         api.matchEnroll(3038184)
-      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
+      ).rejects.toThrowWithMessage(MatchEnrollError, 'Operation not allowed, match 3038184 not subscribable')
     })
 
     test('try to enroll to unexisting match', async () => {
@@ -124,17 +123,15 @@ describe_withtoken('Fubles API integration tests', () => {
     })
 
     test('try to unenroll from already played match', async () => {
-      const expectedErrorMessage = 'Impossible to remove User 55576 from match 2498015';
       await expect(async () =>
         api.matchUnenroll(2498015)
-      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
+      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot unenroll user from match 2498015, forbidden')
     })
 
     test('try to unenroll to completed match not played', async () => {
-      const expectedErrorMessage = 'Match 3038184 does not include User 55576';
       await expect(async () =>
         api.matchUnenroll(3038184)
-      ).rejects.toThrowWithMessage(MatchEnrollError, expectedErrorMessage)
+      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot unenroll user from match 3038184, user not present')
     })
 
     test('try to unenroll from unexisting match', async () => {

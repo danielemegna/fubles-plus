@@ -63,7 +63,7 @@ export default class FublesAPI {
     if (response.ok) return
 
     if (response.status === 403)
-      throw new MatchEnrollError((await response.json()).message)
+      throw new MatchEnrollError(`Operation not allowed, match ${matchId} not subscribable`)
 
     if (response.status === 500)  // unexisting match returns 500 !
       throw new MatchNotFoundError(matchId)
@@ -75,8 +75,10 @@ export default class FublesAPI {
     const response = await this.deleteAt(`/matches/${matchId}/players/${this.authenticatedUser.id}`)
     if (response.ok) return
 
-    if (response.status === 400 || response.status == 403)
-      throw new MatchEnrollError((await response.json()).message)
+    if (response.status === 400)
+      throw new MatchEnrollError(`Cannot unenroll user from match ${matchId}, user not present`)
+    if (response.status == 403)
+      throw new MatchEnrollError(`Cannot unenroll user from match ${matchId}, forbidden`)
 
     if (response.status === 404)
       throw new MatchNotFoundError(matchId)
