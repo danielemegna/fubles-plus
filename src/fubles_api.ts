@@ -40,7 +40,7 @@ export default class FublesAPI {
     if (response.status === 404)
       throw new MatchNotFoundError(matchId)
 
-    throw new Error("Something went wrong during match follow: " + response.status + " - " + response.statusText)
+    throw new OperationError('match follow', response)
   }
 
   async matchUnfollow(matchId: number): Promise<void> {
@@ -50,7 +50,7 @@ export default class FublesAPI {
     if (response.status === 404)
       throw new MatchNotFoundError(matchId)
 
-    throw new Error("Something went wrong during match unfollow: " + response.status + " - " + response.statusText)
+    throw new OperationError('match unfollow', response)
   }
 
   async matchEnroll(matchId: number, side: Side): Promise<void> {
@@ -73,7 +73,7 @@ export default class FublesAPI {
     if (response.status === 500)  // unexisting match returns 500 !
       throw new MatchNotFoundError(matchId)
 
-    throw new Error("Something went wrong during match enroll: " + response.status + " - " + response.statusText)
+    throw new OperationError('match enroll', response)
   }
 
   async matchUnenroll(matchId: number): Promise<void> {
@@ -88,7 +88,7 @@ export default class FublesAPI {
     if (response.status === 404)
       throw new MatchNotFoundError(matchId)
 
-    throw new Error("Something went wrong during match unenroll: " + response.status + " - " + response.statusText)
+    throw new OperationError('match unenroll', response)
   }
 
   private async fetchMatchDetails(matchId: number): Promise<any> {
@@ -101,7 +101,7 @@ export default class FublesAPI {
     if (response.status === 404)
       throw new MatchNotFoundError(matchId)
 
-    throw new Error("Something went wrong during match details fetch: " + response.status + " - " + response.statusText)
+    throw new OperationError('match details fetch', response)
   }
 
   private async fetchAt(urlPath: string): Promise<Response> {
@@ -145,3 +145,9 @@ export class MatchNotFoundError extends Error {
 }
 
 export class MatchEnrollError extends Error { }
+
+export class OperationError extends Error {
+  constructor(operationName: string, response: Response) {
+    super(`Something went wrong during ${operationName}: ${response.status} - ${response.statusText}`)
+  }
+}
