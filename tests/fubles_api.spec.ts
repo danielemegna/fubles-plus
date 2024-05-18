@@ -96,15 +96,15 @@ describe_withtoken('Fubles API integration tests', () => {
 
   describe('match following', () => {
 
-    test('unfollow an already played match never followed', async () => {
-      const api = new FublesAPI(validAuthenticatedUser())
-      await api.matchUnfollow(3034162)
-    })
-
     test('follow and unfollow an already played match', async () => {
       const api = new FublesAPI(validAuthenticatedUser())
       await api.matchFollow(2998153)
       await api.matchUnfollow(2998153)
+    })
+
+    test('unfollow an already played match never followed', async () => {
+      const api = new FublesAPI(validAuthenticatedUser())
+      await api.matchUnfollow(3034162)
     })
 
     test('try to follow or unfollow unexisting match', async () => {
