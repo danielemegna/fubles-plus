@@ -107,18 +107,24 @@ describe_withtoken('Fubles API integration tests', () => {
   describe('match enrolling', () => {
 
     test('enroll to already played match do not throws errors', async () => {
-      await api.matchEnroll(2498015)
+      await api.matchEnroll(2498015, Side.WHITE)
+    })
+
+    test('try to change side in already played match', async () => {
+      await expect(async () =>
+        api.matchEnroll(2498015, Side.BLACK)
+      ).rejects.toThrowWithMessage(MatchEnrollError, 'Operation not allowed in match 2498015, cannot change side')
     })
 
     test('try to enroll to completed match not played', async () => {
       await expect(async () =>
-        api.matchEnroll(3038184)
+        api.matchEnroll(3038184, Side.WHITE)
       ).rejects.toThrowWithMessage(MatchEnrollError, 'Operation not allowed, match 3038184 not subscribable')
     })
 
     test('try to enroll to unexisting match', async () => {
       await expect(async () =>
-        api.matchEnroll(1000000)
+        api.matchEnroll(1000000, Side.BLACK)
       ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
     })
 

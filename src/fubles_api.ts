@@ -1,4 +1,4 @@
-import { MatchDetails, MatchSummary, matchDetailsFrom, matchDetailsAsAnotherUser, matchSummaryFrom } from "./match";
+import { MatchDetails, MatchSummary, matchDetailsFrom, matchDetailsAsAnotherUser, matchSummaryFrom, Side } from "./match";
 
 export default class FublesAPI {
   private authenticatedUser: AutheticatedUser
@@ -53,17 +53,22 @@ export default class FublesAPI {
     throw new Error("Something went wrong during match unfollow: " + response.status + " - " + response.statusText)
   }
 
-  async matchEnroll(matchId: number): Promise<void> {
+  async matchEnroll(matchId: number, side: Side): Promise<void> {
     const response = await this.postAt(`/matches/${matchId}/players`, {
       user: this.authenticatedUser.id,
-      side_key: 1, // WHITE
+      side_key: side == Side.WHITE ? 1 : 2,
       role: 3 // Centrocampista
     });
 
     if (response.ok) return
 
-    if (response.status === 403)
-      throw new MatchEnrollError(`Operation not allowed, match ${matchId} not subscribable`)
+    if (response.status === 403) {
+      const forbiddenMessage = (await response.json()).message as string
+      if (forbiddenMessage.includes('cambiare lato'))
+        throw new MatchEnrollError(`Operation not allowed in match ${matchId}, cannot change side`)
+      if (forbiddenMessage.includes('not subscribable'))
+        throw new MatchEnrollError(`Operation not allowed, match ${matchId} not subscribable`)
+    }
 
     if (response.status === 500)  // unexisting match returns 500 !
       throw new MatchNotFoundError(matchId)
