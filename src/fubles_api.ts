@@ -56,7 +56,7 @@ export default class FublesAPI {
   async matchEnroll(matchId: number): Promise<void> {
     const response = await this.postAt(`/matches/${matchId}/players`, {
       user: this.authenticatedUser.id,
-      side_key: 2, // BLACK
+      side_key: 1, // WHITE
       role: 3 // Centrocampista
     });
 

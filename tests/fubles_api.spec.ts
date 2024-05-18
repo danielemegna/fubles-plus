@@ -107,7 +107,7 @@ describe_withtoken('Fubles API integration tests', () => {
   describe('match enrolling', () => {
 
     test('enroll to already played match do not throws errors', async () => {
-      await api.matchEnroll(3000478)
+      await api.matchEnroll(2498015)
     })
 
     test('try to enroll to completed match not played', async () => {
