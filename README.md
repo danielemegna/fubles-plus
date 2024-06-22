@@ -11,7 +11,7 @@ Some features that we could implement below.
 
 #### Flash enrollment
 
-Select a full match I'm not enrolled to and auto-enroll me immediately when a seat is available.
+Given a full match I'm not enrolled to, auto-enroll me immediately when a seat is available.
 
 Variations:
 - parametrize maximum datetime to be enrolled
@@ -76,7 +76,7 @@ Variations:
 
 #### Peek votes without voting
 
-Given a recent match that I played, I want to see votes players gave without voting.
+Given a recent match that I played, I want to see votes players gave to me without voting.
 
 > in fubles you cannot see votes without giving your votes before
 
