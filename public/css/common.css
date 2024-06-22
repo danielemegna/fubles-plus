@@ -6,6 +6,7 @@
   --verylightgrey: rgb(238, 238, 238);
   --lightblack: rgb(70, 70, 70);
   --background: rgb(242, 242, 242);
+  --headerblack: rgb(26, 37, 50);
 }
 
 * {
@@ -36,7 +37,7 @@ main {
 
 header {
   width: 100%;
-  background-color: #1a2532;
+  background-color: var(--headerblack);
   padding: var(--x-padding) var(--y-padding);
 }
 
