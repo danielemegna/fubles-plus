@@ -1,0 +1,24 @@
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 3rem 2rem;
+}
+
+.home-button {
+  border: 2px dashed lightgray;
+  border-radius: 10px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: var(--verylightgrey);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.icon-medal {
+    background-image: url('../assets/imgs/medal-icon.png');
+  }
+
+  &.icon-run {
+    background-image: url('../assets/imgs/run-icon.png');
+  }
+}

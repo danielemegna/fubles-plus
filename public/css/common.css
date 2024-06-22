@@ -1,0 +1,61 @@
+:root {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  --x-padding: 1rem;
+  --y-padding: 1.25rem;
+  --grey: grey;
+  --verylightgrey: rgb(238, 238, 238);
+  --lightblack: rgb(70, 70, 70);
+  --background: rgb(242, 242, 242);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 0fr 1fr;
+  width: 100vw;
+  margin: 0;
+  background: var(--background);
+}
+
+main {
+  overflow: scroll;
+  padding-bottom: 1.5rem;
+}
+
+header {
+  width: 100%;
+  background-color: #1a2532;
+  padding: var(--x-padding) var(--y-padding);
+}
+
+header > div {
+  width: 100%;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.header-logos__plus-icon {
+  align-self: flex-start;
+}
+
+.header-title {
+  margin-top: 1rem;
+}
+
+.header-title > h1 {
+  margin-top: 1.5rem;
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  color: white;
+}
