@@ -2,9 +2,11 @@
   "name": "fubles-plus-be",
   "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "tsx ./src/main.ts"
+    "start": "tsx ./src/main.ts",
+    "watch": "tsx watch --clear-screen=false ./src/main.ts"
   },
   "dependencies": {
     "tsx": "^4.16.2"
