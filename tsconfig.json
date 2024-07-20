@@ -3,18 +3,19 @@
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "moduleResolution": "bundler",                  /* Specify module resolution strategy: 'classic', 'node10/node', 'node16', 'nodenext', 'bundler' */
+    "allowImportingTsExtensions": true,             /* Allows TS files to import each other with a TS-specific extension like .ts, .mts, or .tsx */
+    "resolveJsonModule": true,                      /* Allows importing modules with a .json extension */
+    "isolatedModules": true,                        /* Transpile each file as a separate module (similar to 'ts.transpileModule') */
+    //"moduleDetection": "force",                   /* Controls how TypeScript determines whether a file is a script or a module: 'legacy', 'auto', 'force' */
+    "noEmit": true,                                 /* Do not emit compiler output files like JavaScript source code, source-maps or declarations */
 
     /* Basic Options */
     // "incremental": true,                         /* Enable incremental compilation */
     "target": "ESNEXT",                             /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 'ES2021', or 'ESNEXT'. */
     "module": "ESNext",                             /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
     // "lib": ["ES2020", "DOM", "DOM.Iterable"],    /* Specify library files to be included in the compilation. */
-    "useDefineForClassFields": true,
+    "useDefineForClassFields": true,                /* Switches to the upcoming ECMA runtime behavior for class fields */
     // "allowJs": true,                             /* Allow javascript files to be compiled. */
     // "checkJs": true,                             /* Report errors in .js files. */
     // "jsx": "preserve",                           /* Specify JSX code generation: 'preserve', 'react-native', 'react', 'react-jsx' or 'react-jsxdev'. */
@@ -75,7 +76,6 @@
 
     /* Advanced Options */
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
-    //"resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true        /* Disallow inconsistently-cased references to the same file. */
   },
   "include": ["src"]
