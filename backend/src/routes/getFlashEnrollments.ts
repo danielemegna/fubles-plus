@@ -1,6 +1,6 @@
 import { ServerResponse } from "http";
+import { jsonResponseWith } from "../api";
 import WatchingMatch, { DesiredSide } from "../entities/WatchingMatch";
-import { jsonResponseWith } from "../main";
 import GetFlashEnrollmentsUsecase from "../usecase/GetFlashEnrollmentsUsecase";
 import { Route, WebRequest } from "./types";
 
