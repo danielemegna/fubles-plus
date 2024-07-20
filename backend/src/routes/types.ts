@@ -1,8 +1,14 @@
+import { ServerResponse } from "http"
 import { IncomingMessage } from "http"
+
+export type Route = {
+  handle: (req: WebRequest, resp: ServerResponse) => void,
+  shouldHandle: (req: WebRequest) => boolean
+}
 
 export type WebRequestMethod = 'GET' | 'POST'
 
-export default class WebRequest {
+export class WebRequest {
   readonly method: WebRequestMethod
   readonly url: string
   readonly requestBody: any
