@@ -89,7 +89,7 @@ Install node dependencies:
 $ yarn install
 ```
 
-Compile with TS checks:
+Run TS type checks:
 ```
 $ yarn tsc
 ```
@@ -122,6 +122,6 @@ $ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
 
 > browse http://localhost
 
-### Bot part (typescript)
+### Backend part (typescript)
 
-To be continued ...
+See [backend README](./backend/README.md) for details.
