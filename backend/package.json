@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build"
+    "build": "tsc",
+    "start": "tsx ./src/main.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tsx": "^4.16.2"
+  },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.3.4"
+    "typescript": "^5.2.2"
   }
 }
