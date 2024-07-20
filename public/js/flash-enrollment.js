@@ -1,3 +1,4 @@
+import { FublesPlusAPI } from './lib/fubles-plus.js'
 
 const watchingMatches = [
   {

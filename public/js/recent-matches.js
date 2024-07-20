@@ -1,4 +1,4 @@
-import FublesAPI from './lib/fubles-api.js'
+import { FublesAPI } from './lib/fubles-plus.js'
 
 const authenticatedUser = {
   id: 55576,

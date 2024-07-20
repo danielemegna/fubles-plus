@@ -110,7 +110,7 @@ To bundle the library in a single ES module file (via Vite) ready to be used by 
 $ yarn build
 ```
 
-> it generates the file `public/js/lib/fubles-api.js`
+> it generates the file `public/js/lib/fubles-plus.js`
 
 ### HTML public part (html/css/js - mobile only)
 

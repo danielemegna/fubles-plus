@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: 'public/js/lib',
     copyPublicDir: false,
     lib: {
-      entry: path.resolve(__dirname, 'src/fubles_api.ts'),
+      entry: path.resolve(__dirname, 'src/exports.ts'),
       formats: ['es'],
     },
   },
