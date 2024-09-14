@@ -11,19 +11,11 @@ const watchingMatches = await fublesPlusSdk.getFlashEnrollmentWatchingMatches()
 document.querySelector('main').innerHTML = watchingMatches.map((match) => {
   return `
     <div class="match-card" onclick="window.open('https://app.fubles.com/it/app/matches/${match.id}')">
-      <div class="match-card__date">
-        ${match.startingAt.toLocaleString('it-IT', {
-          weekday: 'short', //  values: 'long', 'short', 'narrow'
-          day: 'numeric', //  values: 'numeric', '2-digit',
-          month: 'long', //  values: 'numeric', '2-digit', 'long', 'short', 'narrow'
-        })}
-      </div>
+      <div class="match-card__date">${formatStartingAtDate(match.startingAt)}</div>
       <div class="match-card__body">
         <div class="match-card__grid">
           <span class="match-card__sport-type">${match.title}</span>
-          <div class="match-card__time">
-            ${match.startingAt.toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit' })}
-          </div>
+          <div class="match-card__time">${formatStartingAtTime(match.startingAt)}</div>
           <span class="match-card__structure-name">${match.structureName}</span>
           <div class="match-card__desired-side">
             <span class="${desiredSideCssClassFor(match.desiredSide)}"></span>
@@ -32,6 +24,18 @@ document.querySelector('main').innerHTML = watchingMatches.map((match) => {
       </div>
     </div>`;
 }).join("");
+
+function formatStartingAtDate(dateTime) {
+  return dateTime.toLocaleString('it-IT', {
+    weekday: 'short', //  values: 'long', 'short', 'narrow'
+    day: 'numeric', //  values: 'numeric', '2-digit',
+    month: 'long', //  values: 'numeric', '2-digit', 'long', 'short', 'narrow'
+  })
+}
+
+function formatStartingAtTime(dateTime) {
+  return dateTime.toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit' });
+}
 
 function desiredSideCssClassFor(value) {
   switch(value) {
