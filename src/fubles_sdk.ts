@@ -1,6 +1,6 @@
 import { MatchDetails, MatchSummary, matchDetailsFrom, matchDetailsAsAnotherUser, matchSummaryFrom, Side } from "./match";
 
-export default class FublesAPI {
+export default class FublesSDK {
   private authenticatedUser: AutheticatedUser
 
   constructor(autheticatedUser: AutheticatedUser) {

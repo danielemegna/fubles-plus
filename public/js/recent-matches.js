@@ -1,13 +1,13 @@
-import { FublesAPI } from './lib/fubles-plus.js'
+import { FublesSDK } from './lib/fubles-plus.js'
 
 const authenticatedUser = {
   id: 55576,
   bearerToken: "<Bearer Token Here>"
 }
-const fublesApi = new FublesAPI(authenticatedUser);
+const fublesSdk = new FublesSDK(authenticatedUser);
 const urlParams = new URLSearchParams(window.location.search);
 const userId = parseInt(urlParams.get('userId')) || null;
-let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesApi)
+let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesSdk)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {
   return `
@@ -50,18 +50,18 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
     </div>`;
 }).join("");
 
-async function fetchMatches(userId, fublesApi) {
+async function fetchMatches(userId, fublesSdk) {
   if (!userId) {
-    const summariesOfLastPlayedMatches = await fublesApi.getMyLastPlayedMatches();
+    const summariesOfLastPlayedMatches = await fublesSdk.getMyLastPlayedMatches();
     return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
-      const details = await fublesApi.matchDetails(summary.id);
+      const details = await fublesSdk.matchDetails(summary.id);
       return [summary, details];
     }));
   }
 
-  const summariesOfLastPlayedMatches = await fublesApi.getLastPlayedMatchesFor(userId);
+  const summariesOfLastPlayedMatches = await fublesSdk.getLastPlayedMatchesFor(userId);
   return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
-    const details = await fublesApi.matchDetailsAsAnotherUser(summary.id, userId);
+    const details = await fublesSdk.matchDetailsAsAnotherUser(summary.id, userId);
     return [summary, details];
   }));
 }
