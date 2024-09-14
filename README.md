@@ -82,7 +82,7 @@ Given a recent match that I played, I want to see votes players gave to me witho
 
 ## Dev notes
 
-### Library part (typescript)
+### # SDK Library part (typescript)
 
 Install node dependencies:
 ```
@@ -112,7 +112,7 @@ $ yarn build
 
 > it generates the file `public/js/lib/fubles-plus.js`
 
-### HTML public part (html/css/js - mobile only)
+### # HTML frontend part (html/css/js - mobile only)
 
 To browse public html pages, bundle the library before (see above) and than serve the public folder:
 

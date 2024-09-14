@@ -22,7 +22,7 @@ Run main entrypoint:
 $ yarn start
 ```
 
-On watch to use autoreload during develoment:
+Or watch to use autoreload during develoment:
 ```
 $ yarn watch
 ```
