@@ -33,16 +33,23 @@ function handle(webRequest: WebRequest, response: ServerResponse) {
 }
 
 export function textResponse(statusCode: number, text: string, response: ServerResponse) {
-  response.writeHead(statusCode, { 'Content-Type': 'text/plain' })
+  response.writeHead(statusCode, { 'Content-Type': 'text/plain', ...corsHeaders() })
   response.end(text)
 }
 
 export function jsonResponseWith(statusCode: number, body: object, response: ServerResponse) {
-  response.writeHead(statusCode, { 'Content-Type': 'application/json' })
+  response.writeHead(statusCode, { 'Content-Type': 'application/json', ...corsHeaders() })
   response.end(JSON.stringify(body))
 }
 
 export function emptyResponse(statusCode: number, response: ServerResponse) {
-  response.writeHead(statusCode)
+  response.writeHead(statusCode, corsHeaders())
   response.end()
+}
+
+function corsHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': '*'
+  }
 }
