@@ -112,6 +112,14 @@ $ yarn build
 
 > it generates the file `public/js/lib/fubles-plus.js`
 
+Watch can be useful during development to automatically regenerate lib js files on changes:
+```
+$ yarn watch
+```
+
+> it auto regenerates the js file under public folder \
+> _note: tsc checks not performed on rebuild_
+
 ### # HTML frontend part (html/css/js - mobile only)
 
 To browse public html pages, bundle the library before (see above) and than serve the public folder:

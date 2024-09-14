@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
+    "watch": "vite build --watch",
     "test": "jest --runInBand --verbose"
   },
   "engines": {
