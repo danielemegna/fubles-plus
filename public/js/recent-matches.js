@@ -1,12 +1,16 @@
 import { FublesSDK } from './lib/fubles-plus.js'
 
+/* ==== SETTINGS ==== */
 const authenticatedUser = {
   id: 55576,
   bearerToken: "<Bearer Token Here>"
 }
+/* ==== END SETTINGS ==== */
+
 const fublesSdk = new FublesSDK(authenticatedUser);
 const urlParams = new URLSearchParams(window.location.search);
 const userId = parseInt(urlParams.get('userId')) || null;
+
 let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesSdk)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {

@@ -1,27 +1,18 @@
-import { FublesPlusAPI } from './lib/fubles-plus.js'
+import { FublesPlusSDK } from './lib/fubles-plus.js'
 
-const watchingMatches = [
-  {
-    id: 99999,
-    starting_at: new Date(2024, 6, 22, 20, 0),
-    title: "Calcio a 5",
-    structure_name: "Sport Time Corsico",
-    desired_side: "white",
-  },
-  {
-    id: 99999,
-    starting_at: new Date(2024, 6, 24, 20, 0),
-    title: "Calcio a 5",
-    structure_name: "Sport Time Corsico",
-    desired_side: "black",
-  }
-];
+/* ==== SETTINGS ==== */
+const userId = 55576
+const fublesPlusBackendBaseurl = "http://localhost:4321"
+/* ==== END SETTINGS ==== */
+
+const fublesPlusSdk = new FublesPlusSDK(userId, fublesPlusBackendBaseurl);
+const watchingMatches = await fublesPlusSdk.getFlashEnrollmentWatchingMatches()
 
 document.querySelector('main').innerHTML = watchingMatches.map((match) => {
   return `
     <div class="match-card" onclick="window.open('https://app.fubles.com/it/app/matches/${match.id}')">
       <div class="match-card__date">
-        ${match.starting_at.toLocaleString('it-IT', {
+        ${match.startingAt.toLocaleString('it-IT', {
           weekday: 'short', //  values: 'long', 'short', 'narrow'
           day: 'numeric', //  values: 'numeric', '2-digit',
           month: 'long', //  values: 'numeric', '2-digit', 'long', 'short', 'narrow'
@@ -31,11 +22,11 @@ document.querySelector('main').innerHTML = watchingMatches.map((match) => {
         <div class="match-card__grid">
           <span class="match-card__sport-type">${match.title}</span>
           <div class="match-card__time">
-            ${match.starting_at.toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit' })}
+            ${match.startingAt.toLocaleString('it-IT', { hour: '2-digit', minute: '2-digit' })}
           </div>
-          <span class="match-card__structure-name">${match.structure_name}</span>
+          <span class="match-card__structure-name">${match.structureName}</span>
           <div class="match-card__desired-side">
-            <span class="${match.desired_side}"></span>
+            <span class="${match.desiredSide}"></span>
           </div>
         </div>
       </div>

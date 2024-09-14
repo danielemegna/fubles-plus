@@ -1,4 +1,4 @@
 import FublesSDK from "./fubles_sdk";
-import FublesPlusAPI from "./fubles_plus_api";
+import FublesPlusSDK from "./fubles_plus_sdk";
 
-export { FublesSDK as FublesSDK, FublesPlusAPI }
+export { FublesSDK, FublesPlusSDK }
