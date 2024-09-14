@@ -61,5 +61,11 @@
       color: var(--verylightgrey);
       &:before { content: "Neri"; }
     }
+    &.any {
+      border-color: var(--verylightgrey);
+      background-color: var(--verylightgrey);
+      color: gray;
+      &:before { content: "Qualsiasi"; }
+    }
   }
 }
