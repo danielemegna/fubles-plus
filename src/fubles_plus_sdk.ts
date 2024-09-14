@@ -42,9 +42,5 @@ export type WatchingMatch = {
   desiredSide: DesiredSide
 }
 
-export enum DesiredSide {
-  WHITE = "white",
-  BLACK = "black",
-  ANY = "any"
-}
+export enum DesiredSide { WHITE, BLACK, ANY }
 

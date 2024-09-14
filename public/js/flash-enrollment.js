@@ -26,9 +26,17 @@ document.querySelector('main').innerHTML = watchingMatches.map((match) => {
           </div>
           <span class="match-card__structure-name">${match.structureName}</span>
           <div class="match-card__desired-side">
-            <span class="${match.desiredSide}"></span>
+            <span class="${desiredSideCssClassFor(match.desiredSide)}"></span>
           </div>
         </div>
       </div>
     </div>`;
 }).join("");
+
+function desiredSideCssClassFor(value) {
+  switch(value) {
+    case 0: return 'white';
+    case 1: return 'black';
+    default: return 'any';
+  }
+}
