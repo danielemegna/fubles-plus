@@ -1,5 +1,6 @@
 import { Vote, voteFrom } from "./vote"
 
+// TODO every domain types should have camel-case fields
 export type MatchDetails = {
   id: number,
   title: string,
@@ -14,6 +15,7 @@ export type MatchDetails = {
   points: MatchPoints | null,
 }
 
+// TODO every domain types should have camel-case fields
 export type MatchSummary = {
   id: number,
   starting_at: Date,

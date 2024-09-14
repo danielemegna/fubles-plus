@@ -20,9 +20,9 @@ function serialize(match: WatchingMatch): object {
   return {
     id: match.id,
     title: match.title,
-    starting_at: serializeDate(match.starting_at),
-    structure_name: match.structure_name,
-    desired_side: serializeDesiredSide(match.desired_side)
+    starting_at: serializeDate(match.startingAt),
+    structure_name: match.structureName,
+    desired_side: serializeDesiredSide(match.desiredSide)
   };
 }
 
