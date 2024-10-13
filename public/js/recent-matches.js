@@ -7,10 +7,8 @@ const authenticatedUser = {
 }
 /* ==== END SETTINGS ==== */
 
-const fublesSdk = new FublesSDK(authenticatedUser);
-const urlParams = new URLSearchParams(window.location.search);
-const userId = parseInt(urlParams.get('userId')) || null;
-
+const fublesSdk = new FublesSDK(authenticatedUser)
+const userId = readUserIdQueryParam()
 let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesSdk)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {
@@ -53,6 +51,12 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
       </div>
     </div>`;
 }).join("");
+
+function readUserIdQueryParam() {
+  const urlParams = new URLSearchParams(window.location.search)
+  const userIdParam = urlParams.get('userId') || urlParams.get('userid')
+  return parseInt(userIdParam)
+}
 
 async function fetchMatches(userId, fublesSdk) {
   if (!userId) {
