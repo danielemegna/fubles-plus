@@ -6,7 +6,31 @@ const fublesPlusBackendBaseurl = "http://localhost:4321"
 /* ==== END SETTINGS ==== */
 
 const fublesPlusSdk = new FublesPlusSDK(userId, fublesPlusBackendBaseurl);
-const watchingMatches = await fublesPlusSdk.getFlashEnrollmentWatchingMatches()
+//const watchingMatches = await fublesPlusSdk.getFlashEnrollmentWatchingMatches()
+
+const watchingMatches = [
+  {
+    id: 98725,
+    title: "Calcio a 5",
+    startingAt: new Date(2024, 10, 18, 20, 30),
+    structureName: "Sport Time Corsico",
+    desiredSide: 0
+  },
+  {
+    id: 98725,
+    title: "Calcio a 5",
+    startingAt: new Date(2024, 10, 20, 20, 0),
+    structureName: "Tennis Calcetto Barona (T.C.B.)",
+    desiredSide: 1
+  },
+  {
+    id: 98725,
+    title: "Calcio a 5",
+    startingAt: new Date(2024, 10, 26, 19, 30),
+    structureName: "Sport Time Corsico",
+    desiredSide: 2
+  },
+]
 
 document.querySelector('main').innerHTML = watchingMatches.map((match) => {
   return `
