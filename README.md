@@ -130,6 +130,16 @@ $ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
 
 > browse http://localhost
 
+### # Build SDK & frontend via Dockerfile
+
+Simply run
+
+```
+$ docker build -t fubles-plus .
+$ docker run --rm -dp 80:80 --name fubles-plus fubles-plus
+```
+
 ### Backend part (typescript)
 
 See [backend README](./backend/README.md) for details.
+
