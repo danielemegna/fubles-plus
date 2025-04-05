@@ -1,8 +1,10 @@
 # Fubles Plus - Backend side
 
-Composition:
+Backend server part composed by two main parts:
 
-- a basic http API server to store and retrieve fubles-plus user data
+- a basic http API server to
+  - store and retrieve fubles-plus user data
+  - serve the ics calendar of the next user matches
 - a deamon loop that checks for new job to be accomplished
 
 ## Dev notes
