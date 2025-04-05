@@ -1,6 +1,14 @@
 FROM node:18.17.1-slim
 
-COPY . .
+WORKDIR /app
+COPY ../ /app
+
+# fubles-plus sdk part
+RUN yarn install --prod
+RUN yarn build
+
+# fubles-plus backend part
+WORKDIR /app/backend
 RUN yarn install --prod
 
 CMD yarn start
