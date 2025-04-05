@@ -30,3 +30,12 @@ $ yarn watch
 ```
 
 > api served on http://localhost:4321
+
+## Build to ship with docker
+
+:warn: Run from root repository folder:
+
+```
+$ docker build -t fubles-plus-be -f Dockerfile.be .
+$ docker run --rm -dp 4321:4321 --name fubles-plus-be fubles-plus-be
+```

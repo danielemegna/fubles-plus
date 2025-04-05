@@ -135,11 +135,10 @@ $ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
 Simply run
 
 ```
-$ docker build -t fubles-plus .
-$ docker run --rm -dp 80:80 --name fubles-plus fubles-plus
+$ docker build -t fubles-plus-fe -f Dockerfile.fe .
+$ docker run --rm -dp 80:80 --name fubles-plus-fe fubles-plus-fe
 ```
 
 ### Backend part (typescript)
 
 See [backend README](./backend/README.md) for details.
-
