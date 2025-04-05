@@ -10,7 +10,7 @@
 
 # production
 /dist
-/public/js/lib/*.js
+/public/js/lib/*
 
 # misc
 .DS_Store
