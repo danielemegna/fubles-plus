@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "fubles-plus": "../",
     "tsx": "^4.16.2"
   },
   "devDependencies": {
