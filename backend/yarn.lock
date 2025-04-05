@@ -360,6 +360,13 @@ get-tsconfig@^4.7.5:
   dependencies:
     resolve-pkg-maps "^1.0.0"
 
+ical-generator@^8.1.1:
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/ical-generator/-/ical-generator-8.1.1.tgz#88cd74397cf4fad4676b776dec7e7ebcdeea51fa"
+  integrity sha512-vorfUDZk4NaVLB7f1pm9AeRGy0jTYn7QUHZCFCMx3EGOz9+yykdAjA1i4ez+ZLAEK55lmutCXvVovEdTj9s1XA==
+  dependencies:
+    uuid-random "^1.3.2"
+
 loupe@^3.1.0, loupe@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/loupe/-/loupe-3.1.1.tgz#71d038d59007d890e3247c5db97c1ec5a92edc54"
@@ -497,6 +504,11 @@ typescript@^5.2.2:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.3.tgz#e1b0a3c394190838a0b168e771b0ad56a0af0faa"
   integrity sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==
+
+uuid-random@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/uuid-random/-/uuid-random-1.3.2.tgz#96715edbaef4e84b1dcf5024b00d16f30220e2d0"
+  integrity sha512-UOzej0Le/UgkbWEO8flm+0y+G+ljUon1QWTEZOq1rnMAsxo2+SckbiZdKzAHHlVh6gJqI1TjC/xwgR50MuCrBQ==
 
 vite-node@2.1.1:
   version "2.1.1"
