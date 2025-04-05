@@ -1,6 +1,7 @@
-import http, { IncomingMessage, ServerResponse } from 'http';
-import getFlashEnrollmentsRoute from './routes/getFlashEnrollments';
-import { WebRequest } from './routes/types';
+import http, { IncomingMessage, ServerResponse } from 'http'
+import getFlashEnrollmentsRoute from './routes/getFlashEnrollments'
+import getMatchesCalendar from './routes/getMatchesCalendar'
+import { WebRequest } from './routes/types'
 
 export default function start() {
 
@@ -21,6 +22,11 @@ function handle(webRequest: WebRequest, response: ServerResponse) {
   try {
     if (getFlashEnrollmentsRoute.shouldHandle(webRequest)) {
       getFlashEnrollmentsRoute.handle(webRequest, response);
+      return
+    }
+
+    if (getMatchesCalendar.shouldHandle(webRequest)) {
+      getMatchesCalendar.handle(webRequest, response);
       return
     }
 
@@ -45,6 +51,15 @@ export function jsonResponseWith(statusCode: number, body: object, response: Ser
 export function emptyResponse(statusCode: number, response: ServerResponse) {
   response.writeHead(statusCode, corsHeaders())
   response.end()
+}
+
+export function icsResponse(icsFileContent: string, response: ServerResponse) {
+  response.writeHead(200, {
+    'Content-Type': 'text/calendar; charset=utf-8',
+    'Content-Disposition': 'attachment; filename="calendar.ics"',
+    ...corsHeaders()
+  })
+  response.end(icsFileContent)
 }
 
 function corsHeaders() {
