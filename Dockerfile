@@ -19,7 +19,7 @@ FROM node:18.17.1-slim as backend-module
 
 WORKDIR /workdir/sdk
 COPY --from=sdk-build /workdir/package.json .
-COPY --from=sdk-build /workdir/dist .
+COPY --from=sdk-build /workdir/dist ./dist
 
 WORKDIR /workdir/backend
 COPY ./backend/ .
