@@ -1,6 +1,6 @@
 # Fubles Plus - Backend side
 
-Backend server part composed by two main parts:
+Backend server module composed by two main parts:
 
 - a basic http API server to
   - store and retrieve fubles-plus user data

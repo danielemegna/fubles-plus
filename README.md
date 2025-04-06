@@ -82,63 +82,24 @@ Given a recent match that I played, I want to see votes players gave to me witho
 
 ## Dev notes
 
-### # SDK Library part (typescript)
+To detailed instructions regardings the project modules
 
-Install node dependencies:
-```
-$ yarn install
-```
+- SDK Library module (typescript) see [SDK README](./sdk/README.md)
+- Web frontend module (html/css/js - mobile only) see [web README](./web/README.md)
+- Backend module (typescript) see [backend README](./backend/README.md)
 
-Run TS type checks:
-```
-$ yarn tsc
-```
+### # Build and run via docker
 
-Run tests:
-```
-$ yarn test
-```
-
-To run api integration tests set a valid `TEST_BEARER_TOKEN` environment variable before:
-```
-$ export TEST_BEARER_TOKEN=xxxxxxxxxxxxxxxxxx
-$ yarn test
-```
-
-To bundle the library in a single ES module file (via Vite) ready to be used by browsers:
-```
-$ yarn build
-```
-
-> it generates the file `public/js/lib/fubles-plus.js`
-
-Watch can be useful during development to automatically regenerate lib js files on changes:
-```
-$ yarn watch
-```
-
-> it auto regenerates the js file under public folder \
-> _note: tsc checks not performed on rebuild_
-
-### # HTML frontend part (html/css/js - mobile only)
-
-To browse public html pages, bundle the library before (see above) and than serve the public folder:
+Build web and backend images with:
 
 ```
-$ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
+$ docker build -t fubles-plus-web --target web-module . 
+$ docker build -t fubles-plus-be --target backend-module . 
 ```
 
-> browse http://localhost
-
-### # Build SDK & frontend via Dockerfile
-
-Simply run
+Then run them:
 
 ```
-$ docker build -t fubles-plus-fe -f Dockerfile.fe .
-$ docker run --rm -dp 80:80 --name fubles-plus-fe fubles-plus-fe
+$ docker run --rm -dp 8080:80 --name fubles-plus-web fubles-plus-web
+$ docker run --rm -dp 4321:4321 --name fubles-plus-be fubles-plus-be
 ```
-
-### Backend part (typescript)
-
-See [backend README](./backend/README.md) for details.

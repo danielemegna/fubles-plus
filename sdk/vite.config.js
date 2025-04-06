@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig({
   build: {
     target: 'esnext',
-    outDir: 'public/js/lib',
+    outDir: 'dist',
     copyPublicDir: false,
     lib: {
       entry: path.resolve(__dirname, 'src/exports.ts'),

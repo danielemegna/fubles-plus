@@ -1,4 +1,4 @@
-import { FublesPlusSDK } from './lib/fubles-plus.js'
+import { FublesPlusSDK } from './lib/fubles-plus-sdk.js'
 
 /* ==== SETTINGS ==== */
 const userId = 55576

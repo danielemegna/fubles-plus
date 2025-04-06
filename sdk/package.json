@@ -1,11 +1,11 @@
 {
-  "name": "fubles-plus",
-  "description": "Fubles Plus",
+  "name": "fubles-plus-sdk",
+  "description": "Fubles Plus SDK",
   "version": "1.0.0",
   "license": "ISC",
   "type": "module",
-  "main": "public/js/lib/fubles-plus.js",
-  "types": "public/js/lib/index.d.ts",
+  "main": "dist/fubles-plus-sdk.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && vite build",
     "watch": "vite build --watch",

@@ -1,4 +1,4 @@
-import { FublesSDK } from './lib/fubles-plus.js'
+import { FublesSDK } from './lib/fubles-plus-sdk.js'
 
 /* ==== SETTINGS ==== */
 const authenticatedUser = {
