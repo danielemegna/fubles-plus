@@ -21,8 +21,8 @@ async function writeIcsCalendarFile() {
   }
 
   const fublesSdk = new FublesSDK(authenticatedUser)
-  const matches = await fublesSdk.getMyNextScheduledMatches()
-  console.debug('next matches:', matches)
+  //const matches = await fublesSdk.getMyNextScheduledMatches()
+  //console.debug('next matches:', matches)
 
   const calendar = ical({ name: "Daniele's Fubles Matches Calendar" })
   calendar.createEvent({
