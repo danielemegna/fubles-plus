@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { FublesSDK } from 'fubles-plus'
+import { FublesSDK } from 'fubles-plus-sdk'
 import ical from 'ical-generator'
 
 const LOOP_INTERVAL_IN_MINUTES = 5
