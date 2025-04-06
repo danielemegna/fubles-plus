@@ -10,17 +10,27 @@ export default class GenerateUserIcsCalendarUseCase {
   }
 
   async run(userId: number): Promise<void> {
+    console.log(`Generating ics calendar file for user ${userId} ..`)
+
+    console.log(`Fetching matches from fubles ...`)
     const matches = await this.fublesSDK.getMyNextScheduledMatches()
-    console.debug('next matches:', matches)
 
+    if (matches.length == 0) {
+      console.debug(`No matches found.`)
+      return
+    }
+
+    console.debug(`Found ${matches.length} matches!`)
+
+    console.debug(`Writing ics calendar file ...`)
     const calendar = ical({ name: "Daniele's Fubles Matches Calendar" })
-
     for (const match of matches) {
       const event: ICalEventData = this.matchToICalEvent(match)
       calendar.createEvent(event)
     }
-
     fs.writeFileSync(`./calendars/${userId}.ics`, calendar.toString())
+
+    console.debug(`Ics calendar file written.`)
   }
 
   private matchToICalEvent(match: MatchSummary): ICalEventData {
