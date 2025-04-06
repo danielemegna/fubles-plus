@@ -24,7 +24,10 @@ Run main entrypoint:
 $ yarn start
 ```
 
-Or watch to use autoreload during develoment:
+> you need to export `FUBLES_BEARER_TOKEN` env variable before<br/>
+> `export FUBLES_BEARER_TOKEN=xxxxx`
+
+Use watch to use autoreload during development:
 ```
 $ yarn watch
 ```

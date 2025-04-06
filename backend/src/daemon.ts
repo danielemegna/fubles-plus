@@ -4,7 +4,7 @@ import GenerateUserIcsCalendarUseCase from "./usecase/GenerateUserIcsCalendarUse
 const generateUserIcsCalendarUseCase = new GenerateUserIcsCalendarUseCase(
   new FublesSDK({
     id: 55576,
-    bearerToken: "<Bearer Token Here>"
+    bearerToken: process.env.FUBLES_BEARER_TOKEN!
   })
 )
 
