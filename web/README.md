@@ -13,15 +13,11 @@ To browse public html frontend:
     $ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
     ```
 
-### # Build SDK & frontend via Dockerfile
+## Build to ship with docker
 
-Simply run (from repository root folder):
+:warning: Run from root repository folder:
 
 ```
-$ docker build -t fubles-plus-web -f Dockerfile.web .
-$ docker run --rm -dp 80:80 --name fubles-plus-web fubles-plus-web
+$ docker build -t fubles-plus-web --target web-module . 
+$ docker run --rm -dp 8080:80 --name fubles-plus-web fubles-plus-web
 ```
-
-### Backend module (typescript)
-
-See [backend README](./backend/README.md) for details.

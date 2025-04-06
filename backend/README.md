@@ -33,9 +33,9 @@ $ yarn watch
 
 ## Build to ship with docker
 
-:warn: Run from root repository folder:
+:warning: Run from root repository folder:
 
 ```
-$ docker build -t fubles-plus-be -f Dockerfile.be .
+$ docker build -t fubles-plus-be --target backend-module . 
 $ docker run --rm -dp 4321:4321 --name fubles-plus-be fubles-plus-be
 ```
