@@ -11,9 +11,6 @@
     "watch": "vite build --watch",
     "test": "jest --runInBand --verbose"
   },
-  "engines": {
-    "node": ">=18.0.0 <19"
-  },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^18.17.1",
