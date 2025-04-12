@@ -1,11 +1,15 @@
 import http, { IncomingMessage, ServerResponse } from 'http'
-import getFlashEnrollmentsRoute from './routes/getFlashEnrollments'
-import getMatchesCalendar from './routes/getMatchesCalendar'
-import { WebRequest } from './routes/types'
 import { logger } from './logger'
+import getFlashEnrollmentsRoute from './routes/getFlashEnrollments'
+import getMatchesCalendarRoute from './routes/getMatchesCalendar'
+import { Route, WebRequest } from './routes/types'
+
+const routes: Route[] = [
+  getFlashEnrollmentsRoute,
+  getMatchesCalendarRoute
+]
 
 export default function start() {
-
   logger.info('Starting the server at localhost:4321 ...')
   http.createServer((request: IncomingMessage, response: ServerResponse) => {
     logger.debug(`Received ${request.method} on ${request.url}`)
@@ -16,23 +20,18 @@ export default function start() {
       return handle(webRequest, response);
     })
   }).listen(4321)
-
 }
 
-function handle(webRequest: WebRequest, response: ServerResponse) {
+function handle(webRequest: WebRequest, response: ServerResponse): void {
   try {
-    if (getFlashEnrollmentsRoute.shouldHandle(webRequest)) {
-      getFlashEnrollmentsRoute.handle(webRequest, response);
+    const route = routes.find((route) => route.shouldHandle(webRequest))
+    if (!route) {
+      logger.warn('Route not found!')
+      textResponse(404, 'Route not found!', response)
       return
     }
 
-    if (getMatchesCalendar.shouldHandle(webRequest)) {
-      getMatchesCalendar.handle(webRequest, response);
-      return
-    }
-
-    logger.warn('Route not found!')
-    textResponse(404, 'Route not found!', response)
+    route.handle(webRequest, response);
   } catch (error) {
     logger.error('Error during request handling!', error)
     emptyResponse(500, response)
