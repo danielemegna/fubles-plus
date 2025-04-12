@@ -1,3 +1,5 @@
+import { logger } from "./logger"
+
 export default function start() {
   setInterval(fiveMinutesLoop, 5 * 60 * 1000)
   setInterval(sixHourLoop, (6 * 60) * 60 * 1000)
@@ -8,9 +10,9 @@ export default function start() {
 }
 
 function fiveMinutesLoop() {
-  console.log(`Five minutes deamon loop minutes ...`)
+  logger.info(`Five minutes deamon loop minutes ...`)
 }
 
 function sixHourLoop() {
-  console.log(`Six hour deamon loop minutes ...`)
+  logger.info(`Six hour deamon loop minutes ...`)
 }
