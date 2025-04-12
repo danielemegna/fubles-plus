@@ -3,7 +3,7 @@ import { IncomingMessage } from "http"
 import { logger } from "../logger"
 
 export type Route = {
-  handle: (req: WebRequest, resp: ServerResponse) => void,
+  handle: (req: WebRequest, resp: ServerResponse) => Promise<void>,
   shouldHandle: (req: WebRequest) => boolean
 }
 

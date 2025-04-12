@@ -22,7 +22,7 @@ export default function start() {
   }).listen(4321)
 }
 
-function handle(webRequest: WebRequest, response: ServerResponse): void {
+async function handle(webRequest: WebRequest, response: ServerResponse): Promise<void> {
   try {
     const route = routes.find((route) => route.shouldHandle(webRequest))
     if (!route) {
@@ -31,7 +31,7 @@ function handle(webRequest: WebRequest, response: ServerResponse): void {
       return
     }
 
-    route.handle(webRequest, response);
+    await route.handle(webRequest, response);
   } catch (error) {
     logger.error('Error during request handling!', error)
     emptyResponse(500, response)

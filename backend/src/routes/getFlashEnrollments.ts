@@ -8,7 +8,7 @@ export default {
   shouldHandle: (request: WebRequest): boolean => {
     return request.method === 'GET' && request.url === '/users/55576/flash-enrollments';
   },
-  handle: (request: WebRequest, response: ServerResponse): void => {
+  handle: async (request: WebRequest, response: ServerResponse): Promise<void> => {
     const usecase = new GetFlashEnrollmentsUsecase();
     const result = usecase.run(55576);
     const responseBody = result.map(serialize);
