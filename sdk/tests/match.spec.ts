@@ -1,4 +1,4 @@
-import 'jest-extended';
+import { describe, expect, test } from 'vitest';
 import { Side, matchDetailsAsAnotherUser, matchDetailsFrom, matchSummaryFrom } from '../src/match';
 import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.json';
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
@@ -68,10 +68,10 @@ describe('build match details from api object', () => {
     expect(match.title).toBe("Calcio a 5 • Coperto")
     expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
     expect(match.structure_name).toBe("Sport Time Corsico")
-    expect(match.my_side).toBeNil()
+    expect(match.my_side).toBeNull()
     expect(match.available_slots.white).toBe(0)
     expect(match.available_slots.black).toBe(0)
-    expect(match.received_votes).toBeNil()
+    expect(match.received_votes).toBeNull()
     expect(match.points).toStrictEqual({ white: 9, black: 14})
   })
 
@@ -98,8 +98,8 @@ describe('build match details from api object', () => {
     expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 874716, "voterName": "Tommaso Forte" })
     expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 928229, "voterName": "Cristian Benvenuto" })
 
-    expect(matchAsNonPlayingUser.my_side).toBeNil();
-    expect(matchAsNonPlayingUser.received_votes).toBeNil();
+    expect(matchAsNonPlayingUser.my_side).toBeNull();
+    expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
   })
 
 })

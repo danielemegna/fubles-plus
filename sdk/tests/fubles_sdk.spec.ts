@@ -1,5 +1,5 @@
-import 'jest-extended';
-import FublesSDK, { AutheticatedUser, MatchEnrollError, MatchNotFoundError } from '../src/fubles_sdk';
+import { describe, expect, test } from 'vitest';
+import FublesSDK, { AutheticatedUser } from '../src/fubles_sdk';
 import { MatchDetails, MatchSummary, Side } from '../src/match';
 
 // set TEST_BEARER_TOKEN env variabile in order to run this tests
@@ -13,7 +13,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
 
     test('get my next scheduled matches summaries', async () => {
       const matches: MatchSummary[] = await sdk.getMyNextScheduledMatches()
-      expect(matches).not.toBeEmpty()
+      expect(matches).not.to.be.empty
     })
 
     test('get my last played matches summaries', async () => {
@@ -33,7 +33,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
     test('try to get unexisting match details', async () => {
       await expect(async () =>
         sdk.matchDetails(1000000)
-      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+      ).rejects.toThrowError('Match 1000000 not found !')
     })
 
     test('get a past played match details', async () => {
@@ -58,10 +58,10 @@ describe_withtoken('Fubles SDK integration tests', () => {
       expect(match.id).toBe(3022886)
       expect(match.available_slots.white).toBe(0)
       expect(match.available_slots.black).toBe(0)
-      expect(match.my_side).toBeNil()
+      expect(match.my_side).toBeNull()
       expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
       expect(match.points).toStrictEqual({ white: 9, black: 14 })
-      expect(match.received_votes).toBeNil()
+      expect(match.received_votes).toBeNull()
     })
 
     test('get a past match details played as another user', async () => {
@@ -95,11 +95,11 @@ describe_withtoken('Fubles SDK integration tests', () => {
 
       await expect(async () =>
         sdk.matchFollow(unexistingMatchId)
-      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+      ).rejects.toThrow('Match 1000000 not found !')
 
       await expect(async () =>
         sdk.matchUnfollow(unexistingMatchId)
-      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+      ).rejects.toThrow('Match 1000000 not found !')
     })
 
   })
@@ -113,37 +113,37 @@ describe_withtoken('Fubles SDK integration tests', () => {
     test('try to change side in already played match', async () => {
       await expect(async () =>
         sdk.matchEnroll(2498015, Side.BLACK)
-      ).rejects.toThrowWithMessage(MatchEnrollError, 'Operation not allowed in match 2498015, cannot change side')
+      ).rejects.toThrow('Operation not allowed in match 2498015, cannot change side')
     })
 
     test('try to enroll to completed match not played', async () => {
       await expect(async () =>
         sdk.matchEnroll(3038184, Side.WHITE)
-      ).rejects.toThrowWithMessage(MatchEnrollError, 'Operation not allowed, match 3038184 not subscribable')
+      ).rejects.toThrow('Operation not allowed, match 3038184 not subscribable')
     })
 
     test('try to enroll to unexisting match', async () => {
       await expect(async () =>
         sdk.matchEnroll(1000000, Side.BLACK)
-      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+      ).rejects.toThrow('Match 1000000 not found !')
     })
 
     test('try to unenroll from already played match', async () => {
       await expect(async () =>
         sdk.matchUnenroll(2498015)
-      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot unenroll user from match 2498015, forbidden')
+      ).rejects.toThrow('Cannot unenroll user from match 2498015, forbidden')
     })
 
     test('try to unenroll to completed match not played', async () => {
       await expect(async () =>
         sdk.matchUnenroll(3038184)
-      ).rejects.toThrowWithMessage(MatchEnrollError, 'Cannot unenroll user from match 3038184, user not present')
+      ).rejects.toThrow('Cannot unenroll user from match 3038184, user not present')
     })
 
     test('try to unenroll from unexisting match', async () => {
       await expect(async () =>
         sdk.matchUnenroll(1000000)
-      ).rejects.toThrowWithMessage(MatchNotFoundError, 'Match 1000000 not found !')
+      ).rejects.toThrow('Match 1000000 not found !')
     })
 
   })
