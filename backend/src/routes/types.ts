@@ -1,5 +1,6 @@
 import { ServerResponse } from "http"
 import { IncomingMessage } from "http"
+import { logger } from "../logger"
 
 export type Route = {
   handle: (req: WebRequest, resp: ServerResponse) => void,
@@ -32,7 +33,7 @@ export class WebRequest {
     try {
       return JSON.parse(receivedData)
     } catch (error) {
-      console.log('Invalid not-empty request body', receivedData)
+      logger.error('Invalid not-empty request body', receivedData)
       return undefined
     }
   }

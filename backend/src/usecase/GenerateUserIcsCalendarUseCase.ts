@@ -1,6 +1,7 @@
 import fs from 'fs'
 import ical, { ICalEventData } from 'ical-generator'
 import { FublesSDK, MatchSummary } from "fubles-plus-sdk"
+import { logger } from '../logger'
 
 export default class GenerateUserIcsCalendarUseCase {
   private fublesSDK: FublesSDK
@@ -10,19 +11,19 @@ export default class GenerateUserIcsCalendarUseCase {
   }
 
   async run(userId: number): Promise<string> {
-    console.log(`Generating ics calendar file for user ${userId} ..`)
+    logger.info(`Generating ics calendar file for user ${userId} ..`)
 
-    console.log(`Fetching matches from fubles ...`)
+    logger.info(`Fetching matches from fubles ...`)
     const matches = await this.fublesSDK.getMyNextScheduledMatches()
 
     if (matches.length == 0) {
-      console.debug(`No matches found.`)
+      logger.info(`No matches found.`)
       return ''
     }
 
-    console.debug(`Found ${matches.length} matches!`)
+    logger.info(`Found ${matches.length} matches!`)
 
-    console.debug(`Generating ...`)
+    logger.info(`Generating ...`)
     const calendar = ical({ name: "Daniele's Fubles Matches Calendar" })
     for (const match of matches) {
       const event: ICalEventData = this.matchToICalEvent(match)
