@@ -10,7 +10,7 @@ To browse public html frontend:
 3. finally serve the public folder
 
     ```
-    $ docker run --rm -it -p 80:80 -v $PWD/public:/www fnichol/uhttpd
+    $ docker run --rm -it -p 8080:80 -v $PWD:/www fnichol/uhttpd
     ```
 
 ## Build to ship with docker
