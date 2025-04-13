@@ -20,18 +20,9 @@ Api integration tests are skipped by default, to enable them set a valid `TEST_B
 $ TEST_BEARER_TOKEN=xxxxxxxxxxxxxxxxxx yarn test
 ```
 
-To bundle the library in a single ES module file (via Vite) ready to be used by browsers:
+To bundle the library in a single ES module file (via Vite):
 ```
 $ yarn build
 ```
 
 > it generates the bundled sdk js file in dist folder (`fubles-plus-sdk.js` + `index.d.ts`)
-
-Watch can be useful during development to automatically regenerate lib js files on changes:
-```
-$ yarn watch
-```
-
-> it auto regenerates the js file under public folder \
-> _note: tsc checks not performed on rebuild_
-
