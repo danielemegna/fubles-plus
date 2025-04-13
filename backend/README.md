@@ -19,6 +19,11 @@ Run TS type checks:
 $ yarn tsc
 ```
 
+Run tests:
+```
+$ yarn test
+```
+
 Run main entrypoint:
 ```
 $ yarn start
@@ -33,6 +38,14 @@ $ yarn watch
 ```
 
 > api served on http://localhost:4321
+
+If you need to update sdk module to the latest local version:
+
+```
+$ yarn upgrade fubles-plus-sdk --latest
+```
+
+> build the sdk before, see [sdk README](../sdk/README.md)
 
 ## Build to ship with docker
 
