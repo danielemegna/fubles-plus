@@ -110,9 +110,10 @@ describe('build match summary from api object', () => {
     const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
-    expect(match.availableSlots).toBe(2)
-    expect(match.mySide).toBe(Side.WHITE)
     expect(match.startingAt.toISOString()).toBe("2023-09-11T18:00:00.000Z")
+    expect(match.title).toBe("Calcio a 5")
+    expect(match.mySide).toBe(Side.WHITE)
+    expect(match.availableSlots).toBe(2)
     expect(match.points).toBeNull()
     expect(match.avgReceivedVote).toBeNull()
   })

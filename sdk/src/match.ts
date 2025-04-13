@@ -18,6 +18,7 @@ export type MatchDetails = {
 export type MatchSummary = {
   id: number,
   startingAt: Date,
+  title: string,
   structure: Structure,
   mySide: Side | null,
   availableSlots: number,
@@ -74,18 +75,19 @@ export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): Ma
   return result;
 }
 
-export function matchSummaryFrom(matchDetails: any): MatchSummary {
+export function matchSummaryFrom(matchSummary: any): MatchSummary {
   return {
-    id: matchDetails.id,
-    startingAt: new Date(matchDetails.start_datetime),
+    id: matchSummary.id,
+    title: matchSummary.title,
+    startingAt: new Date(matchSummary.start_datetime),
     structure: {
-      name: matchDetails.structure.name,
-      address: matchDetails.structure.address,
+      name: matchSummary.structure.name,
+      address: matchSummary.structure.address,
     },
-    mySide: mySideFrom(matchDetails),
-    availableSlots: matchDetails.available_slots,
-    points: matchPointsFrom(matchDetails),
-    avgReceivedVote: matchDetails.ref_player.avg_vote ?? null
+    mySide: mySideFrom(matchSummary),
+    availableSlots: matchSummary.available_slots,
+    points: matchPointsFrom(matchSummary),
+    avgReceivedVote: matchSummary.ref_player.avg_vote ?? null
   }
 }
 
