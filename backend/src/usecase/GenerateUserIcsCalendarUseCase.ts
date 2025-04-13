@@ -34,12 +34,12 @@ export default class GenerateUserIcsCalendarUseCase {
   }
 
   private matchToICalEvent(match: MatchSummary): ICalEventData {
-    const endDate = new Date(match.starting_at.getTime())
-    endDate.setHours(match.starting_at.getHours() + 1)
+    const endDate = new Date(match.startingAt.getTime())
+    endDate.setHours(match.startingAt.getHours() + 1)
 
     const matchLink = 'https://app.fubles.com/it/app/matches/' + match.id
     const description =
-      'Metti la maglia ' + (match.my_side == 'black' ? 'NERA' : 'BIANCA') + '!' +
+      'Metti la maglia ' + (match.mySide == 'black' ? 'NERA' : 'BIANCA') + '!' +
       '\n' + matchLink
 
     // TODO to create a detailed match we should use MatchDetails
@@ -47,7 +47,7 @@ export default class GenerateUserIcsCalendarUseCase {
     // this.fublesSDK.matchDetails(matchId)
 
     return {
-      start: match.starting_at,
+      start: match.startingAt,
       end: endDate,
       summary: 'Calcetto a 5',
       description: description,

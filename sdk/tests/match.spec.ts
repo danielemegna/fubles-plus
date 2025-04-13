@@ -110,11 +110,11 @@ describe('build match summary from api object', () => {
     const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
-    expect(match.available_slots).toBe(2)
-    expect(match.my_side).toBe(Side.WHITE)
-    expect(match.starting_at.toISOString()).toBe("2023-09-11T18:00:00.000Z")
+    expect(match.availableSlots).toBe(2)
+    expect(match.mySide).toBe(Side.WHITE)
+    expect(match.startingAt.toISOString()).toBe("2023-09-11T18:00:00.000Z")
     expect(match.points).toBeNull()
-    expect(match.avg_received_vote).toBeNull()
+    expect(match.avgReceivedVote).toBeNull()
   })
 
   test('has properly my_side field value', async () => {
@@ -128,17 +128,17 @@ describe('build match summary from api object', () => {
 
     const match = matchSummaryFrom(onBlackSide)
 
-    expect(match.my_side).toBe(Side.BLACK)
+    expect(match.mySide).toBe(Side.BLACK)
   })
 
   test('played match has scored points', async () => {
     const match = matchSummaryFrom(playedWithMeMatchSummary)
 
     expect(match.id).toBe(3017993)
-    expect(match.available_slots).toBe(0)
-    expect(match.my_side).toBe(Side.WHITE)
+    expect(match.availableSlots).toBe(0)
+    expect(match.mySide).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 7, black: 9 })
-    expect(match.avg_received_vote).toBe(7.3)
+    expect(match.avgReceivedVote).toBe(7.3)
   })
 
 })

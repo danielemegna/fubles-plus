@@ -15,14 +15,13 @@ export type MatchDetails = {
   points: MatchPoints | null,
 }
 
-// TODO every domain types should have camel-case fields
 export type MatchSummary = {
   id: number,
-  starting_at: Date,
-  my_side: Side | null,
-  available_slots: number,
+  startingAt: Date,
+  mySide: Side | null,
+  availableSlots: number,
   points: MatchPoints | null,
-  avg_received_vote: number | null
+  avgReceivedVote: number | null
 }
 
 type MatchPoints = {
@@ -72,11 +71,11 @@ export function matchDetailsAsAnotherUser(matchDetails: any, userId: number): Ma
 export function matchSummaryFrom(matchDetails: any): MatchSummary {
   return {
     id: matchDetails.id,
-    starting_at: new Date(matchDetails.start_datetime),
-    my_side: mySideFrom(matchDetails),
-    available_slots: matchDetails.available_slots,
+    startingAt: new Date(matchDetails.start_datetime),
+    mySide: mySideFrom(matchDetails),
+    availableSlots: matchDetails.available_slots,
     points: matchPointsFrom(matchDetails),
-    avg_received_vote: matchDetails.ref_player.avg_vote ?? null
+    avgReceivedVote: matchDetails.ref_player.avg_vote ?? null
   }
 }
 
