@@ -1,4 +1,3 @@
-import fs from 'fs'
 import ical, { ICalEventData } from 'ical-generator'
 import { FublesSDK, MatchSummary } from "fubles-plus-sdk"
 import { logger } from '../logger'
@@ -38,21 +37,18 @@ export default class GenerateUserIcsCalendarUseCase {
     endDate.setHours(match.startingAt.getHours() + 1)
 
     const matchLink = 'https://app.fubles.com/it/app/matches/' + match.id
+    const location = match.structure.name + ', ' + match.structure.address
     const description =
       'Metti la maglia ' + (match.mySide == 'black' ? 'NERA' : 'BIANCA') + '!' +
       '\n' + matchLink
 
-    // TODO to create a detailed match we should use MatchDetails
-    // but it is available only with separated api call using
-    // this.fublesSDK.matchDetails(matchId)
-
     return {
       start: match.startingAt,
       end: endDate,
-      summary: 'Calcetto a 5',
+      summary: match.title,
       description: description,
-      location: 'Sport Time Corsico, Via Visconti di Modrone, 2, 20094 Corsico MI, Italia',
-      url: 'https://app.fubles.com/it/app/matches/' + match.id
+      location: location,
+      url: matchLink
     }
   }
 }
