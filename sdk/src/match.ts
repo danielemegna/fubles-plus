@@ -18,6 +18,7 @@ export type MatchDetails = {
 export type MatchSummary = {
   id: number,
   startingAt: Date,
+  structure: Structure,
   mySide: Side | null,
   availableSlots: number,
   points: MatchPoints | null,
@@ -27,6 +28,11 @@ export type MatchSummary = {
 type MatchPoints = {
   white: number,
   black: number
+}
+
+type Structure = {
+  name: string,
+  address: string
 }
 
 export const enum Side {
@@ -72,6 +78,10 @@ export function matchSummaryFrom(matchDetails: any): MatchSummary {
   return {
     id: matchDetails.id,
     startingAt: new Date(matchDetails.start_datetime),
+    structure: {
+      name: matchDetails.structure.name,
+      address: matchDetails.structure.address,
+    },
     mySide: mySideFrom(matchDetails),
     availableSlots: matchDetails.available_slots,
     points: matchPointsFrom(matchDetails),

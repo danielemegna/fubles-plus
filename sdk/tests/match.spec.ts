@@ -106,7 +106,7 @@ describe('build match details from api object', () => {
 
 describe('build match summary from api object', () => {
 
-  test('has properly fields values', async () => {
+  test('has proper fields values', async () => {
     const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
@@ -117,7 +117,16 @@ describe('build match summary from api object', () => {
     expect(match.avgReceivedVote).toBeNull()
   })
 
-  test('has properly my_side field value', async () => {
+  test('has proper structure values', async () => {
+    const match = matchSummaryFrom(openWithMeMatchSummary)
+
+    expect(match.structure).toStrictEqual({
+      name: "Sport Time Corsico",
+      address: "Via Modrone di Visconti, 4, 20094 Corsico MI, Italia",
+    })
+  })
+
+  test('has proper mySide field value', async () => {
     const onBlackSide = {
       ...openWithMeMatchSummary,
       ref_player: {
