@@ -9,13 +9,14 @@ export default {
     return request.method === 'GET' && request.url === '/users/55576/calendar';
   },
   handle: async (request: WebRequest, response: ServerResponse): Promise<void> => {
+    // TODO parse user id from url
     const generateUserIcsCalendarUseCase = new GenerateUserIcsCalendarUseCase(
       new FublesSDK({
         id: 55576,
         bearerToken: process.env.FUBLES_BEARER_TOKEN!
       })
     )
-    const icsFileContent = await generateUserIcsCalendarUseCase.run(55576)
+    const icsFileContent = await generateUserIcsCalendarUseCase.run(55576) // TODO use the id from url
     icsResponse(icsFileContent, response);
   }
 } as Route
