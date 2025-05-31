@@ -22,7 +22,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
     })
 
     test('get last played matches summaries of another user', async () => {
-      const matches: MatchSummary[] = await sdk.getLastPlayedMatchesFor(774702)
+      const matches: MatchSummary[] = await sdk.getLastPlayedMatchesFor(1044)
       expect(matches).toHaveLength(4)
     })
 
