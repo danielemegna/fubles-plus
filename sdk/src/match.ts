@@ -91,11 +91,11 @@ export function matchSummaryFrom(matchSummary: any): MatchSummary {
   }
 }
 
-function mySideFrom(matchDetails: any): Side | null {
-  if (!matchDetails.me.is_playing)
+function mySideFrom(match: any): Side | null {
+  if (!match.ref_player)
     return null;
 
-  return matchDetails.ref_player.side_key === 1 ? Side.WHITE : Side.BLACK
+  return match.ref_player.side_key === 1 ? Side.WHITE : Side.BLACK
 }
 
 function sideFor(matchDetails: any, userId: number): Side | null {

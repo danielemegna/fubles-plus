@@ -14,21 +14,39 @@ describe_withtoken('Fubles SDK integration tests', () => {
     test('get my next scheduled matches summaries', async () => {
       const matches: MatchSummary[] = await sdk.getMyNextScheduledMatches()
       expect(matches).not.to.be.empty
+      const nextMatch = matches[0]
+      expect(nextMatch.mySide).not.toBeNull()
+      expect(nextMatch.avgReceivedVote).toBeNull()
+      expect(nextMatch.points).toBeNull()
     })
 
     test('get next scheduled matches of another user', async () => {
       const matches: MatchSummary[] = await sdk.getNextScheduledMatchesFor(1044)
       expect(matches).not.to.be.empty
+      const nextMatch = matches[0]
+      expect(nextMatch.mySide).not.toBeNull()
+      expect(nextMatch.avgReceivedVote).toBeNull()
+      expect(nextMatch.points).toBeNull()
     })
 
     test('get my last played matches summaries', async () => {
       const matches: MatchSummary[] = await sdk.getMyLastPlayedMatches()
       expect(matches).toHaveLength(4)
+      const pastMatch = matches[3]
+      expect(pastMatch.availableSlots).toBe(0)
+      expect(pastMatch.avgReceivedVote).not.toBeNull()
+      expect(pastMatch.mySide).not.toBeNull()
+      expect(pastMatch.points).not.toBeNull()
     })
 
     test('get last played matches summaries of another user', async () => {
       const matches: MatchSummary[] = await sdk.getLastPlayedMatchesFor(1044)
       expect(matches).toHaveLength(4)
+      const pastMatch = matches[3]
+      expect(pastMatch.availableSlots).toBe(0)
+      expect(pastMatch.avgReceivedVote).not.toBeNull()
+      expect(pastMatch.mySide).not.toBeNull()
+      expect(pastMatch.points).not.toBeNull()
     })
 
   })

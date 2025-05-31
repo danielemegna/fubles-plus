@@ -7,6 +7,7 @@ import playedWithMeMatchDetails from './api_samples/match_details/played_with_me
 import playedWithoutMeMatchDetails from './api_samples/match_details/played_without_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
+import playedWithoutMeMatchSummary from './api_samples/match_summary/played_without_me.json';
 
 describe('build match details from api object', () => {
 
@@ -72,7 +73,7 @@ describe('build match details from api object', () => {
     expect(match.available_slots.white).toBe(0)
     expect(match.available_slots.black).toBe(0)
     expect(match.received_votes).toBeNull()
-    expect(match.points).toStrictEqual({ white: 9, black: 14})
+    expect(match.points).toStrictEqual({ white: 9, black: 14 })
   })
 
   test('played without me match with another player details', async () => {
@@ -80,12 +81,12 @@ describe('build match details from api object', () => {
     const matchAsSecondUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 718115)
     const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 999999)
 
-    for(let matchDetails of [matchAsFirstUser, matchAsSecondUser, matchAsNonPlayingUser]) {
+    for (let matchDetails of [matchAsFirstUser, matchAsSecondUser, matchAsNonPlayingUser]) {
       expect(matchDetails.id).toBe(3022562)
       expect(matchDetails.available_slots.white).toBe(0)
       expect(matchDetails.available_slots.black).toBe(0)
       expect(matchDetails.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
-      expect(matchDetails.points).toStrictEqual({ white: 9, black: 14})
+      expect(matchDetails.points).toStrictEqual({ white: 9, black: 14 })
     }
 
     expect(matchAsFirstUser.my_side).toBe(Side.BLACK)
@@ -151,4 +152,13 @@ describe('build match summary from api object', () => {
     expect(match.avgReceivedVote).toBe(7.3)
   })
 
+  test('played without me should have side and vote of reference player', async () => {
+    const match = matchSummaryFrom(playedWithoutMeMatchSummary)
+
+    expect(match.id).toBe(3094995)
+    expect(match.availableSlots).toBe(0)
+    expect(match.mySide).toBe(Side.WHITE)
+    expect(match.points).toStrictEqual({ white: 12, black: 11 })
+    expect(match.avgReceivedVote).toBe(7.6)
+  })
 })
