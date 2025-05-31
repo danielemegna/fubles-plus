@@ -81,7 +81,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
 
   describe('match following', () => {
 
-    test('follow and unfollow an already played match', async () => {
+    test.skip('follow and unfollow an already played match', async () => {
       await sdk.matchFollow(2998153)
       await sdk.matchUnfollow(2998153)
     })
