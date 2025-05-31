@@ -8,7 +8,11 @@ export default class FublesSDK {
   }
 
   async getMyNextScheduledMatches(): Promise<MatchSummary[]> {
-    const response = await this.fetchAt(`/users/${this.authenticatedUser.id}/matches/scheduled`)
+    return this.getNextScheduledMatchesFor(this.authenticatedUser.id)
+  }
+
+  async getNextScheduledMatchesFor(userId: number): Promise<MatchSummary[]> {
+    const response = await this.fetchAt(`/users/${userId}/matches/scheduled`)
     const responseBody = await response.json()
     return responseBody.items.map(matchSummaryFrom)
   }

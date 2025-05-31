@@ -16,6 +16,11 @@ describe_withtoken('Fubles SDK integration tests', () => {
       expect(matches).not.to.be.empty
     })
 
+    test('get next scheduled matches of another user', async () => {
+      const matches: MatchSummary[] = await sdk.getNextScheduledMatchesFor(1044)
+      expect(matches).not.to.be.empty
+    })
+
     test('get my last played matches summaries', async () => {
       const matches: MatchSummary[] = await sdk.getMyLastPlayedMatches()
       expect(matches).toHaveLength(4)
