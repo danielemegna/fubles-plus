@@ -47,80 +47,89 @@ describe('build match details from api object', () => {
     expect(match.points).toBeNull()
   })
 
-  test('played with me match', async () => {
-    const match = matchDetailsFrom(playedWithMeMatchDetails)
+  describe('played with me match', () => {
 
-    expect(match.id).toBe(3009507)
-    expect(match.title).toBe("Calcio a 5")
-    expect(match.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
-    expect(match.structure_name).toBe("Sport Time Corsico")
-    expect(match.my_side).toBe(Side.WHITE)
-    expect(match.available_slots.white).toBe(0)
-    expect(match.available_slots.black).toBe(0)
-    expect(match.received_votes).toHaveLength(8)
-    expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 986622, "voterName": "Oliviero Giroud" })
-    expect(match.points).toStrictEqual({ white: 7, black: 6 })
+    test('as myself', async () => {
+      const match = matchDetailsFrom(playedWithMeMatchDetails)
+
+      expect(match.id).toBe(3009507)
+      expect(match.title).toBe("Calcio a 5")
+      expect(match.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
+      expect(match.structure_name).toBe("Sport Time Corsico")
+      expect(match.my_side).toBe(Side.WHITE)
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.received_votes).toHaveLength(8)
+      expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 986622, "voterName": "Oliviero Giroud" })
+      expect(match.points).toStrictEqual({ white: 7, black: 6 })
+    })
+
+    test('as another user', async () => {
+      const matchAsAnotherUser = matchDetailsAsAnotherUser(playedWithMeMatchDetails, 688144)
+      const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithMeMatchDetails, 999999)
+
+      for (let matchDetails of [matchAsAnotherUser, matchAsNonPlayingUser]) {
+        expect(matchDetails.id).toBe(3009507)
+        expect(matchDetails.available_slots.white).toBe(0)
+        expect(matchDetails.available_slots.black).toBe(0)
+        expect(matchDetails.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
+        expect(matchDetails.points).toStrictEqual({ white: 7, black: 6 })
+      }
+
+      expect(matchAsAnotherUser.my_side).toBe(Side.BLACK)
+      expect(matchAsAnotherUser.received_votes).toContainEqual({ "vote": 7, "voterId": 98353, "voterName": "Beppe Tarantino" })
+
+      expect(matchAsNonPlayingUser.my_side).toBeNull();
+      expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
+    })
+
   })
 
-  test('played without me match', async () => {
-    const match = matchDetailsFrom(playedWithoutMeMatchDetails)
+  describe('played without me match', () => {
 
-    expect(match.id).toBe(3022562)
-    expect(match.title).toBe("Calcio a 5 • Coperto")
-    expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
-    expect(match.structure_name).toBe("Sport Time Corsico")
-    expect(match.my_side).toBeNull()
-    expect(match.available_slots.white).toBe(0)
-    expect(match.available_slots.black).toBe(0)
-    expect(match.received_votes).toBeNull()
-    expect(match.points).toStrictEqual({ white: 9, black: 14 })
+    test('as myself', async () => {
+      const match = matchDetailsFrom(playedWithoutMeMatchDetails)
+
+      expect(match.id).toBe(3022562)
+      expect(match.title).toBe("Calcio a 5 • Coperto")
+      expect(match.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+      expect(match.structure_name).toBe("Sport Time Corsico")
+      expect(match.my_side).toBeNull()
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.received_votes).toBeNull()
+      expect(match.points).toStrictEqual({ white: 9, black: 14 })
+    })
+
+    test('as another user', async () => {
+      const matchAsFirstUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 874716)
+      const matchAsSecondUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 718115)
+      const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 999999)
+
+      for (let matchDetails of [matchAsFirstUser, matchAsSecondUser, matchAsNonPlayingUser]) {
+        expect(matchDetails.id).toBe(3022562)
+        expect(matchDetails.available_slots.white).toBe(0)
+        expect(matchDetails.available_slots.black).toBe(0)
+        expect(matchDetails.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
+        expect(matchDetails.points).toStrictEqual({ white: 9, black: 14 })
+      }
+
+      expect(matchAsFirstUser.my_side).toBe(Side.BLACK)
+      expect(matchAsFirstUser.received_votes).toHaveLength(4)
+      expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9.5, "voterId": 997122, "voterName": "Alessandro Puntazza" })
+      expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9, "voterId": 919328, "voterName": "Donato Virgilio" })
+
+      expect(matchAsSecondUser.my_side).toBe(Side.WHITE)
+      expect(matchAsSecondUser.received_votes).toHaveLength(4)
+      expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 874716, "voterName": "Tommaso Forte" })
+      expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 928229, "voterName": "Cristian Benvenuto" })
+
+      expect(matchAsNonPlayingUser.my_side).toBeNull();
+      expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
+    })
+
   })
 
-  test('played without me match as another user', async () => {
-    const matchAsFirstUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 874716)
-    const matchAsSecondUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 718115)
-    const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithoutMeMatchDetails, 999999)
-
-    for (let matchDetails of [matchAsFirstUser, matchAsSecondUser, matchAsNonPlayingUser]) {
-      expect(matchDetails.id).toBe(3022562)
-      expect(matchDetails.available_slots.white).toBe(0)
-      expect(matchDetails.available_slots.black).toBe(0)
-      expect(matchDetails.starting_at.toISOString()).toBe("2024-01-09T19:00:00.000Z")
-      expect(matchDetails.points).toStrictEqual({ white: 9, black: 14 })
-    }
-
-    expect(matchAsFirstUser.my_side).toBe(Side.BLACK)
-    expect(matchAsFirstUser.received_votes).toHaveLength(4)
-    expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9.5, "voterId": 997122, "voterName": "Alessandro Puntazza" })
-    expect(matchAsFirstUser.received_votes).toContainEqual({ "vote": 9, "voterId": 919328, "voterName": "Donato Virgilio" })
-
-    expect(matchAsSecondUser.my_side).toBe(Side.WHITE)
-    expect(matchAsSecondUser.received_votes).toHaveLength(4)
-    expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 874716, "voterName": "Tommaso Forte" })
-    expect(matchAsSecondUser.received_votes).toContainEqual({ "vote": 7.5, "voterId": 928229, "voterName": "Cristian Benvenuto" })
-
-    expect(matchAsNonPlayingUser.my_side).toBeNull();
-    expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
-  })
-
-  test('played with me as another user', async () => {
-    const matchAsAnotherUser = matchDetailsAsAnotherUser(playedWithMeMatchDetails, 688144)
-    const matchAsNonPlayingUser = matchDetailsAsAnotherUser(playedWithMeMatchDetails, 999999)
-
-    for (let matchDetails of [matchAsAnotherUser, matchAsNonPlayingUser]) {
-      expect(matchDetails.id).toBe(3009507)
-      expect(matchDetails.available_slots.white).toBe(0)
-      expect(matchDetails.available_slots.black).toBe(0)
-      expect(matchDetails.starting_at.toISOString()).toBe("2023-10-25T18:00:00.000Z")
-      expect(matchDetails.points).toStrictEqual({ white: 7, black: 6 })
-    }
-
-    expect(matchAsAnotherUser.my_side).toBe(Side.BLACK)
-    expect(matchAsAnotherUser.received_votes).toContainEqual({ "vote": 7, "voterId": 98353, "voterName": "Beppe Tarantino" })
-
-    expect(matchAsNonPlayingUser.my_side).toBeNull();
-    expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
-  })
 
 })
 
