@@ -20,6 +20,14 @@ describe_withtoken('Fubles SDK integration tests', () => {
       expect(nextMatch.points).toBeNull()
     })
 
+    test('get my next scheduled match', async () => {
+      const nextMatch: MatchSummary | null = await sdk.getMyNextScheduledMatch()
+      expect(nextMatch).not.toBeNull()
+      expect(nextMatch!.mySide).not.toBeNull()
+      expect(nextMatch!.avgReceivedVote).toBeNull()
+      expect(nextMatch!.points).toBeNull()
+    })
+
     test('get next scheduled matches of another user', async () => {
       const matches: MatchSummary[] = await sdk.getNextScheduledMatchesFor(1044)
       expect(matches).not.to.be.empty
@@ -27,6 +35,11 @@ describe_withtoken('Fubles SDK integration tests', () => {
       expect(nextMatch.mySide).not.toBeNull()
       expect(nextMatch.avgReceivedVote).toBeNull()
       expect(nextMatch.points).toBeNull()
+    })
+
+    test('get next scheduled match of another user without any scheduled match', async () => {
+      const nextMatch: MatchSummary | null = await sdk.getNextScheduledMatchFor(215253)
+      expect(nextMatch).toBeNull()
     })
 
     test('get my last played matches summaries', async () => {
