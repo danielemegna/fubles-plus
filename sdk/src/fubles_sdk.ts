@@ -37,7 +37,20 @@ export default class FublesSDK {
   async getLastPlayedMatchesFor(userId: number): Promise<MatchSummary[]> {
     const response = await this.fetchAt(`/users/${userId}/matches/played?offset=0&page_size=4`)
     const responseBody = await response.json()
-    return responseBody.items.map(matchSummaryFrom)
+    const lastPlayedMatches = responseBody.items.map(matchSummaryFrom)
+    await this.addMatchFinishedFewMinutesAgo(userId, lastPlayedMatches);
+    return lastPlayedMatches
+  }
+
+  private async addMatchFinishedFewMinutesAgo(userId: number, lastPlayedMatches: MatchSummary[]) {
+    const nextMatch = await this.getNextScheduledMatchFor(userId);
+
+    // TODO: test on next match
+    // use startingAt if this does not work
+    // delete the comment otherwise
+    //if (nextMatch && nextMatch.startingAt < new Date()) {
+    if (nextMatch && nextMatch.points)
+      lastPlayedMatches.unshift(nextMatch);
   }
 
   async matchDetails(matchId: number): Promise<MatchDetails> {
