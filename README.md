@@ -80,6 +80,12 @@ Given a recent match that I played, I want to see votes players gave to me witho
 
 > in fubles you cannot see votes without giving your votes before
 
+#### Show level variation
+
+Given some recent matches that I played, I want to see the level variation caused by that match.
+
+> this information is never shown by fubles but present as `level_variation` in api payload
+
 ## Dev notes
 
 To detailed instructions regardings the project modules
