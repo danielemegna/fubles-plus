@@ -100,7 +100,7 @@ function mySideFrom(match: any): Side | null {
 
 function sideFor(matchDetails: any, userId: number): Side | null {
   const user = findUserIn(matchDetails, userId);
-  if(user == null) return null;
+  if (user == null) return null;
 
   return user.side_key === 1 ? Side.WHITE : Side.BLACK
 }
@@ -146,8 +146,11 @@ function matchPointsFrom(matchDetails: any): MatchPoints | null {
 }
 
 function hasBeenPlayed(matchDetails: any): boolean {
-  return [
-    MatchStatus.VOTING,
-    MatchStatus.CONCLUDED
-  ].includes(matchDetails.status)
+  if ([MatchStatus.VOTING, MatchStatus.CONCLUDED].includes(matchDetails.status))
+    return true
+
+  if (matchDetails.me.can_report_score)
+    return true
+
+  return false
 }

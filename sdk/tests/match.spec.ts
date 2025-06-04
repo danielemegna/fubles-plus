@@ -4,6 +4,7 @@ import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.jso
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
 import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
+import justFinishedWithMe from './api_samples/match_details/just_finished_with_me.json';
 import playedWithoutMeMatchDetails from './api_samples/match_details/played_without_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
@@ -83,6 +84,21 @@ describe('build match details from api object', () => {
       expect(matchAsNonPlayingUser.received_votes).toBeUndefined();
     })
 
+    test('just finished as myself', async () => {
+      const match = matchDetailsFrom(justFinishedWithMe)
+
+      expect(match.id).toBe(3083220)
+      expect(match.title).toBe("Calcio a 5")
+      expect(match.starting_at.toISOString()).toBe("2025-06-04T17:30:00.000Z")
+      expect(match.structure_name).toBe("Sport Time Corsico")
+      expect(match.my_side).toBe(Side.BLACK)
+      expect(match.available_slots.white).toBe(0)
+      expect(match.available_slots.black).toBe(0)
+      expect(match.received_votes).toHaveLength(2)
+      expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 992111, "voterName": "Antonio Turco" })
+      expect(match.received_votes).toContainEqual({ "vote": 6.5, "voterId": 921880, "voterName": "Alessio Crudo" })
+      expect(match.points).toStrictEqual({ white: 14, black: 5 })
+    })
   })
 
   describe('played without me match', () => {
