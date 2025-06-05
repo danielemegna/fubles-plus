@@ -12,7 +12,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
   describe('match summaries reading', () => {
 
     test('get my next scheduled matches summaries', async () => {
-      const matches: MatchSummary[] = await sdk.getMyNextScheduledMatches()
+      const matches: MatchSummary[] = await sdk.getMyNextScheduledMatches(3)
       expect(matches).not.to.be.empty
       const nextMatch = matches[0]
       expect(nextMatch.mySide).not.toBeNull()
@@ -29,7 +29,7 @@ describe_withtoken('Fubles SDK integration tests', () => {
     })
 
     test('get next scheduled matches of another user', async () => {
-      const matches: MatchSummary[] = await sdk.getNextScheduledMatchesFor(1044)
+      const matches: MatchSummary[] = await sdk.getNextScheduledMatchesFor(1044, 3)
       expect(matches).not.to.be.empty
       const nextMatch = matches[0]
       expect(nextMatch.mySide).not.toBeNull()

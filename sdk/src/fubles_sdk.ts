@@ -7,8 +7,8 @@ export default class FublesSDK {
     this.authenticatedUser = autheticatedUser
   }
 
-  async getMyNextScheduledMatches(): Promise<MatchSummary[]> {
-    return this.getNextScheduledMatchesFor(this.authenticatedUser.id)
+  async getMyNextScheduledMatches(limit: number): Promise<MatchSummary[]> {
+    return this.getNextScheduledMatchesFor(this.authenticatedUser.id, limit)
   }
 
   async getMyNextScheduledMatch(): Promise<MatchSummary | null> {
@@ -23,8 +23,7 @@ export default class FublesSDK {
     return null
   }
 
-  // TODO: remove default 4 as limit ... i do not like default param values
-  async getNextScheduledMatchesFor(userId: number, limit: number = 4): Promise<MatchSummary[]> {
+  async getNextScheduledMatchesFor(userId: number, limit: number): Promise<MatchSummary[]> {
     const response = await this.fetchAt(`/users/${userId}/matches/scheduled?page_size=${limit}`)
     const responseBody = await response.json()
     return responseBody.items.map(matchSummaryFrom)
@@ -34,6 +33,7 @@ export default class FublesSDK {
     return this.getLastPlayedMatchesFor(this.authenticatedUser.id)
   }
 
+  // TODO: add limit param
   async getLastPlayedMatchesFor(userId: number): Promise<MatchSummary[]> {
     const response = await this.fetchAt(`/users/${userId}/matches/played?offset=0&page_size=4`)
     const responseBody = await response.json()

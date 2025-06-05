@@ -13,7 +13,7 @@ export default class GenerateUserIcsCalendarUseCase {
     logger.info(`Generating ics calendar file for user ${userId} ..`)
 
     logger.info(`Fetching matches from fubles ...`)
-    const matches = await this.fublesSDK.getNextScheduledMatchesFor(userId);
+    const matches = await this.fublesSDK.getNextScheduledMatchesFor(userId, 10);
 
     if (matches.length == 0) {
       logger.info(`No matches found.`)
