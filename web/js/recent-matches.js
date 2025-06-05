@@ -8,7 +8,7 @@ const authenticatedUser = {
 /* ==== END SETTINGS ==== */
 
 const fublesSdk = new FublesSDK(authenticatedUser)
-const userId = readUserIdQueryParam()
+const userId = visitingUserId()
 let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesSdk)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {
@@ -52,21 +52,22 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
     </div>`;
 }).join("");
 
+function visitingUserId() {
+  const userIdQueryParam = readUserIdQueryParam()
+  return userIdQueryParam ?? authenticatedUser.id
+}
+
 function readUserIdQueryParam() {
   const urlParams = new URLSearchParams(window.location.search)
   const userIdParam = urlParams.get('userId') || urlParams.get('userid')
-  return parseInt(userIdParam)
+  const parsedUserIdParam = parseInt(userIdParam)
+  if(!parsedUserIdParam || isNaN(parsedUserIdParam))
+    return null
+
+  return parsedUserIdParam
 }
 
 async function fetchMatches(userId, fublesSdk) {
-  if (!userId) {
-    const summariesOfLastPlayedMatches = await fublesSdk.getMyLastPlayedMatches(5);
-    return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
-      const details = await fublesSdk.matchDetails(summary.id);
-      return [summary, details];
-    }));
-  }
-
   const summariesOfLastPlayedMatches = await fublesSdk.getLastPlayedMatchesFor(userId, 5);
   return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
     const details = await fublesSdk.matchDetailsAsAnotherUser(summary.id, userId);
