@@ -60,14 +60,14 @@ function readUserIdQueryParam() {
 
 async function fetchMatches(userId, fublesSdk) {
   if (!userId) {
-    const summariesOfLastPlayedMatches = await fublesSdk.getMyLastPlayedMatches();
+    const summariesOfLastPlayedMatches = await fublesSdk.getMyLastPlayedMatches(5);
     return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
       const details = await fublesSdk.matchDetails(summary.id);
       return [summary, details];
     }));
   }
 
-  const summariesOfLastPlayedMatches = await fublesSdk.getLastPlayedMatchesFor(userId);
+  const summariesOfLastPlayedMatches = await fublesSdk.getLastPlayedMatchesFor(userId, 5);
   return await Promise.all(summariesOfLastPlayedMatches.map(async summary => {
     const details = await fublesSdk.matchDetailsAsAnotherUser(summary.id, userId);
     return [summary, details];

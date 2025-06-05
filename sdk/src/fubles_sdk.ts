@@ -29,20 +29,27 @@ export default class FublesSDK {
     return responseBody.items.map(matchSummaryFrom)
   }
 
-  async getMyLastPlayedMatches(): Promise<MatchSummary[]> {
-    return this.getLastPlayedMatchesFor(this.authenticatedUser.id)
+  async getMyLastPlayedMatches(limit: number): Promise<MatchSummary[]> {
+    return this.getLastPlayedMatchesFor(this.authenticatedUser.id, limit)
   }
 
-  // TODO: add limit param
-  async getLastPlayedMatchesFor(userId: number): Promise<MatchSummary[]> {
-    const response = await this.fetchAt(`/users/${userId}/matches/played?offset=0&page_size=4`)
+  async getLastPlayedMatchesFor(userId: number, limit: number): Promise<MatchSummary[]> {
+    const result: MatchSummary[] = []
+
+    const justFinishedMatch = await this.getMatchFinishedFewMinutesAgo(userId)
+    if (justFinishedMatch) {
+      result.push(justFinishedMatch)
+      limit--
+    }
+
+    const response = await this.fetchAt(`/users/${userId}/matches/played?offset=0&page_size=${limit}`)
     const responseBody = await response.json()
-    const lastPlayedMatches = responseBody.items.map(matchSummaryFrom)
-    await this.addMatchFinishedFewMinutesAgo(userId, lastPlayedMatches);
-    return lastPlayedMatches
+    const fetchedMatches = responseBody.items.map(matchSummaryFrom)
+    result.push(...fetchedMatches)
+    return result
   }
 
-  private async addMatchFinishedFewMinutesAgo(userId: number, lastPlayedMatches: MatchSummary[]) {
+  private async getMatchFinishedFewMinutesAgo(userId: number): Promise<MatchSummary | null> {
     const nextMatch = await this.getNextScheduledMatchFor(userId);
 
     // TODO: test on next match
@@ -50,7 +57,9 @@ export default class FublesSDK {
     // delete the comment otherwise
     //if (nextMatch && nextMatch.startingAt < new Date()) {
     if (nextMatch && nextMatch.points)
-      lastPlayedMatches.unshift(nextMatch);
+      return nextMatch
+
+    return null
   }
 
   async matchDetails(matchId: number): Promise<MatchDetails> {

@@ -43,9 +43,9 @@ describe_withtoken('Fubles SDK integration tests', () => {
     })
 
     test('get my last played matches summaries', async () => {
-      const matches: MatchSummary[] = await sdk.getMyLastPlayedMatches()
-      expect(matches).toHaveLength(4)
-      const pastMatch = matches[3]
+      const matches: MatchSummary[] = await sdk.getMyLastPlayedMatches(3)
+      expect(matches).toHaveLength(3)
+      const pastMatch = matches[2]
       expect(pastMatch.availableSlots).toBe(0)
       expect(pastMatch.avgReceivedVote).not.toBeNull()
       expect(pastMatch.mySide).not.toBeNull()
@@ -53,9 +53,9 @@ describe_withtoken('Fubles SDK integration tests', () => {
     })
 
     test('get last played matches summaries of another user', async () => {
-      const matches: MatchSummary[] = await sdk.getLastPlayedMatchesFor(1044)
-      expect(matches).toHaveLength(4)
-      const pastMatch = matches[3]
+      const matches: MatchSummary[] = await sdk.getLastPlayedMatchesFor(1044, 3)
+      expect(matches).toHaveLength(3)
+      const pastMatch = matches[2]
       expect(pastMatch.availableSlots).toBe(0)
       expect(pastMatch.avgReceivedVote).not.toBeNull()
       expect(pastMatch.mySide).not.toBeNull()
