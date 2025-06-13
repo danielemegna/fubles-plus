@@ -84,11 +84,11 @@
         "phone_complete": "+0 02.38925474",
         "id": 1370,
         "partner": true,
-        "lat": 45.4274201,
-        "lng": 9.112,
+        "lat": 45.1174201,
+        "lng": 9.122,
         "name": "Sport Time Corsico",
-        "address": "Via Modrone di Visconti, 4, 20094 Corsico MI, Italia",
-        "sub_title": "2 Km - Via Modrone di Visconti, 4, 20094 Corsico MI, Italia"
+        "address": "Via Ammiraglio dei Conti, 16, 20094 Corsico MI, Italia",
+        "sub_title": "2 Km - Via Ammiraglio dei Conti, 16, 20094 Corsico MI, Italia"
     },
     "type": 1,
     "side_1": {
@@ -732,7 +732,7 @@
     "goalkeeper_required": false,
     "goalkeepers_count": 0,
     "reliable_players_required": false,
-    "notes": "SPORT TIME CORSICO\nArrivare in anticipo. \nSi paga IN CONTANTI prima di giocare. \n\nCampo in erba sintetica di ultima generazione.\nSe all'aperto si gioca anche con pioggia. \n\nChi manda la sostituzione ha comunque la responsabilità di presentarsi se non si trova nessuno. \n\nChi bidona dovrà pagare la quota entro il giorno successivo, verrà bloccato finché non paga. \n\nSi è responsabili di chi si iscrive, in caso di bidone di una persona iscritta da voi la quota la dovete pagare subito al campo. \n\nBlacklist per comportamenti inappropriati, ritardi, bidone. \n\nSPORT TIME COSICO\nVia Modrone di Visconti, 4, 20094 Corsico, MI. \n\nN.B. Non sarà possibile cancellarsi dalla partita a meno di 24 ore dall'inizio.",
+    "notes": "SPORT TIME CORSICO\nArrivare in anticipo. \nSi paga IN CONTANTI prima di giocare. \n\nCampo in erba sintetica di ultima generazione.\nSe all'aperto si gioca anche con pioggia. \n\nChi manda la sostituzione ha comunque la responsabilità di presentarsi se non si trova nessuno. \n\nChi bidona dovrà pagare la quota entro il giorno successivo, verrà bloccato finché non paga. \n\nSi è responsabili di chi si iscrive, in caso di bidone di una persona iscritta da voi la quota la dovete pagare subito al campo. \n\nBlacklist per comportamenti inappropriati, ritardi, bidone. \n\nSPORT TIME COSICO\nVia Ammiraglio dei Conti, 16, 20094 Corsico, MI. \n\nN.B. Non sarà possibile cancellarsi dalla partita a meno di 24 ore dall'inizio.",
     "imminent_interval": "24H",
     "ground": {
         "id": 1,

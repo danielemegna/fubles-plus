@@ -168,7 +168,7 @@ describe('build match summary from api object', () => {
 
     expect(match.structure).toStrictEqual({
       name: "Sport Time Corsico",
-      address: "Via Modrone di Visconti, 4, 20094 Corsico MI, Italia",
+      address: "Via Ammiraglio dei Conti, 16, 20094 Corsico MI, Italia",
     })
   })
 
