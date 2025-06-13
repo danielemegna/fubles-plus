@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { afterAll, beforeAll, describe, expect, test, vi } from 'vitest';
 import { Side, matchDetailsAsAnotherUser, matchDetailsFrom, matchSummaryFrom } from '../src/match';
 import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.json';
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
@@ -6,11 +6,21 @@ import justFinishedWithMeDetails from './api_samples/match_details/just_finished
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
 import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
 import playedWithoutMeMatchDetails from './api_samples/match_details/played_without_me.json';
+import justFinishedWithMeSummary from './api_samples/match_summary/just_finished_with_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
 import playedWithoutMeMatchSummary from './api_samples/match_summary/played_without_me.json';
 
 describe('build match details from api object', () => {
+
+  beforeAll(() => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2025-06-12T20:45:00+02:00'))
+  })
+
+  afterAll(() => {
+    vi.useRealTimers()
+  })
 
   test('full with me match', async () => {
     const match = matchDetailsFrom(fullWithMeMatchDetails)
@@ -209,5 +219,15 @@ describe('build match summary from api object', () => {
     expect(match.mySide).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 12, black: 11 })
     expect(match.avgReceivedVote).toBe(7.6)
+  })
+
+  test('just finished played match has null vote but evaluated points', async () => {
+    const match = matchSummaryFrom(justFinishedWithMeSummary)
+
+    expect(match.id).toBe(3083226)
+    expect(match.availableSlots).toBe(0)
+    expect(match.mySide).toBe(Side.WHITE)
+    expect(match.points).toStrictEqual({ white: 12, black: 13 })
+    expect(match.avgReceivedVote).toBeNull()
   })
 })

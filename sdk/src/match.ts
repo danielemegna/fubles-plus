@@ -152,5 +152,8 @@ function hasBeenPlayed(matchDetails: any): boolean {
   if (matchDetails.me.can_report_score)
     return true
 
+  if (new Date(matchDetails.start_datetime) < new Date())
+    return true
+
   return false
 }

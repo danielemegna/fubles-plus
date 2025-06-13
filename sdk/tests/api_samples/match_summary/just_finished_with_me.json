@@ -1,0 +1,104 @@
+{
+  "is_imminent": false,
+  "start_datetime": "2025-06-12T19:30:00+02:00",
+  "start_datetime_st": "2025-06-12 19:30:00",
+  "imminent_datetime_st": "2025-06-11 19:30:00",
+  "imminent_datetime": "2025-06-11T19:30:00+02:00",
+  "available_slots": 0,
+  "missing_players": 0,
+  "followers_count": 17,
+  "player_price": {
+    "currency_symbol": "\u20ac",
+    "amount": 8,
+    "currency": "EUR"
+  },
+  "status": 5,
+  "id": 3083226,
+  "owner": {
+    "id": 28875,
+    "first_name": "Luca",
+    "last_name": "Marlboro",
+    "avatar": "https:\/\/assets.fubles.com\/images\/User\/28876\/avatar\/original_large.jpeg",
+    "url": "https:\/\/api.fubles.com\/it\/app\/user\/28876",
+    "me": {
+      "is_myself": false
+    }
+  },
+  "structure": {
+    "phone_complete": "+0 02.23232323",
+    "id": 1370,
+    "partner": true,
+    "lat": 45.1174201,
+    "lng": 9.122,
+    "name": "Sport Time Corsico",
+    "address": "Via Ammiraglio dei Conti, 16, 20094 Corsico MI, Italia",
+    "sub_title": "3 Km - Via Ammiraglio dei Conti, 16, 20094 Corsico MI, Italia"
+  },
+  "side_1": {
+    "name": "Bianchi",
+    "points": 12,
+    "img": "https:\/\/assets.fubles.com\/images\/common\/side1_crest.png?v24"
+  },
+  "side_2": {
+    "name": "Neri",
+    "points": 13,
+    "img": "https:\/\/assets.fubles.com\/images\/common\/side2_crest.png?v24"
+  },
+  "goalkeepers_count": 0,
+  "player_payment_type": 2,
+  "me": {
+    "followed_players": [
+      {
+        "id": 323814,
+        "first_name": "Alberto",
+        "last_name": "Falegna",
+        "avatar": "https:\/\/assets.fubles.com\/images\/User\/323814\/avatar\/default_large.png",
+        "url": "https:\/\/api.fubles.com\/en\/app\/user\/323814",
+        "me": {
+          "is_myself": false
+        }
+      },
+      {
+        "id": 945098,
+        "first_name": "Buffalo",
+        "last_name": "Bill",
+        "avatar": "https:\/\/assets.fubles.com\/images\/User\/945098\/avatar\/default_large.jpeg",
+        "url": "https:\/\/api.fubles.com\/en\/app\/user\/945098",
+        "me": {
+          "is_myself": false
+        }
+      }
+    ],
+    "distance": 2.6,
+    "is_following": true,
+    "is_playing": true,
+    "can_subscribe": false,
+    "has_requested_replace": false
+  },
+  "ref_player": {
+    "side_key": 1,
+    "is_mom": false,
+    "level_variation": 0,
+    "is_no_show": false,
+    "level": 65,
+    "role": {
+      "id": 3,
+      "name": "Centrocampista"
+    },
+    "user": {
+      "id": 55576,
+      "first_name": "Daniele",
+      "last_name": "Megna",
+      "avatar": "https:\/\/assets.fubles.com\/images\/User\/55576\/avatar\/default_large.png",
+      "url": "https:\/\/api.fubles.com\/en\/app\/user\/55576",
+      "me": {
+        "is_myself": true
+      }
+    },
+    "points": 0,
+    "warning": 0
+  },
+  "title": "Calcio a 5 \u2022 Coperto",
+  "sub_title": "2.6 Km - Sport Time Corsico",
+  "sport_name": "Calcetto"
+}
