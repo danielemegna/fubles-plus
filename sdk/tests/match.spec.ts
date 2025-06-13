@@ -2,9 +2,9 @@ import { describe, expect, test } from 'vitest';
 import { Side, matchDetailsAsAnotherUser, matchDetailsFrom, matchSummaryFrom } from '../src/match';
 import fullWithMeMatchDetails from './api_samples/match_details/full_with_me.json';
 import fullWithoutMeMatchDetails from './api_samples/match_details/full_without_me.json';
+import justFinishedWithMeDetails from './api_samples/match_details/just_finished_with_me.json';
 import openWithoutMeMatchDetails from './api_samples/match_details/open_without_me.json';
 import playedWithMeMatchDetails from './api_samples/match_details/played_with_me.json';
-import justFinishedWithMe from './api_samples/match_details/just_finished_with_me.json';
 import playedWithoutMeMatchDetails from './api_samples/match_details/played_without_me.json';
 import openWithMeMatchSummary from './api_samples/match_summary/open_with_me.json';
 import playedWithMeMatchSummary from './api_samples/match_summary/played_with_me.json';
@@ -85,7 +85,7 @@ describe('build match details from api object', () => {
     })
 
     test('just finished as myself', async () => {
-      const match = matchDetailsFrom(justFinishedWithMe)
+      const match = matchDetailsFrom(justFinishedWithMeDetails)
 
       expect(match.id).toBe(3083220)
       expect(match.title).toBe("Calcio a 5")
@@ -151,16 +151,12 @@ describe('build match details from api object', () => {
 
 describe('build match summary from api object', () => {
 
-  test('has proper fields values', async () => {
+  test('has proper match values', async () => {
     const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
     expect(match.startingAt.toISOString()).toBe("2025-06-23T18:00:00.000Z")
     expect(match.title).toBe("Calcio a 5")
-    expect(match.mySide).toBe(Side.WHITE)
-    expect(match.availableSlots).toBe(2)
-    expect(match.points).toBeNull()
-    expect(match.avgReceivedVote).toBeNull()
   })
 
   test('has proper structure values', async () => {
@@ -173,6 +169,9 @@ describe('build match summary from api object', () => {
   })
 
   test('has proper mySide field value', async () => {
+    let match = matchSummaryFrom(openWithMeMatchSummary)
+    expect(match.mySide).toBe(Side.WHITE)
+
     const onBlackSide = {
       ...openWithMeMatchSummary,
       ref_player: {
@@ -180,10 +179,16 @@ describe('build match summary from api object', () => {
         side_key: 2
       }
     }
-
-    const match = matchSummaryFrom(onBlackSide)
-
+    match = matchSummaryFrom(onBlackSide)
     expect(match.mySide).toBe(Side.BLACK)
+  })
+
+  test('open future match has available slots, null points, and null vote', () => {
+    const match = matchSummaryFrom(openWithMeMatchSummary)
+
+    expect(match.availableSlots).toBe(2)
+    expect(match.points).toBeNull()
+    expect(match.avgReceivedVote).toBeNull()
   })
 
   test('played match has scored points', async () => {
