@@ -1,9 +1,9 @@
 {
     "is_imminent": false,
-    "start_datetime": "2023-11-30T19:00:00+01:00",
-    "start_datetime_st": "2023-11-30 19:00:00",
-    "imminent_datetime_st": "2023-11-29 19:00:00",
-    "imminent_datetime": "2023-11-29T19:00:00+01:00",
+    "start_datetime": "2025-06-17T19:00:00+01:00",
+    "start_datetime_st": "2025-06-17 19:00:00",
+    "imminent_datetime_st": "2025-06-16 19:00:00",
+    "imminent_datetime": "2025-06-16T19:00:00+01:00",
     "available_slots": 0,
     "missing_players": 0,
     "followers_count": 18,
@@ -215,11 +215,11 @@
                         "matches": [
                             {
                                 "id": 3009501,
-                                "title": "2023-10-17 20:00 - Sport Time Corsico"
+                                "title": "2025-10-17 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 3010024,
-                                "title": "2023-09-30 17:00 - Barona Sporting 1971"
+                                "title": "2025-09-30 17:00 - Barona Sporting 1971"
                             }
                         ]
                     }
@@ -654,6 +654,6 @@
     },
     "share_url": "https://api.fubles.com/it/matches/3017265",
     "title": "Calcio a 5 • Coperto",
-    "sub_title": "gio 30 nov 2023 - 19:00",
+    "sub_title": "mar 17 nov 2025 - 19:00",
     "sport_name": "Calcetto"
 }

@@ -1,12 +1,12 @@
 {
   "is_imminent": false,
-  "start_datetime": "2025-06-04T19:30:00+02:00",
-  "start_datetime_st": "2025-06-04 19:30:00",
-  "imminent_datetime_st": "2025-06-03 19:30:00",
-  "imminent_datetime": "2025-06-03T19:30:00+02:00",
+  "start_datetime": "2025-06-12T19:30:00+02:00",
+  "start_datetime_st": "2025-06-12 19:30:00",
+  "imminent_datetime_st": "2025-06-11 19:30:00",
+  "imminent_datetime": "2025-06-11T19:30:00+02:00",
   "available_slots": 0,
   "missing_players": 0,
-  "followers_count": 15,
+  "followers_count": 17,
   "player_price": {
     "currency_symbol": "\u20ac",
     "amount": 8,

@@ -1,9 +1,9 @@
 {
     "is_imminent": false,
-    "start_datetime": "2023-11-28T20:00:00+01:00",
-    "start_datetime_st": "2023-11-28 20:00:00",
-    "imminent_datetime_st": "2023-11-27 20:00:00",
-    "imminent_datetime": "2023-11-27T20:00:00+01:00",
+    "start_datetime": "2025-06-18T20:00:00+01:00",
+    "start_datetime_st": "2025-06-18 20:00:00",
+    "imminent_datetime_st": "2025-06-17 20:00:00",
+    "imminent_datetime": "2025-06-17T20:00:00+01:00",
     "available_slots": 0,
     "missing_players": 0,
     "followers_count": 16,
@@ -353,51 +353,51 @@
                         "matches": [
                             {
                                 "id": 3015481,
-                                "title": "2023-11-07 20:00 - Sport Time Corsico"
+                                "title": "2025-11-07 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 3014989,
-                                "title": "2023-11-03 16:00 - Tennis Calcetto Barona  (T.C.B.)"
+                                "title": "2025-11-03 16:00 - Tennis Calcetto Barona  (T.C.B.)"
                             },
                             {
                                 "id": 3009512,
-                                "title": "2023-11-01 20:00 - Sport Time Corsico"
+                                "title": "2025-11-01 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 3004629,
-                                "title": "2023-09-01 20:00 - Sport Time Corsico"
+                                "title": "2025-09-01 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2979131,
-                                "title": "2023-07-18 20:00 - Sport Time Corsico"
+                                "title": "2025-07-18 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2979117,
-                                "title": "2023-06-22 19:00 - Sport Time Corsico"
+                                "title": "2025-06-22 19:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2979108,
-                                "title": "2023-06-07 20:00 - Sport Time Corsico"
+                                "title": "2025-06-07 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2992925,
-                                "title": "2023-06-01 19:30 - Tennis Calcetto Barona  (T.C.B.)"
+                                "title": "2025-06-01 19:30 - Tennis Calcetto Barona  (T.C.B.)"
                             },
                             {
                                 "id": 2993185,
-                                "title": "2023-05-27 17:00 - Tennis Calcetto Barona  (T.C.B.)"
+                                "title": "2025-05-27 17:00 - Tennis Calcetto Barona  (T.C.B.)"
                             },
                             {
                                 "id": 2979099,
-                                "title": "2023-05-23 20:00 - Sport Time Corsico"
+                                "title": "2025-05-23 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2979044,
-                                "title": "2023-05-22 20:00 - Sport Time Corsico"
+                                "title": "2025-05-22 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 2979096,
-                                "title": "2023-05-17 20:00 - Sport Time Corsico"
+                                "title": "2025-05-17 20:00 - Sport Time Corsico"
                             }
                         ]
                     }
@@ -573,11 +573,11 @@
                         "matches": [
                             {
                                 "id": 3009509,
-                                "title": "2023-10-27 20:00 - Sport Time Corsico"
+                                "title": "2025-10-27 20:00 - Sport Time Corsico"
                             },
                             {
                                 "id": 3009505,
-                                "title": "2023-10-23 20:00 - Sport Time Corsico"
+                                "title": "2025-10-23 20:00 - Sport Time Corsico"
                             }
                         ]
                     }
@@ -676,11 +676,11 @@
                         "matches": [
                             {
                                 "id": 3003654,
-                                "title": "2023-10-21 11:30 - Parrocchia San Protaso"
+                                "title": "2025-10-21 11:30 - Parrocchia San Protaso"
                             },
                             {
                                 "id": 3013090,
-                                "title": "2023-10-20 16:00 - Tennis Calcetto Barona  (T.C.B.)"
+                                "title": "2025-10-20 16:00 - Tennis Calcetto Barona  (T.C.B.)"
                             }
                         ]
                     }
@@ -846,11 +846,11 @@
                 "matches": [
                     {
                         "id": 3009509,
-                        "title": "2023-10-27 20:00 - Sport Time Corsico"
+                        "title": "2025-10-27 20:00 - Sport Time Corsico"
                     },
                     {
                         "id": 3009505,
-                        "title": "2023-10-23 20:00 - Sport Time Corsico"
+                        "title": "2025-10-23 20:00 - Sport Time Corsico"
                     }
                 ]
             }
@@ -884,6 +884,6 @@
     },
     "share_url": "https://api.fubles.com/it/matches/3015825",
     "title": "Calcio a 5 • Coperto",
-    "sub_title": "mar 28 nov 2023 - 20:00",
+    "sub_title": "mer 18 giu 2025 - 20:00",
     "sport_name": "Calcetto"
 }
