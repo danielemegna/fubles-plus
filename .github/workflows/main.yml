@@ -14,5 +14,5 @@ jobs:
           host: danielemegna.it
           username: root
           key: ${{ secrets.SCALEWAY_PRIVATE_KEY }}
-          script_path: ~/fubles-plus/deploy.sh
+          script: ~/fubles-plus/deploy.sh
 
