@@ -1,0 +1,18 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: execute remote deploy script
+        uses: appleboy/ssh-action@v1
+        with:
+          host: danielemegna.it
+          username: root
+          key: ${{ secrets.SCALEWAY_PRIVATE_KEY }}
+          script_path: ~/fubles-plus/deploy.sh
+
