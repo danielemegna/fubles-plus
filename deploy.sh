@@ -1,5 +1,10 @@
 #!/bin/sh
 
+set -x
+
+SCRIPT_DIR=$(dirname -- "$( readlink -f -- "$0"; )";)
+cd $SCRIPT_DIR
+
 git pull --rebase --autostash
 
 docker rm -f fubles-plus-be || true
