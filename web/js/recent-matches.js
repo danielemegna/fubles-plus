@@ -12,6 +12,9 @@ const userId = visitingUserId()
 let fullDetailsOfLastPlayedMatches = await fetchMatches(userId, fublesSdk)
 
 document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([summary, details]) => {
+  const levelVariationCssClass = levelVariationCssClassFrom(summary.levelVariation)
+  const levelVariationText = levelVariationTextFrom(summary.levelVariation)
+
   return `
     <div class="match-card" onclick="window.open('https://app.fubles.com/it/app/matches/${summary.id}')">
       <div class="match-card__date">
@@ -35,12 +38,12 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
               ${summary.points.black}
             </span>
           </div>
-          <span class="match-card__level-variation-arrow positive"></span>
+          <span class="match-card__level-variation-arrow ${levelVariationCssClass}"></span>
           <span class="match-card__structure-name">${details.structure_name}</span>
           <div class="match-card__average-vote">
             Voto: <span>${summary.avgReceivedVote ?? "--"}</span>
           </div>
-          <span class="match-card__level-variation positive">+1</span>
+          <span class="match-card__level-variation ${levelVariationCssClass}">${levelVariationText}</span>
         </div>
         <div class="match-card__votes">
           ${details.received_votes.map(vote => {
@@ -53,6 +56,23 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
       </div>
     </div>`;
 }).join("");
+
+function levelVariationCssClassFrom(levelVariation) {
+  if (!levelVariation || levelVariation == 0)
+    return ""
+
+  return levelVariation > 0 ? "positive" : "negative"
+}
+
+function levelVariationTextFrom(levelVariation) {
+  if (levelVariation == null)
+    return "--"
+
+  if(levelVariation <= 0)
+    return levelVariation.toString()
+
+  return "+" + levelVariation
+}
 
 function visitingUserId() {
   const userIdQueryParam = readUserIdQueryParam()

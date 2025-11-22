@@ -92,7 +92,7 @@ Given some recent matches that I played, I want to see the level variation cause
 Progress of work :construction_worker::
 - :white_check_mark: frontend mockup
 - :warning: needed SDK operation
-- :warning: dynamic fronted based on real values
+- :white_check_mark: dynamic fronted based on real values
 
 ## Dev notes
 
