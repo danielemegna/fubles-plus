@@ -1,15 +1,14 @@
 # Fubles Plus
-Automate your Fubles operations
 
-## Goal
+Better explore your Fubles stats and automate some Fubles operations!
 
-(to be completed)
 
-## Ideas
+The idea is to leverege on the exposed API (non-official, the currently used by the real frontend) to better visualize stats, events, ecc.
+Furthermore, same API can be used to autmatically perform some scheduled operation like enrollment or unrollement following some rules.
 
-Some features that we could implement below.
+## Feature ideas
 
-#### Flash enrollment
+#### Flash enrollment :construction_worker:
 
 Given a full match I'm not enrolled to, auto-enroll me immediately when a seat is available.
 
@@ -18,6 +17,12 @@ Variations:
 - enroll me only if the free seat is in the specified team
 - enroll me only if I can play with a specific team mate
 - do not autoenroll, just notify
+
+Progress of work :construction_worker::
+- :white_check_mark: needed SDK operation
+- :white_check_mark: frontend mockup
+- :construction_worker: backend api of monitorized matches (currently fake data)
+- :warning: missing monitoring daemon
 
 #### Flash side switch
 
@@ -34,35 +39,6 @@ Variations:
 - configure unbalance value
 - do not auto unroll, just notify
 
-#### User recent performances
-
-Given a player, show some additional statistics on last N played matches:
-- match outcome (winner/lost)
-- number of goals
-- average votes
-
-#### Almost full match notification
-
-Select a not full match I'm not enrolled to and notify me (mail) when it is almost full (eg. 2 seat available)
-
-Variations:
-- parametrize number of seat available
-- autoenroll me when almost full
-- autoenroll only when my google calendar is free
-
-#### Google calendar sync
-
-Sync my google calendar putting events of matches I'm enrolled to.
-
-Created google calendar event should contain:
-- venue with the right sport center
-- match date and time
-- match fubles link in notes
-- notifications set to some hours before the match
-
-Variation:
-- select the g calendar you want to use
-
 #### Notify interesting match
 
 Notify me when there is a new interesting match.
@@ -74,13 +50,40 @@ Versions:
 Variations:
 - parametrize number of followed users
 
-#### Peek votes without voting
+#### Almost full match notification
+
+Select a not full match I'm not enrolled to and notify me (mail) when it is almost full (eg. 2 seat available)
+
+Variations:
+- parametrize number of seat available
+- autoenroll me when almost full
+- autoenroll only when my google calendar is free
+
+#### Calendar sync :white_check_mark:
+
+Create a public browsable calendar (.ics format) putting events of matches I'm enrolled to.
+Calendar events should contain:
+- venue with the right sport center
+- match date and time
+- match fubles link in notes
+- notifications set to some hours before the match
+
+> :construction_worker: to complete usage with another used-id !
+
+#### User recent performances :white_check_mark:
+
+Given a player, show some additional statistics on last N played matches:
+- match outcome (winner/lost)
+- <s>number of goals</s>
+- average votes
+
+#### Peek votes without voting :white_check_mark:
 
 Given a recent match that I played, I want to see votes players gave to me without voting.
 
 > in fubles you cannot see votes without giving your votes before
 
-#### Show level variation
+#### Show level variation :construction_worker:
 
 Given some recent matches that I played, I want to see the level variation caused by that match.
 
