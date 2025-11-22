@@ -165,7 +165,7 @@ describe('build match summary from api object', () => {
     const match = matchSummaryFrom(openWithMeMatchSummary)
 
     expect(match.id).toBe(3004643)
-    expect(match.startingAt.toISOString()).toBe("2025-06-23T18:00:00.000Z")
+    expect(match.startingAt.toISOString()).toBe("2125-06-23T18:00:00.000Z")
     expect(match.title).toBe("Calcio a 5")
   })
 
