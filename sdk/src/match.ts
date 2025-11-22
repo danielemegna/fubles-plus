@@ -24,6 +24,7 @@ export type MatchSummary = {
   availableSlots: number,
   points: MatchPoints | null,
   avgReceivedVote: number | null
+  levelVariation: number | null
 }
 
 type MatchPoints = {
@@ -87,7 +88,8 @@ export function matchSummaryFrom(matchSummary: any): MatchSummary {
     mySide: mySideFrom(matchSummary),
     availableSlots: matchSummary.available_slots,
     points: matchPointsFrom(matchSummary),
-    avgReceivedVote: matchSummary.ref_player.avg_vote ?? null
+    avgReceivedVote: matchSummary.ref_player.avg_vote ?? null,
+    levelVariation: levelVariationFrom(matchSummary)
   }
 }
 
@@ -135,14 +137,25 @@ function findUserIn(matchDetails: any, userId: number): any | null {
   return found ?? null;
 }
 
-function matchPointsFrom(matchDetails: any): MatchPoints | null {
-  if (!hasBeenPlayed(matchDetails))
+function matchPointsFrom(match: any): MatchPoints | null {
+  if (!hasBeenPlayed(match))
     return null;
 
   return {
-    white: matchDetails.side_1.points,
-    black: matchDetails.side_2.points,
+    white: match.side_1.points,
+    black: match.side_2.points,
   }
+}
+
+function levelVariationFrom(matchSummary: any): number | null {
+  // check for avg_vote since level_variation seems always present
+  if (matchSummary.ref_player?.avg_vote == null)
+    return null
+
+  if (!hasBeenPlayed(matchSummary))
+    return null
+
+  return matchSummary.ref_player.level_variation
 }
 
 function hasBeenPlayed(matchDetails: any): boolean {

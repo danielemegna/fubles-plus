@@ -199,6 +199,7 @@ describe('build match summary from api object', () => {
     expect(match.availableSlots).toBe(2)
     expect(match.points).toBeNull()
     expect(match.avgReceivedVote).toBeNull()
+    expect(match.levelVariation).toBeNull()
   })
 
   test('played match has scored points', async () => {
@@ -209,6 +210,7 @@ describe('build match summary from api object', () => {
     expect(match.mySide).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 7, black: 9 })
     expect(match.avgReceivedVote).toBe(7.3)
+    expect(match.levelVariation).toBe(0)
   })
 
   test('played without me should have side and vote of reference player', async () => {
@@ -219,6 +221,7 @@ describe('build match summary from api object', () => {
     expect(match.mySide).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 12, black: 11 })
     expect(match.avgReceivedVote).toBe(7.6)
+    expect(match.levelVariation).toBe(0)
   })
 
   test('just finished played match has null vote but evaluated points', async () => {
@@ -229,5 +232,6 @@ describe('build match summary from api object', () => {
     expect(match.mySide).toBe(Side.WHITE)
     expect(match.points).toStrictEqual({ white: 12, black: 13 })
     expect(match.avgReceivedVote).toBeNull()
+    expect(match.levelVariation).toBeNull()
   })
 })
