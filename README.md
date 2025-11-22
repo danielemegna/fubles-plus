@@ -8,7 +8,7 @@ Furthermore, same API can be used to autmatically perform some scheduled operati
 
 ## Feature ideas
 
-#### Flash enrollment :construction_worker:
+#### # Flash enrollment :construction_worker:
 
 Given a full match I'm not enrolled to, auto-enroll me immediately when a seat is available.
 
@@ -24,14 +24,14 @@ Progress of work :construction_worker::
 - :construction_worker: backend api of monitorized matches (currently fake data)
 - :warning: missing monitoring daemon
 
-#### Flash side switch
+#### # Flash side switch
 
 Given a full match I'm enrolled to, automatically change team when a spot became available in the other team.
 
 Variations:
 - do not autoswitch, just notify
 
-#### Auto unsubcribe
+#### # Auto unsubcribe
 
 Given a match I'm enrolled to, if the prediction is too unbalanced close to the deadline to unsubscribe, auto unroll me.
 
@@ -39,7 +39,7 @@ Variations:
 - configure unbalance value
 - do not auto unroll, just notify
 
-#### Notify interesting match
+#### # Notify interesting match
 
 Notify me when there is a new interesting match.
 
@@ -50,7 +50,7 @@ Versions:
 Variations:
 - parametrize number of followed users
 
-#### Almost full match notification
+#### # Almost full match notification
 
 Select a not full match I'm not enrolled to and notify me (mail) when it is almost full (eg. 2 seat available)
 
@@ -59,7 +59,7 @@ Variations:
 - autoenroll me when almost full
 - autoenroll only when my google calendar is free
 
-#### Calendar sync :white_check_mark:
+#### # Calendar sync :white_check_mark:
 
 Create a public browsable calendar (.ics format) putting events of matches I'm enrolled to.
 Calendar events should contain:
@@ -70,20 +70,20 @@ Calendar events should contain:
 
 > :construction_worker: to complete usage with another used-id !
 
-#### User recent performances :white_check_mark:
+#### # User recent performances :white_check_mark:
 
 Given a player, show some additional statistics on last N played matches:
 - match outcome (winner/lost)
 - <s>number of goals</s>
 - average votes
 
-#### Peek votes without voting :white_check_mark:
+#### # Peek votes without voting :white_check_mark:
 
 Given a recent match that I played, I want to see votes players gave to me without voting.
 
 > in fubles you cannot see votes without giving your votes before
 
-#### Show level variation :construction_worker:
+#### # Show level variation :construction_worker:
 
 Given some recent matches that I played, I want to see the level variation caused by that match.
 
