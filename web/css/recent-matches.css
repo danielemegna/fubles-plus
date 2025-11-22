@@ -7,7 +7,7 @@
 
 .match-card__grid {
   display: grid;
-  grid-template-columns: 6fr 2fr;
+  grid-template-columns: 10fr 3fr 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: center;
   row-gap: 0.125rem;
@@ -46,7 +46,6 @@
   justify-self: end;
 }
 
-
 .match-card__date {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
@@ -56,6 +55,23 @@
   color: var(--lightblack);
 }
 
+.match-card__level-variation-arrow, .match-card__level-variation {
+  justify-self: end;
+  font-size: 0.875rem;
+
+  &.positive { color: green; }
+  &.negative { color: red; }
+}
+
+.match-card__level-variation-arrow {
+  font-size: 1.750rem;
+  line-height: 1rem;
+
+  &.positive::before { content: '\2191' }
+  &.negative::before { content: '\2193' }
+}
+
+
 .match-card__votes {
   border-top: 1px solid var(--verylightgrey);
   padding: var(--x-padding) var(--y-padding);
@@ -64,8 +80,8 @@
   align-items: center;
   color: var(--lightblack);
   row-gap: 0.875rem;
-}
 
-.match-card__votes > span {
-  padding-top: 2px;
+  > span { padding-top: 0.125rem; }
+  > span:nth-child(even) { justify-self: right; }
+
 }
