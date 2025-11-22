@@ -7,16 +7,29 @@
 
 .match-card__grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 6fr 2fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
   row-gap: 0.125rem;
   padding: var(--x-padding) var(--y-padding);
 }
 
+.match-card__sport-type {
+  justify-self: start;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.match-card__structure-name {
+  justify-self: start;
+  font-size: 0.875rem;
+  color: var(--grey);
+}
+
 .match-card__outcome {
   font-size: 1.125rem;
   font-weight: 600;
+  justify-self: end;
 }
 
 .match-card__outcome > span {
@@ -30,21 +43,9 @@
 .match-card__average-vote {
   font-size: 0.875rem;
   color: var(--grey);
-}
-
-.match-card__grid > *:nth-child(even) {
   justify-self: end;
 }
 
-.match-card__sport-type {
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-
-.match-card__structure-name {
-  font-size: 0.875rem;
-  color: var(--grey);
-}
 
 .match-card__date {
   padding-top: 1.5rem;
