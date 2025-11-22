@@ -58,14 +58,21 @@
 .match-card__level-variation-arrow, .match-card__level-variation {
   justify-self: end;
   font-size: 0.875rem;
+  color: var(--grey);
 
   &.positive { color: green; }
   &.negative { color: red; }
 }
 
 .match-card__level-variation-arrow {
-  font-size: 1.750rem;
-  line-height: 1rem;
+  color: var(--grey);
+  font-size: 0.875rem;
+  &::before { content: '\2212' }
+
+  &.positive, &.negative {
+    font-size: 1.750rem;
+    line-height: 1rem;
+  }
 
   &.positive::before { content: '\2191' }
   &.negative::before { content: '\2193' }

@@ -35,12 +35,12 @@ document.querySelector('main').innerHTML = fullDetailsOfLastPlayedMatches.map(([
               ${summary.points.black}
             </span>
           </div>
-          <span class="match-card__level-variation-arrow negative"></span>
+          <span class="match-card__level-variation-arrow positive"></span>
           <span class="match-card__structure-name">${details.structure_name}</span>
           <div class="match-card__average-vote">
             Voto: <span>${summary.avgReceivedVote ?? "--"}</span>
           </div>
-          <span class="match-card__level-variation negative">-2</span>
+          <span class="match-card__level-variation positive">+1</span>
         </div>
         <div class="match-card__votes">
           ${details.received_votes.map(vote => {
