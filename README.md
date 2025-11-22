@@ -87,7 +87,12 @@ Given a recent match that I played, I want to see votes players gave to me witho
 
 Given some recent matches that I played, I want to see the level variation caused by that match.
 
-> this information is never shown by fubles but present as `level_variation` in api payload
+> this information is never shown by fubles but present as `level_variation` in api payload!
+
+Progress of work :construction_worker::
+- :white_check_mark: frontend mockup
+- :warning: needed SDK operation
+- :warning: dynamic fronted based on real values
 
 ## Dev notes
 
